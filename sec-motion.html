@@ -58,14 +58,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.4.1';
+eBookConfig.runestone_version = '8.4.2';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.82b21a4699b89209.bundle.js"></script><script src="_static/prefix-23.7d27cb317c36911a.bundle.js"></script><script src="_static/prefix-runestone.35a40fea06647cf2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-runestone.7062ede5334282a6.css">
+<script src="_static/prefix-runtime.124380009849b47e.bundle.js"></script><script src="_static/prefix-23.7d27cb317c36911a.bundle.js"></script><script src="_static/prefix-runestone.1f0ec0deacd7bb16.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-runestone.52ceae47a9e6e8ed.css">
 <script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
@@ -268,14 +268,14 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="displaymath process-math" id="sec-motion-2-1-6">
 \begin{equation*}
-\mathbf{v(t)} = \mathbf{r'(t)} = \lim_{\h \to 0} \frac{\mathbf{r(t + h)} - \mathbf{r(t)}}{h}
+\mathbf{v(t)} = \mathbf{r'(t)} = \lim_{h \to 0} \frac{\mathbf{r(t + h)} - \mathbf{r(t)}}{h}
 \end{equation*}
 </div>
 <div class="para">Where <span class="process-math">\(h \)</span> is very small length of time. The <dfn class="terminology">acceleration vector</dfn> of the particle is the derivative of the velocity vector with respect to time <span class="process-math">\(t\)</span> is <span class="process-math">\(\mathbf{r''(t)}\text{.}\)</span>
 </div>
 <div class="displaymath process-math" id="sec-motion-2-1-11">
 \begin{equation*}
-\mathbf{a(t)} = \mathbf{r''(t)} = \lim_{\h \to 0} \frac{\mathbf{r'(t + h)} - \mathbf{r'(t)}}{h}
+\mathbf{a(t)} = \mathbf{r''(t)} = \lim_{h \to 0} \frac{\mathbf{r'(t + h)} - \mathbf{r'(t)}}{h}
 \end{equation*}
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-motion-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -429,17 +429,22 @@ C_1 = 1, C_2 = 1, C_3 = 1
 <div class="para">To find the position, we integrate the velocity:</div>
 <div class="displaymath process-math" id="sec-motion-2-6-2-1-5">
 \begin{equation*}
-\mathbf{r(t)} = \int \mathbf{v(t)} dt = \int \langle 2t^2 + 1, 3t^2 + 1, t + 1 \rangle dt = \langle \frac{2}{3}t^3 + t + D_1, t^3 + t + D_2, \frac{1}{2}t^2 + t + D_3 \rangle
+\mathbf{r(t)} = \int \mathbf{v(t)} dt = \int \langle 2t^2 + 1, 3t^2 + 1, t + 1 \rangle dt 
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="sec-motion-2-6-2-1-6">
+\begin{equation*}
+= \langle \frac{2}{3}t^3 + t + D_1, t^3 + t + D_2, \frac{1}{2}t^2 + t + D_3 \rangle
 \end{equation*}
 </div>
 <div class="para">Using the initial condition <span class="process-math">\(\mathbf{r(0)} = \langle 1, 0, 0 \rangle\text{,}\)</span> we find:</div>
-<div class="displaymath process-math" id="sec-motion-2-6-2-1-7">
+<div class="displaymath process-math" id="sec-motion-2-6-2-1-8">
 \begin{equation*}
 D_1 = 1, D_2 = 0, D_3 = 0
 \end{equation*}
 </div>
 <div class="para">Therefore, the position is:</div>
-<div class="displaymath process-math" id="sec-motion-2-6-2-1-8">
+<div class="displaymath process-math" id="sec-motion-2-6-2-1-9">
 \begin{equation*}
 \mathbf{r(t)} = \langle \frac{2}{3}t^3 + t + 1, t^3 + t, \frac{1}{2}t^2 + t \rangle
 \end{equation*}
@@ -571,7 +576,12 @@ a_T = \frac{d||\mathbf{v}||}{dt} = \frac{d}{dt}(\sqrt{14}) = 0
 <div class="para">The normal component of acceleration is:</div>
 <div class="displaymath process-math" id="subsec-tangent_normal-accel-4-2-1-7">
 \begin{equation*}
-a_N = ||\mathbf{a} - a_T\hat{\mathbf{v}}|| = ||\langle 0, 2, 6 \rangle - 0\hat{\mathbf{v}}|| = ||\langle 0, 2, 6 \rangle|| = \sqrt{0^2 + 2^2 + 6^2} = \sqrt{40}
+a_N = ||\mathbf{a} - a_T\hat{\mathbf{v}}|| = ||\langle 0, 2, 6 \rangle - 0\hat{\mathbf{v}}|| = ||\langle 0, 2, 6 \rangle|| 
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="subsec-tangent_normal-accel-4-2-1-8">
+\begin{equation*}
+= \sqrt{0^2 + 2^2 + 6^2} = \sqrt{40}
 \end{equation*}
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-tangent_normal-accel-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>

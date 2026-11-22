@@ -58,14 +58,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.4.1';
+eBookConfig.runestone_version = '8.4.2';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.82b21a4699b89209.bundle.js"></script><script src="_static/prefix-23.7d27cb317c36911a.bundle.js"></script><script src="_static/prefix-runestone.35a40fea06647cf2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-runestone.7062ede5334282a6.css">
+<script src="_static/prefix-runtime.124380009849b47e.bundle.js"></script><script src="_static/prefix-23.7d27cb317c36911a.bundle.js"></script><script src="_static/prefix-runestone.1f0ec0deacd7bb16.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-runestone.52ceae47a9e6e8ed.css">
 <script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
@@ -272,21 +272,84 @@ eBookConfig.enable_chatcodes =  false;
 </figure>
 <div class="para" id="sec-I-vector_algebra-2-4">Two parallel vectors have the same or opposite direction. For example, if <span class="process-math">\(\vec{a}\)</span> and <span class="process-math">\(\vec{b}\)</span> are parallel, then <span class="process-math">\(\vec{b} = c\vec{a}\)</span> for some scalar <span class="process-math">\(c\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-I-vector_algebra-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-I-vector_algebra-2-5">A vector can be represented in component form as <span class="process-math">\(\vec{a} = \langle a_1, a_2, a_3 \rangle\text{,}\)</span> or <span class="process-math">\(\vec{a} = a_1 \hat{i}+ a_2 \hat{j}+ a_3 \hat{k},\)</span> where <span class="process-math">\(a_1\text{,}\)</span> <span class="process-math">\(a_2\text{,}\)</span> and <span class="process-math">\(a_3\)</span> are the components of the vector along the <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> and <span class="process-math">\(z\)</span> axes, respectively.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-I-vector_algebra-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="sec-I-vector_algebra-2-5">
+<div class="para">A vector can be represented in component form as</div>
+<div class="displaymath process-math" id="sec-I-vector_algebra-2-5-1">
+\begin{equation*}
+\vec{a} = \langle a_1, a_2, a_3 \rangle\text{,}
+\end{equation*}
 </div>
-<div class="para" id="sec-I-vector_algebra-2-6">The magnitude of a vector <span class="process-math">\(\vec{a}\)</span> is given by <span class="process-math">\(\|\vec{a}\| = \sqrt{a_1^2 + a_2^2 + a_3^2}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-I-vector_algebra-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">or</div>
+<div class="displaymath process-math" id="sec-I-vector_algebra-2-5-2">
+\begin{equation*}
+\vec{a} = a_1 \hat{i}+ a_2 \hat{j}+ a_3 \hat{k},
+\end{equation*}
 </div>
-<div class="para" id="sec-I-vector_algebra-2-7">A unit vector is a vector with magnitude 1. The unit vector in the direction of <span class="process-math">\(\vec{a}\)</span> is given by <span class="process-math">\(\hat{a} = \frac{\vec{a}}{\|\vec{a}\|}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-I-vector_algebra-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">where <span class="process-math">\(a_1\text{,}\)</span> <span class="process-math">\(a_2\text{,}\)</span> and <span class="process-math">\(a_3\)</span> are the components of the vector along the <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> and <span class="process-math">\(z\)</span> axes, respectively.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-I-vector_algebra-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-I-vector_algebra-2-8">The sum of two vectors <span class="process-math">\(\vec{a} = \langle a_1, a_2, a_3 \rangle\)</span> and <span class="process-math">\(\vec{b} = \langle b_1, b_2, b_3 \rangle\)</span> is given by <span class="process-math">\(\vec{a} + \vec{b} = \langle a_1 + b_1, a_2 + b_2, a_3 + b_3 \rangle\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-I-vector_algebra-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="sec-I-vector_algebra-2-6">
+<div class="para">The magnitude of a vector <span class="process-math">\(\vec{a}\)</span> is given by</div>
+<div class="displaymath process-math" id="sec-I-vector_algebra-2-6-2">
+\begin{equation*}
+\|\vec{a}\| = \sqrt{a_1^2 + a_2^2 + a_3^2}\text{.}
+\end{equation*}
 </div>
-<div class="para" id="sec-I-vector_algebra-2-9">The difference of two vectors <span class="process-math">\(\vec{a} = \langle a_1, a_2, a_3 \rangle\)</span> and <span class="process-math">\(\vec{b} = \langle b_1, b_2, b_3 \rangle\)</span> is given by <span class="process-math">\(\vec{a} - \vec{b} = \langle a_1 - b_1, a_2 - b_2, a_3 - b_3 \rangle\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-I-vector_algebra-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-I-vector_algebra-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-I-vector_algebra-2-10">The scalar multiple of a vector <span class="process-math">\(\vec{a} = \langle a_1, a_2, a_3 \rangle\)</span> by a scalar <span class="process-math">\(c\)</span> is given by <span class="process-math">\(c\vec{a} = \langle ca_1, ca_2, ca_3 \rangle\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-I-vector_algebra-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="sec-I-vector_algebra-2-7">
+<div class="para">A unit vector is a vector with magnitude 1. The unit vector in the direction of <span class="process-math">\(\vec{a}\)</span> is given by</div>
+<div class="displaymath process-math" id="sec-I-vector_algebra-2-7-2">
+\begin{equation*}
+\hat{a} = \frac{\vec{a}}{\|\vec{a}\|}\text{.}
+\end{equation*}
 </div>
-<div class="para" id="sec-I-vector_algebra-2-11">The dot product of two vectors <span class="process-math">\(\vec{a} = \langle a_1, a_2, a_3 \rangle\)</span> and <span class="process-math">\(\vec{b} = \langle b_1, b_2, b_3 \rangle\)</span> is given by <span class="process-math">\(\vec{a} \cdot \vec{b} = a_1 b_1 + a_2 b_2 + a_3 b_3\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-I-vector_algebra-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-I-vector_algebra-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-I-vector_algebra-2-12">The cross product of two vectors <span class="process-math">\(\vec{a} = \langle a_1, a_2, a_3 \rangle\)</span> and <span class="process-math">\(\vec{b} = \langle b_1, b_2, b_3 \rangle\)</span> is given by <span class="process-math">\(\vec{a} \times \vec{b} = \langle a_2 b_3 - a_3 b_2, a_3 b_1 - a_1 b_3, a_1 b_2 - a_2 b_1 \rangle\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-I-vector_algebra-2-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="sec-I-vector_algebra-2-8">
+<div class="para">The sum of two vectors <span class="process-math">\(\vec{a} = \langle a_1, a_2, a_3 \rangle\)</span> and <span class="process-math">\(\vec{b} = \langle b_1, b_2, b_3 \rangle\)</span> is given by</div>
+<div class="displaymath process-math" id="sec-I-vector_algebra-2-8-3">
+\begin{equation*}
+\vec{a} + \vec{b} = \langle a_1 + b_1, a_2 + b_2, a_3 + b_3 \rangle\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-I-vector_algebra-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-I-vector_algebra-2-9">
+<div class="para">The difference of two vectors <span class="process-math">\(\vec{a} = \langle a_1, a_2, a_3 \rangle\)</span> and <span class="process-math">\(\vec{b} = \langle b_1, b_2, b_3 \rangle\)</span> is given by</div>
+<div class="displaymath process-math" id="sec-I-vector_algebra-2-9-3">
+\begin{equation*}
+\vec{a} - \vec{b} = \langle a_1 - b_1, a_2 - b_2, a_3 - b_3 \rangle\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-I-vector_algebra-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-I-vector_algebra-2-10">
+<div class="para">The scalar multiple of a vector <span class="process-math">\(\vec{a} = \langle a_1, a_2, a_3 \rangle\)</span> by a scalar <span class="process-math">\(c\)</span> is given by</div>
+<div class="displaymath process-math" id="sec-I-vector_algebra-2-10-3">
+\begin{equation*}
+c\vec{a} = \langle ca_1, ca_2, ca_3 \rangle\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-I-vector_algebra-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-I-vector_algebra-2-11">
+<div class="para">The dot product of two vectors <span class="process-math">\(\vec{a} = \langle a_1, a_2, a_3 \rangle\)</span> and <span class="process-math">\(\vec{b} = \langle b_1, b_2, b_3 \rangle\)</span> is given by</div>
+<div class="displaymath process-math" id="sec-I-vector_algebra-2-11-3">
+\begin{equation*}
+\vec{a} \cdot \vec{b} = a_1 b_1 + a_2 b_2 + a_3 b_3\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-I-vector_algebra-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-I-vector_algebra-2-12">
+<div class="para">The cross product of two vectors <span class="process-math">\(\vec{a} = \langle a_1, a_2, a_3 \rangle\)</span> and <span class="process-math">\(\vec{b} = \langle b_1, b_2, b_3 \rangle\)</span> is given by</div>
+<div class="displaymath process-math" id="sec-I-vector_algebra-2-12-3">
+\begin{equation*}
+\vec{a} \times \vec{b} = \langle a_2 b_3 - a_3 b_2, a_3 b_1 - a_1 b_3, a_1 b_2 - a_2 b_1 \rangle\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-I-vector_algebra-2-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></section>
 <section class="subsection" id="sec-I-vector_algebra-3">
 <h2 class="heading hide-type">
@@ -481,9 +544,19 @@ eBookConfig.enable_chatcodes =  false;
 <div class="displaymath process-math" id="subsubsec-component-vector-8-2-1-1">
 \begin{equation*}
 \vert \vec{a} \vert  = \sqrt{2^2 + 0^2 + 3^2} = \sqrt{13} 
-\vec{a} + \vec{b} = \langle 2 + (-2), 0 + 3, 3 + 5 \rangle = \langle 0, 3, 8 \rangle 
+\vec{a} + \vec{b} = \langle 2 + (-2), 0 + 3, 3 + 5 \rangle 
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="subsubsec-component-vector-8-2-1-2">
+\begin{equation*}
+= \langle 0, 3, 8 \rangle 
 \vec{a} - \vec{b} = \langle 2 - (-2), 0 - 3, 3 - 5 \rangle = \langle 4, -3, -2 \rangle 
-3\vec{b} = \langle 3(-2), 3(3), 3(5) \rangle = \langle -6, 9, 15 \rangle 
+3\vec{b} = \langle 3(-2), 3(3), 3(5) \rangle 
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="subsubsec-component-vector-8-2-1-3">
+\begin{equation*}
+= \langle -6, 9, 15 \rangle 
 2\vec{a} + 5\vec{b} = \langle 2(2) + 5(-2), 2(0) + 5(3), 2(3) + 5(5) \rangle = \langle -6, 15, 31 \rangle 
 \end{equation*}
 </div>
@@ -527,7 +600,12 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para logical" id="subsubsec-unit_vector-3-2-1">
 <div class="displaymath process-math" id="subsubsec-unit_vector-3-2-1-1">
 \begin{equation*}
-2\vec{a} + 3\vec{b}  = 2(\hat{i} + 5\hat{j} - 3\hat{k}) + 3(2\hat{i} - 5\hat{k}) \\ \amp = (2 + 6)\hat{i} + 10\hat{j} + (-6 - 15)\hat{k} \\ \amp = 8\hat{i} + 10\hat{j} - 21\hat{k} 
+2\vec{a} + 3\vec{b}  = 2(\hat{i} + 5\hat{j} - 3\hat{k}) + 3(2\hat{i} - 5\hat{k}) 
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="subsubsec-unit_vector-3-2-1-2">
+\begin{equation*}
+= (2 + 6)\hat{i} + 10\hat{j} + (-6 - 15)\hat{k}  = 8\hat{i} + 10\hat{j} - 21\hat{k} 
 \end{equation*}
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsubsec-unit_vector-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1139,12 +1217,8 @@ b_1 &amp; b_2 &amp; b_3
 <div class="para logical" id="subsec-cross_product-2-6-1">
 <div class="displaymath process-math" id="subsec-cross_product-2-6-1-1">
 \begin{equation*}
-\hat{i} \times \hat{j}  = \hat{k} \\
-\hat{j} \times \hat{k}   = \hat{i}  \\
-\hat{k} \times \hat{i} = \hat{j}  \\
-\hat{j} \times \hat{i}   = -\hat{k}  \\
-\hat{k} \times \hat{j}   = -\hat{i} \\
-\hat{i} \times \hat{k}  = -\hat{j} 
+\hat{i} \times \hat{j}  = \hat{k} \quad   \hat{j} \times \hat{k}   = \hat{i}  \quad  \hat{k} \times \hat{i} = \hat{j}  \\
+\hat{j} \times \hat{i}   = -\hat{k}  \quad  \hat{k} \times \hat{j}   = -\hat{i} \quad  \hat{i} \times \hat{k}  = -\hat{j} 
 \end{equation*}
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cross_product-2-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1297,8 +1371,11 @@ a \cdot (b \times c) =
 4 &amp; 5 &amp; 6 \\
 7 &amp; 8 &amp; 9
 \end{vmatrix}
-= 1(5 \cdot 9 - 6 \cdot 8) - 2(4 \cdot 9 - 6 \cdot 7) + 3(4 \cdot 8 - 5 \cdot 7)
-= 0
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="subsec-cross_product-7-2-1-2">
+\begin{equation*}
+= 1(5 \cdot 9 - 6 \cdot 8) - 2(4 \cdot 9 - 6 \cdot 7) + 3(4 \cdot 8 - 5 \cdot 7) = 0
 \end{equation*}
 </div>
 <div class="para">Therefore, the vectors <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(c\)</span> are coplanar.</div>
