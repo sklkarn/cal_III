@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-I-3D_coordinate" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>3D Coordinate System</title>
+
+  <introduction>
+
+  <p> <term>The Three-Dimensional Coordinate Systems: </term> 
+    To locate a point in three-dimensional space, we need a third axis the
+        <m>z</m>-axis which is perpendicular to both the <m>x</m>-axis and the
+        <m>y</m>-axis. 
+       <ol>
+        <li>
+          <p>
+            The Origin (<m>O</m>): The point where the three axes intersect,
+            denoted as <m>(0, 0, 0)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The Right-Hand Rule: To maintain consistency in
+            standard mathematical orientation, the axes follow the right-hand rule.
+            If you curl the fingers of your right hand from the positive <m>x</m>-axis
+            toward the positive <m>y</m>-axis, your thumb points in the direction of the
+            positive <m>z</m>-axis (typically pointing straight up or out of the
+            page).
+          </p>
+        </li>
+        <li>
+          <p>
+            Coordinate Planes: The three axes intersect in pairs to form three coordinate planes:
+          <ul>
+            <li>
+              <p>
+                 The <m>xy</m>-plane (<m>z = 0</m>).
+              </p>
+            </li>
+            <li>
+              <p>
+                The <m>yz</m>-plane (<m>x = 0</m>).
+              </p>
+            </li>
+            <li>
+              <p>
+                The <m>xz</m>-plane (<m>y = 0</m>).
+              </p>
+            </li>
+          </ul>
+          </p>
+        </li>
+        <li>
+          <p>
+            These planes divide space into regions analogous to the quadrants of 2D geometry.
+          </p>
+        </li>
+       </ol>
+   </p>
+
+<p>
+  <term>From Quadrants to Octants:</term>
+  In a two-dimensional plane, the <m>x</m> and <m>y</m> axes divide the space into
+    four quadrants, determined by the signs of the coordinates:
+  <ul>
+    <li>
+      <p>
+        Quadrant I: <m>x &gt; 0</m> and <m>y &gt; 0</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Quadrant II: <m>x &lt; 0</m> and <m>y &gt; 0</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Quadrant III: <m>x &lt; 0</m> and <m>y &lt; 0</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Quadrant IV: <m>x &gt; 0</m> and <m>y &lt; 0</m>.
+      </p>
+    </li>
+  </ul>
+  In three-dimensional space, the three coordinate planes divide space into eight octants,
+    determined by the signs of the coordinates:
+  <ul>
+    <li>
+      <p>
+        Octant I: <m>x &gt; 0</m>, <m>y &gt; 0</m>, and <m>z &gt; 0</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Octant II: <m>x &lt; 0</m>, <m>y &gt; 0</m>, and <m>z &gt; 0</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Octant III: <m>x &lt; 0</m>, <m>y &lt; 0</m>, and <m>z &gt; 0</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Octant IV: <m>x &gt; 0</m>, <m>y &lt; 0</m>, and <m>z &gt; 0</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Octant V: <m>x &gt; 0</m>, <m>y &gt; 0</m>, and <m>z &lt; 0</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Octant VI: <m>x &lt; 0</m>, <m>y &gt; 0</m>, and <m>z &lt; 0</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Octant VII: <m>x &lt; 0</m>, <m>y &lt; 0</m>, and <m>z &lt; 0</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Octant VIII: <m>x &gt; 0</m>, <m>y &lt; 0</m>, and <m>z &lt; 0</m>.
+      </p>
+    </li>
+  </ul>
+</p>
+
+  <sidebyside widths="30% 30% 30%" >
+    <image source="octant.jpeg"/>
+  <image source="octant_2.gif"/>
+  <image source="octant_3.gif"/>
+  </sidebyside>
+
+
+<p>
+  In two-dimensional analytical geometry, the graph of an equation involving x and y is a curve in <m>\mathbb{R}^2</m>.
+  In three-dimensional analytical geometry, an equation in x, y, and z represents a surface in <m>\mathbb{R}^3</m>.
+</p>
+<p>
+  <term>The Rule of Dimensions (Degrees of Freedom): </term> 
+  In analytic geometry, there is a general rule relating the dimension of the 
+  space to the number of constraints (equations) imposed:
+    <md>
+        \text{Dimension of the Graph}= (\text{Dimension of the Ambient Space}) - (\text{Number of Independent Equations})
+    </md>
+    Let's see how this rule plays out in both worlds:
+    <ul>
+      <li>
+        <p>
+          In two-dimensional space <m>\mathbb{R}^2</m>, one independent equation reduces the dimension by one, resulting in a one-dimensional curve.
+          For example, the equation <m>x^2 + y^2 = 1</m> represents a circle in <m>\mathbb{R}^2</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          In three-dimensional space <m>\mathbb{R}^3</m>, one independent equation reduces the dimension by one, resulting in a two-dimensional surface.
+          For example, the equation <m>x^2 + y^2 + z^2 = 1</m> represents a sphere in <m>\mathbb{R}^3</m>.
+        </p>
+      </li>
+    </ul>
+</p>
+
+  <example>
+      <statement>
+         <p>
+      How can you graph the equation <m>x = 5</m> in  <m>\mathbb{R}^{2}</m> and <m>\mathbb{R}^{3}</m> space?
+         </p>
+      </statement>
+      <solution>
+         <p>
+        In <m>\mathbb{R}^{2}</m>, the equation <m>x = 5</m> represents a vertical line at <m>x = 5</m>.
+        In <m>\mathbb{R}^{3}</m>, the equation <m>x = 5</m> represents a plane parallel to the <m>yz</m>-plane at <m>x = 5</m>.
+         </p>
+          <sidebyside widths="30% 30%" margins="3% 3%">
+    <image source="x_5-line.png"/>
+  <image source="x_c-plane.png"/>
+  </sidebyside>
+          </solution>
+  </example>
+
+  <example>
+      <statement>
+         <p>
+     Plot <m>x^2+y^2=1</m> at <m>z=5</m> in <m>\mathbb{R}^{2}</m> and <m>\mathbb{R}^{3}</m> space?
+         </p>
+      </statement>
+      <solution>
+         <p>
+        In <m>\mathbb{R}^{2}</m>, the equation <m>x^2+y^2=1</m> at <m>z=5</m> represents a circle centered at the <m>z=5</m> with radius 1.
+        In <m>\mathbb{R}^{3}</m>, the equation <m>x^2+y^2=1</m> represents a cylinder centered on the <m>z</m>-axis with radius 1.
+         </p>
+         <sidebyside widths="30% 30%">
+    <image source="circ_1.png"/>
+  <image source="cyl_1.png"/>
+  </sidebyside>
+          </solution>
+  </example>
+
+
+   <example>
+      <statement>
+         <p>
+            Draw the equation <m>y =x</m> in <m>\mathbb{R}^{3}</m>.
+         </p>
+      </statement>
+      <solution>
+         <p>
+        In <m>\mathbb{R}^{3}</m>, the equation <m>y =x</m> represents a plane 
+        containing the <m>z</m>-axis and the line <m>y =x</m> in the <m>xy</m>-plane.
+         </p>
+          <image source="y_x-plane.png" width="30%"/>
+          </solution>
+  </example>
+
+  </introduction>
+
+  <subsection xml:id="subsec-distance_points">
+    <title>Distance between Points</title>
+    <p>
+      The distance between two points <m>P_1(x_1, y_1, z_1)</m> and <m>P_2(x_2, y_2, z_2)</m> 
+      in <m>\mathbb{R}^3</m> is given by the formula: 
+      <md>
+        d(P_1, P_2) = \vert P_1P_2\vert = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}.
+      </md>
+    </p>
+     <image source="cube_1.png" width="30%"/>
+  </subsection>
+
+
+ <subsection xml:id="subsec-sphere">
+    <title>Sphere</title>
+    <p>
+      A sphere in <m>\mathbb{R}^3</m> is the set of all points that are a fixed distance (radius) from a given point (center).
+      The equation of a sphere with center <m>(h, k, l)</m> and radius <m>r</m> is
+      <md>
+        (x - h)^2 + (y - k)^2 + (z - l)^2 = r^2.
+      </md>
+    </p>
+     <image source="sphere_1.png" width="30%"/>
+
+     <example>
+       <statement>
+         <p>
+           Draw the spherical shell <m>1 \le x^2 + y^2 + z^2 \le 4</m> with <m>z \le 0</m>.
+         </p>
+       </statement>
+       <solution>
+         <p>
+           The spherical shell is the region between two concentric spheres of radii 1 and 2, restricted to the lower hemisphere.
+         </p>
+     
+   
+
+     <figure xml:id="fig-spherical-shell-tikz">
+  <caption>Spherical shell <m>1 \le x^2 + y^2 + z^2 \le 4</m> with <m>z \le 0</m>.</caption>
+  <image width="60%">
+    <shortdescription>A lower hemisphere shell with inner radius 1 and outer radius 2.</shortdescription>
+    <latex-image>
+      \tdplotsetmaincoords{70}{110}
+      \begin{tikzpicture}[tdplot_main_coords, scale=1.5]
+        % Axes
+        \draw[->, thin, gray] (-2.5,0,0) -- (2.5,0,0) node[anchor=north east, black]{$x$};
+        \draw[->, thin, gray] (0,-2.5,0) -- (0,2.5,0) node[anchor=north west, black]{$y$};
+        \draw[->, thin, gray] (0,0,-2.5) -- (0,0,0.8) node[anchor=south, black]{$z$};
+
+        % Outer Lower Hemisphere (R = 2)
+        \begin{scope}[tdplot_screen_coords]
+          \fill[blue!25, opacity=0.85] (2,0) arc (0:-180:2) -- cycle;
+          \draw[blue!60!black, thick] (2,0) arc (0:-180:2);
+        \end{scope}
+
+        % Flat Annular Top Ring at z = 0
+        \fill[blue!10, even odd rule] (0,0,0) circle (2) (0,0,0) circle (1);
+
+        % Inner Hemisphere Cutout (R = 1)
+        \begin{scope}[tdplot_screen_coords]
+          \fill[blue!45, opacity=0.75] (1,0) arc (0:-180:1) -- cycle;
+          \draw[blue!60!black, dashed] (1,0) arc (0:-180:1);
+        \end{scope}
+
+        % Boundary Circles at z = 0
+        \draw[blue!60!black, thick] (0,0,0) circle (2);
+        \draw[blue!60!black, thick] (0,0,0) circle (1);
+
+        % Labels
+        \node[below, font=\small] at (1,0,0) {$1$};
+        \node[below, font=\small] at (2,0,0) {$2$};
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+</figure>
+  </solution>
+  </example>
+
+  </subsection>
+
+<exercises xml:id="exercises-1">
+ <exercise>
+<p>
+  Show that <m>x^2 + y^2 + z^2 + 6x + 4y - 2z = 14 </m> is the equation of a sphere, and find its center and radius.
+</p>
+ </exercise>
+ 
+ <exercise>
+<p>
+  Which of the points <m>P(5, -2, 3)</m>, <m>Q(-4, 1, -6)</m>, and <m>R(3, -5, 2)</m> is closest to the <m>xz</m>-plane?
+</p>
+<p>
+  Hint: The distance from a point to the <m>xz</m>-plane is the absolute value of its <m>y</m>-coordinate.
+</p>
+ </exercise>
+ <exercise>
+  <p>
+    Sketch <m>x+y=5</m> in <m>\mathbb{R}^3</m>.
+  </p>
+ </exercise>
+
+<exercise>
+  <p>
+    Find the lengths of the sides of the following triangles. Is it a right triangle? Is it an isosceles triangle?
+    <ol>
+      <li><m>P(5, -2, 3)</m>, <m>Q(-4, 1, -6)</m>, <m>R(3, -5, 2)</m></li>
+        <li>
+          <p>
+            <m>P(1, 2, 3)</m>, <m>Q(4, 5, 6)</m>, <m>R(7, 8, 9)</m> 
+          </p>
+        </li>
+    </ol>
+  </p>  
+  <hint>
+    <p>
+      Use the distance formula to find the lengths of the sides of each triangle. 
+      <ul>
+        <li>
+          <p>
+            A triangle is isosceles if at least two sides have the exact same length.
+          </p>
+        </li>
+        <li>
+          <p>
+            A triangle is right if the sum of the squares of the two shorter sides equals the square of the longest side.
+          </p>
+        </li>
+      </ul>
+    </p>
+  </hint>
+</exercise>
+
+<exercise>
+  <p>
+    Determine whether the given points lie on a straight line. 
+    <ol>
+      <li><m>P(1, 2, 3)</m>, <m>Q(4, 5, 6)</m>, <m>R(7, 8, 9)</m></li>
+      <li><m>P(5, -2, 3)</m>, <m>Q(-4, 1, -6)</m>, <m>R(3, -5, 2)</m></li>
+    </ol> 
+    <hint>
+     <p>
+      The points are collinear if the sum of the two shorter segments equals the length of the longest segment: <m>PQ + QR = PR</m>.
+     </p>
+    </hint>
+    <hint>
+    <p>
+      The points are collinear if the vectors <m>\vec{PQ}</m> and <m>\vec{PR}</m> are scalar multiples of each other.
+    </p>
+    </hint>
+  </p>
+</exercise>
+
+<exercise>
+  <p>
+    Find the distance from <m>(4, -2, 6)</m> to each of the following:
+    <ol>
+      <li><m>xy</m>-plane</li>
+      <li><m>xz</m>-plane</li>
+      <li><m>yz</m>-plane</li>
+      <li><m>origin</m></li>
+    </ol>
+  </p>
+</exercise>
+
+<exercise>
+  <p>
+   Find an equation of the sphere that passes through the point <m>(3, 3, 1)</m> and has center <m>(3, 3, -3)</m>.
+  </p>
+  <hint>
+    <p>
+      The equation of a sphere with center <m>(h, k, l)</m> and radius <m>r</m> is <m>(x-h)^2 + (y-k)^2 + (z-l)^2 = r^2</m>.
+    </p>
+  </hint>
+  <hint>
+    <p>
+      The radius is the distance from the center to the point on the sphere.
+    </p>
+  </hint>
+ 
+</exercise>
+
+<exercise>
+  <p>
+    Find the equation of the sphere with center <m>(-1, 2, 4)</m> and radius 5. What is the intersection of this sphere with the
+    each of the coordinate planes? 
+  </p>
+  <hint>
+    <p>
+      The equation of a sphere with center <m>(h, k, l)</m> and radius <m>r</m> is <m>(x-h)^2 + (y-k)^2 + (z-l)^2 = r^2</m>.
+    </p>
+  </hint>
+  <hint>
+    <p>
+      To find the intersection with the <m>xz</m>-plane, set <m>y = 0</m> in the sphere's equation and solve for <m>x</m> and <m>z</m>.
+    </p>
+  </hint>
+</exercise>
+
+<exercise>
+   <p>
+    Find the equation of the sphere with center <m>(0, 0, 0)</m> and radius 3. 
+    What is the intersection of this sphere with each of the coordinate planes?
+   </p>
+</exercise>
+
+<exercise>
+  <p>
+   For the equation <m>x^2+y^2+z^2+6x+2z+17=0</m>, find the center and radius of the sphere.
+  </p>
+  <hint>
+    <p>
+      Complete the square for the <m>x</m>, <m>y</m>, and <m>z</m> terms to rewrite the equation in standard form.
+    </p>
+  </hint>
+</exercise>
+
+<exercise>
+  <p>
+    Find the center and radius of the sphere for the equations below:  
+    <ol>
+      <li><m>x^2+y^2+z^2+6x+2z+17=0</m></li>
+      <li><m>x^2+y^2+z^2-4x+6y-2z+9=0</m></li>
+    </ol>   
+  </p>  
+</exercise>
+
+<exercise>
+  <p>
+    Find the lengths of the medians of the given triangle with vertices 
+    <ol>
+      <li>
+        <p>
+          <m>A(1, 2, 3)</m>, <m>B(-2, 0, 5)</m>, and <m>C(4, 1, 5)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>A(0, 0, 0)</m>, <m>B(2, 2, 2)</m>, and <m>C(4, 4, 4)</m>.
+        </p>
+      </li>
+    </ol>
+  </p>
+</exercise>
+
+<exercise>
+  <p>
+    Find an equation of the set of all points equidistant from the
+points
+ <ol>
+  <li>
+    <p>
+      <m>A(-1, 5, 3)</m> and <m>B(6, 2, -2)</m>.
+    </p>
+  </li>
+  <li>
+    <p>
+      <m>A(1, 2, 3)</m> and <m>B(-2, 0, 5)</m>.
+    </p>
+  </li>
+ </ol>
+  </p>
+</exercise>
+
+<exercise>
+  <p>
+   Find the distance between the spheres:
+   <ol>
+    <li>
+      <p>
+        <m>x^2+y^2+z^2=4</m> and <m>x^2+y^2+z^2=4x+4y+4z-11</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        <m>x^2+y^2+z^2=2</m> and <m>x^2+y^2+z^2=2x+2y+2z-1</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        <m>x^2+y^2+z^2=0</m> and <m>x^2+y^2+z^2=2x+2y+2z-1</m>.
+      </p>
+    </li>
+   </ol>
+  </p>  
+</exercise>
+
+</exercises> 
+</section>

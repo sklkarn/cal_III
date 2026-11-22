@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-motion" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Motion in Three-Dimensional Space</title>
+
+<introduction>
+  <p>
+    In this section, we will explore the motion of objects in three-dimensional space, 
+    including velocity and acceleration vectors. Suppose a particle moves through space so 
+    that its position vector at time t is <m>\mathbf{r(t)}</m>. the <term>velocity vector</term> of the 
+    particle is the derivative of the position vector <m>\mathbf{r(t)}</m> with respect to time <m>t</m> is <m>\mathbf{r'(t)}</m>.
+    <md>
+      \mathbf{v(t)} = \mathbf{r'(t)} = \lim_{h \to 0} \frac{\mathbf{r(t + h)} - \mathbf{r(t)}}{h}
+    </md>
+    Where <m>h </m> is very small length of time. The <term>acceleration vector</term> of the particle is 
+    the derivative of the velocity vector with respect to time <m>t</m> is <m>\mathbf{r''(t)}</m>.
+    <md>
+      \mathbf{a(t)} = \mathbf{r''(t)} = \lim_{h \to 0} \frac{\mathbf{r'(t + h)} - \mathbf{r'(t)}}{h}
+    </md>   
+  </p>
+   <image source="vel_vect.png" width="30%"/>
+
+   <example>
+    <statement>
+      <p>
+        A particle moves along a curve in space with position vector <m>\mathbf{r(t)} = \langle t, t^2, t^3 \rangle</m>. 
+        Find the velocity and acceleration vectors at time <m>t = 1</m>.  
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The velocity vector is the derivative of the position vector:
+        <md>
+          \mathbf{v(t)} = \mathbf{r'(t)} = \langle 1, 2t, 3t^2 \rangle
+        </md>
+        At time <m>t = 1</m>, we have:
+        <md>
+          \mathbf{v(1)} = \langle 1, 2, 3 \rangle
+        </md>
+        The acceleration vector is the derivative of the velocity vector:
+        <md>
+          \mathbf{a(t)} = \mathbf{r''(t)} = \langle 0, 2, 6t \rangle
+        </md>
+        At time <m>t = 1</m>, we have:
+        <md>
+          \mathbf{a(1)} = \langle 0, 2, 6 \rangle
+        </md> 
+      </p>
+    </solution>
+   </example>
+
+   <example>
+    <statement>
+      <p>
+        A particle moves along a curve in space with position vector <m>\mathbf{r(t)} = \langle \cos t, \sin t, t \rangle</m>. 
+        Find the velocity and acceleration vectors at time <m>t = \pi/4</m>.  
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The velocity vector is the derivative of the position vector:
+        <md>
+          \mathbf{v(t)} = \mathbf{r'(t)} = \langle -\sin t, \cos t, 1 \rangle
+        </md>
+        At time <m>t = \pi/4</m>, we have:
+        <md>
+          \mathbf{v(\pi/4)} = \langle -\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}, 1 \rangle
+        </md>
+        The acceleration vector is the derivative of the velocity vector:
+        <md>
+          \mathbf{a(t)} = \mathbf{r''(t)} = \langle -\cos t, -\sin t, 0 \rangle
+        </md>
+        At time <m>t = \pi/4</m>, we have:
+        <md>
+          \mathbf{a(\pi/4)} = \langle -\frac{\sqrt{2}}{2}, -\frac{\sqrt{2}}{2}, 0 \rangle
+        </md> 
+      </p>
+    </solution> 
+   </example>
+
+   <example>
+    <statement>
+      <p>
+        Find the velocity, acceleration, and speed of a particle with position vector <m>\mathbf{r(t)} = \langle t^2, e^t, te^t \rangle</m>. 
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The velocity vector is the derivative of the position vector:
+        <md>
+          \mathbf{v(t)} = \mathbf{r'(t)} = \langle 2t, e^t, e^t + te^t \rangle
+        </md>
+        The acceleration vector is the derivative of the velocity vector:
+        <md>
+          \mathbf{a(t)} = \mathbf{r''(t)} = \langle 2, e^t, 2e^t + te^t \rangle
+        </md>
+        The speed of the particle is the magnitude of the velocity vector:
+        <md>
+          \text{speed} = ||\mathbf{v(t)}|| = \sqrt{(2t)^2 + (e^t)^2 + (e^t + te^t)^2}
+        </md> 
+      </p>
+    </solution> 
+   </example>
+
+   <example>
+    <statement>
+      <p>
+       A moving particle starts at an initial position <m>\mathbf{r(0)} = \langle 1, 0, 0 \rangle</m> with initial velocity 
+       <m>\mathbf{v(0)} = \langle 1, 1, 1 \rangle</m>. 
+       Its acceleration is <m>\mathbf{a(t)} = \langle 4t, 6t, 1 \rangle</m>. 
+       Find its velocity and position at time <m>t</m>. 
+      </p>
+    </statement>
+    <solution>
+      <p>
+        To find the velocity, we integrate the acceleration:
+        <md>
+          \mathbf{v(t)} = \int \mathbf{a(t)} dt = \int \langle 4t, 6t, 1 \rangle dt = \langle 2t^2 + C_1, 3t^2 + C_2, t + C_3 \rangle
+        </md>
+        Using the initial condition <m>\mathbf{v(0)} = \langle 1, 1, 1 \rangle</m>, we find:
+        <md>
+          C_1 = 1, C_2 = 1, C_3 = 1
+        </md>
+        Therefore, the velocity is:
+        <md>
+          \mathbf{v(t)} = \langle 2t^2 + 1, 3t^2 + 1, t + 1 \rangle
+        </md>
+        To find the position, we integrate the velocity:
+        <md>
+          \mathbf{r(t)} = \int \mathbf{v(t)} dt = \int \langle 2t^2 + 1, 3t^2 + 1, t + 1 \rangle dt 
+        </md>
+        <md>
+          = \langle \frac{2}{3}t^3 + t + D_1, t^3 + t + D_2, \frac{1}{2}t^2 + t + D_3 \rangle
+        </md>
+        
+        Using the initial condition <m>\mathbf{r(0)} = \langle 1, 0, 0 \rangle</m>, we find:
+        <md>
+          D_1 = 1, D_2 = 0, D_3 = 0
+        </md>
+        Therefore, the position is:
+        <md>
+          \mathbf{r(t)} = \langle \frac{2}{3}t^3 + t + 1, t^3 + t, \frac{1}{2}t^2 + t \rangle
+        </md> 
+      </p>
+    </solution> 
+   </example>
+
+   <example>
+    <statement>
+      <p>
+        A projectile is fired with angle of elevation <m>\theta</m> and initial velocity <m>v_0</m>. 
+        Assuming that air resistance is negligible and the only external force is due to gravity, 
+        find the position function <m>\mathbf{r(t)}</m> of the projectile. 
+        What value of <m>\theta</m> maximizes the range (the horizontal distance traveled)?
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The position function of the projectile can be modeled as:
+        <md>
+          \mathbf{r(t)} = \langle v_0 \cos(\theta) t, v_0 \sin(\theta) t - \frac{1}{2} g t^2, 0 \rangle
+        </md>
+        where <m>g</m> is the acceleration due to gravity. 
+        To maximize the range, we need to find the time <m>t\_f</m> when the projectile hits the ground (y=0):
+        <md>
+          0 = v_0 \sin(\theta) t_f - \frac{1}{2} g t_f^2
+        </md>
+        Solving for <m>t_f</m>, we get:
+        <md>
+          t_f = \frac{2 v_0 \sin(\theta)}{g}
+        </md>
+        The range <m>R</m> is given by:
+        <md>
+          R = v_0 \cos(\theta) t_f = v_0 \cos(\theta) \frac{2 v_0 \sin(\theta)}{g} = \frac{v_0^2}{g} 2 \sin(\theta) \cos(\theta)
+        </md>
+        Using the double-angle identity, we have:
+        <md>
+          R = \frac{v_0^2}{g} \sin(2\theta)
+        </md>
+        To maximize <m>R</m>, we need to maximize <m>\sin(2\theta)</m>, which occurs when <m>2\theta = 90^\circ</m>, or <m>\theta = 45^\circ</m>. 
+      </p>
+    </solution> 
+   </example>
+</introduction>
+  
+<subsection xml:id="subsec-tangent_normal-accel">
+  <title>Tangential and Normal Components of Acceleration</title>
+  <p>
+    The acceleration vector of a particle moving along a curve can be decomposed into two components: 
+    the tangential component, which is parallel to the velocity vector, and the normal component, 
+    which is perpendicular to the velocity vector. The tangential component of acceleration is given by:
+    <md>
+      a_T = \frac{d||\mathbf{v}||}{dt}
+    </md>
+    and the normal component of acceleration is given by:
+    <md>
+      a_N = \frac{||\mathbf{v} \times \mathbf{a}||}{||\mathbf{v}||}
+    </md> 
+    where <m>\mathbf{v}</m> is the velocity vector and <m>\mathbf{a}</m> is the acceleration vector.  
+  </p>
+  <p>
+    In terms of curvature <m>\kappa</m> and speed <m>||\mathbf{v}||</m>, 
+    the normal component of acceleration can also be expressed as:
+    <md>
+      a_N = \kappa ||\mathbf{v}||^2
+    </md> 
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        A particle moves along a curve in space with position vector <m>\mathbf{r(t)} = \langle t, t^2, t^3 \rangle</m>. 
+        Find the tangential and normal components of acceleration at time <m>t = 1</m>.  
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The velocity vector is:
+        <md>
+          \mathbf{v(t)} = \mathbf{r'(t)} = \langle 1, 2t, 3t^2 \rangle
+        </md>
+        The acceleration vector is:
+        <md>
+          \mathbf{a(t)} = \mathbf{r''(t)} = \langle 0, 2, 6t \rangle
+        </md>
+        At time <m>t = 1</m>, we have:
+        <md>
+          \mathbf{v(1)} = \langle 1, 2, 3 \rangle, \quad ||\mathbf{v(1)}|| = \sqrt{1^2 + 2^2 + 3^2} = \sqrt{14}
+        </md>
+        <md>
+          \mathbf{a(1)} = \langle 0, 2, 6 \rangle
+        </md>
+        The tangential component of acceleration is:
+        <md>
+          a_T = \frac{d||\mathbf{v}||}{dt} = \frac{d}{dt}(\sqrt{14}) = 0
+        </md>
+        The normal component of acceleration is:
+        <md>
+          a_N = ||\mathbf{a} - a_T\hat{\mathbf{v}}|| = ||\langle 0, 2, 6 \rangle - 0\hat{\mathbf{v}}|| = ||\langle 0, 2, 6 \rangle|| 
+        </md> 
+        <md>
+          = \sqrt{0^2 + 2^2 + 6^2} = \sqrt{40}
+        </md>
+        
+      </p>
+    </solution> 
+  </example>
+</subsection>
+
+<subsection xml:id="subsec-planetary-motion">
+  <title>Kepler's Laws of Planetary Motion</title>
+  <p>
+    Kepler's laws describe the motion of planets around the sun. The first law states that 
+    planets move in elliptical orbits with the sun at one focus. The second law states that 
+    a line segment joining a planet and the sun sweeps out equal areas during equal intervals of time. 
+    The third law states that the square of the orbital period of a planet is proportional to the cube 
+    of the semi-major axis of its orbit. 
+  </p>
+  <p>
+    Mathematically, the second law can be expressed as:
+    <md>
+      \frac{dA}{dt} = \text{constant}
+    </md>
+    where <m>A</m> is the area swept out by the line segment joining the planet and the sun. 
+    The third law can be expressed as:
+    <md>
+      T^2 \propto a^3
+    </md>
+    where <m>T</m> is the orbital period and <m>a</m> is the semi-major axis of the orbit.  
+  </p>
+  <p>
+    The first law can be expressed in polar coordinates as:
+    <md>
+      r = \frac{a(1 - e^2)}{1 + e \cos(\theta)}
+    </md>
+    where <m>r</m> is the distance from the sun, <m>a</m> is the semi-major axis, 
+    <m>e</m> is the eccentricity of the ellipse, and <m>\theta</m> is the angle from the closest approach.    
+  </p>
+  <p>
+    <md>
+      or, \quad r = \frac{ed}{1 + e \cos(\theta)} 
+    </md>
+    where <m>d=\frac{a(1 - e^2)}{e}</m> is the distance from the sun to the closest approach. 
+  </p>
+</subsection>
+
+</section>

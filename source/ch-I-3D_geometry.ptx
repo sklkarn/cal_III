@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-I-3D_geometry" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Geometry of Space</title>
+
+  <introduction>
+    <p> Up to this point, we have been working on the flat, two-dimensional canvas of the 
+    Cartesian plane (<m>xy</m>-plane). But the physical world we live, move, and build things 
+    in is inherently three-dimensional. To model satellite orbits, design computer graphics, 
+    analyze fluid dynamics, or navigate physical space, we must expand our mathematical toolkit 
+    from two dimensions to three. </p> 
+    <image source="vector_1.jpeg" width="30%"/>
+    <p>
+      In the figure above, we see a point P mapped in three-dimensional space.
+    </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="sec-I-3D_coordinate.ptx" />
+   <xi:include href="sec-I-vector_algebra.ptx" />
+   <xi:include href="sec-I-eq_lines-planes.ptx" />
+   <xi:include href="sec-I-quadratic_surfaces.ptx" />
+   <xi:include href="ex_first.ptx" />
+
+</chapter>

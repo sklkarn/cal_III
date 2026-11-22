@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-I-quadratic_surfaces" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Quadratic Surfaces</title>
+
+  <p> A quadric surface is the three-dimensional counterpart to a two-dimensional
+    conic section (such as ellipses, parabolas, and hyperbolas), defined as the
+    graph of a second-degree polynomial equation in three variables: <m>x</m>,
+    <m>y</m>, and <m>z</m>.Their general equation takes the form:
+    <md>
+        Ax^{2} + By^{2} + Cz^{2} + Dxy + Eyz + Fxz + Gx + Hy + Iz + J = 0
+    </md>
+    Just as linear equations describe flat planes, quadric surfaces create curved,
+    symmetric geometric shapes such as spheres, ellipsoids, paraboloids, and
+    hyperboloids. </p>
+
+    <p>
+      Quadric surfaces can be classified into several types based on their standard equations, including:
+      <ul>
+        <li>
+          <p>
+            Cylinders: <m>x^2 + y^2 = r^2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Spheres: <m>x^2 + y^2 + z^2 = r^2</m>
+          </p>
+        </li>
+        <li>Ellipsoids: <m>\frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1</m></li>
+        <li>Paraboloids: <m>z = \frac{x^2}{a^2} + \frac{y^2}{b^2}</m> (elliptic) or <m>z = \frac{x^2}{a^2} - \frac{y^2}{b^2}</m> (hyperbolic)</li>
+        <li>Hyperboloids: <m>\frac{x^2}{a^2} + \frac{y^2}{b^2} - \frac{z^2}{c^2} = 1</m> (one-sheet) or <m>\frac{x^2}{a^2} + \frac{y^2}{b^2} - \frac{z^2}{c^2} = -1</m> (two-sheet)</li>
+      </ul> 
+    </p>
+ <sidebyside widths="25% 25% 25% 25%">
+ <image source="parab_cyl.png" width ="30%">  </image> 
+  <image source="parabol.png" width ="30%">  </image> 
+
+ <image source="ellipsoid.png" width ="30%">  </image> 
+
+ <image source="ellip_parabol.png" width ="30%">  </image> 
+ </sidebyside>
+
+</section>

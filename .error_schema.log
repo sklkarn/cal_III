@@ -1,0 +1,5 @@
+/home/sk/Desktop/cal_III/source/main.ptx:87:0:ERROR:RELAXNGV:RELAXNG_ERR_NOELEM: Expecting an element li, got nothing
+/home/sk/Desktop/cal_III/source/main.ptx:59:0:ERROR:RELAXNGV:RELAXNG_ERR_NOELEM: Expecting an element nbsp, got nothing
+/home/sk/Desktop/cal_III/source/main.ptx:59:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element blockquote, got p
+/home/sk/Desktop/cal_III/source/main.ptx:59:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMWRONG: Did not expect element p there
+/home/sk/Desktop/cal_III/source/main.ptx:59:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element sidebyside, got p

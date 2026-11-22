@@ -1,0 +1,955 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-I-vector_algebra" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Vector Algebra</title>
+
+<introduction>
+  <p>
+    A vector is a quantity that has both magnitude and direction. It is represented by an
+    arrow and a directed line segment. The length of the arrow represents the magnitude of
+    the physical quantity, while its direction indicates the direction of that physical quantity
+   (say displacement) as shown in the figure below. The vector is denoted by <m>\vec{OA}</m> or <m>\vec{a}</m>.
+   Here, <m>O</m> is the initial point and <m>A</m> is the terminal point. Since this vector starts at the origin,
+   it is called a position vector.
+  </p>
+<p>
+  In this section, we will explore the algebra of vectors in three-dimensional space, 
+    including vector addition, subtraction, scalar multiplication, and the dot product. 
+</p>
+
+    <figure xml:id="fig-vector_1-tikz">
+  <caption>A vector representation.</caption>
+  <image width="30%">
+    <shortdescription>A vector.</shortdescription>
+    <latex-image>
+     \begin{tikzpicture}
+    % Define coordinates for origin O and point A
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (3,4);
+
+    % Draw the vector OA
+    \draw[-stealth, thick, blue] (O) -- (A) node[midway, above left] {$\vec{OA}$};
+
+    % Mark and label the points O and A
+    \fill (O) circle (2pt) node[below left] {$O$};
+    \fill (A) circle (2pt) node[above right] {$A$};
+\end{tikzpicture}
+    </latex-image>
+  </image>
+</figure>
+
+<p>
+  Two parallel vectors have the same or opposite direction. 
+  For example, if <m>\vec{a}</m> and <m>\vec{b}</m> are parallel, then <m>\vec{b} = c\vec{a}</m> for some scalar <m>c</m>.
+</p>
+
+<p>
+  A vector can be represented in component form as <md>\vec{a} = \langle a_1, a_2, a_3 \rangle</md>, 
+  or <md>\vec{a} = a_1 \hat{i}+ a_2 \hat{j}+ a_3 \hat{k},</md>
+  where <m>a_1</m>, <m>a_2</m>, and <m>a_3</m> are the components of the vector along the <m>x</m>, <m>y</m>, and <m>z</m> axes, respectively.
+</p>
+<p>
+  The magnitude of a vector <m>\vec{a}</m> is given by <md>\|\vec{a}\| = \sqrt{a_1^2 + a_2^2 + a_3^2}</md>.
+</p>
+<p>
+  A unit vector is a vector with magnitude 1. The unit vector in the direction of <m>\vec{a}</m> is given by 
+  <md>\hat{a} = \frac{\vec{a}}{\|\vec{a}\|}</md>.
+</p>
+<p>
+  The sum of two vectors <m>\vec{a} = \langle a_1, a_2, a_3 \rangle</m> and <m>\vec{b} = \langle b_1, b_2, b_3 \rangle</m> 
+  is given by <md>\vec{a} + \vec{b} = \langle a_1 + b_1, a_2 + b_2, a_3 + b_3 \rangle</md>.
+</p>
+<p>
+  The difference of two vectors <m>\vec{a} = \langle a_1, a_2, a_3 \rangle</m> and <m>\vec{b} = \langle b_1, b_2, b_3 \rangle</m> 
+  is given by <md>\vec{a} - \vec{b} = \langle a_1 - b_1, a_2 - b_2, a_3 - b_3 \rangle</md>.
+</p>
+<p>
+  The scalar multiple of a vector <m>\vec{a} = \langle a_1, a_2, a_3 \rangle</m> by a scalar <m>c</m> 
+  is given by <md>c\vec{a} = \langle ca_1, ca_2, ca_3 \rangle</md>.
+</p>
+<p>
+  The dot product of two vectors <m>\vec{a} = \langle a_1, a_2, a_3 \rangle</m> 
+  and <m>\vec{b} = \langle b_1, b_2, b_3 \rangle</m> 
+  is given by <md>\vec{a} \cdot \vec{b} = a_1 b_1 + a_2 b_2 + a_3 b_3</md>.
+</p>
+<p>
+  The cross product of two vectors <m>\vec{a} = \langle a_1, a_2, a_3 \rangle</m> 
+  and <m>\vec{b} = \langle b_1, b_2, b_3 \rangle</m> 
+  is given by <md>\vec{a} \times \vec{b} = \langle a_2 b_3 - a_3 b_2, a_3 b_1 - a_1 b_3, a_1 b_2 - a_2 b_1 \rangle</md>.
+</p>  
+
+</introduction>
+ 
+<subsection>
+  <title>Combination of Vectors</title>
+  <introduction>
+  
+  <p>
+    Suppose a vector <m>\vec{OA} </m> is representing a particle that has displaced from point <m>O</m> to point <m>A</m>;
+    the vector <m>\vec{AB}</m> represents the displacement from point <m>A</m> to point <m>B</m>, then the total 
+    displacement of the particle is given by <md>\vec{OB} = \vec{OA} + \vec{AB}</md>. This is called the addition of the vectors.
+    In addition to the vectors, a tail-to-head method can be used to find the resultant vector. Here, the tail of <m>\vec{AB}</m> 
+    is placed at the head of <m>\vec{OA}</m>, and the resultant vector <m>\vec{OC}</m> is drawn from the tail of <m>\vec{OA}</m> to the head of <m>\vec{AB}</m>.
+  </p>
+  
+  <figure xml:id="fig-vector_2-tikz">
+  <caption>Vector addition.</caption>
+  <image width="30%">
+    <shortdescription>Vector addition.</shortdescription>
+    <latex-image>
+     \begin{tikzpicture}
+    % Define coordinates for origin O and point A
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (3,4);
+    \coordinate (B) at (2,6);
+
+    % Draw the vector OA
+    \draw[-stealth, thick, blue] (O) -- (A) node[midway, above right] {$\vec{OA}$};
+    \draw[-stealth, thick, blue] (A) -- (B) node[midway, below right] {$\vec{AB}$};
+
+    % Mark and label the points O and A
+    \fill (O) circle (2pt) node[below left] {$O$};
+    \fill (A) circle (2pt) node[above right] {$A$};
+    \fill (B) circle (2pt) node[above right] {$B$};
+    \draw[-stealth, thick, red] (O) -- (B) node[midway, below left] {$\vec{OB}$};
+\end{tikzpicture}
+    </latex-image>
+  </image>
+</figure>
+
+<p>
+  In the figure above, the vector <m>\vec{OB}</m> is the resultant vector obtained by adding the vectors <m>\vec{OA}</m> and <m>\vec{AB}</m>. 
+  This demonstrates the tail-to-head method for vector addition.
+</p>
+
+<example>
+  <p>
+    Let <m>\vec{OA} = \langle 3, 4 \rangle</m> and <m>\vec{AB} = \langle -1, 2 \rangle</m>. Find the resultant vector <m>\vec{OB}</m>.
+  </p>
+  <p>
+    Solution:
+    <md>
+      \vec{OB} = \vec{OA} + \vec{AB} = \langle 3, 4 \rangle + \langle -1, 2 \rangle = \langle 2, 6 \rangle.
+    </md>
+  </p>  
+</example>
+
+<example>
+  <statement>
+    <p>
+      Let <m>\vec{a} = \langle 2, 3 \rangle</m> and <m>\vec{b} = \langle 1, -1 \rangle</m>. Find the sum of these vectors.
+    </p>
+  </statement>  
+    <solution>
+      <p>
+        <md>
+      \vec{a} + \vec{b} = \langle 2, 3 \rangle + \langle 1, -1 \rangle = \langle 3, 2 \rangle = \vec{c}.
+    </md> 
+      </p>
+    </solution>
+</example>
+
+<example>
+  <statement>
+    <p>
+      Let <m>\vec{a} = \langle 4, 5 \rangle</m> and <m>\vec{b} = \langle -2, 3 \rangle</m>. 
+      Find the subtraction of these vectors.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <md>
+        \vec{a} - \vec{b} = \langle 4, 5 \rangle - \langle -2, 3 \rangle = \langle 6, 2 \rangle = \vec{c}.
+      </md>
+    </p>
+  </solution> 
+</example>
+
+<p>
+  Vector addition and subtraction can be performed component-wise. 
+  For two vectors <m>\vec{a} = \langle a_x, a_y \rangle</m> and <m>\vec{b} = \langle b_x, b_y \rangle</m>, 
+  their sum and difference are given by:
+  <md>
+    \vec{a} + \vec{b} = \langle a_x + b_x, a_y + b_y \rangle, \quad \vec{a} - \vec{b} = \langle a_x - b_x, a_y - b_y \rangle.
+  </md>
+</p>
+<p>
+  <term>Collinear vectors</term> are vectors that lie on the same line or are parallel to each other. 
+<ul>
+  <li>
+    <p>
+      They can point in the same direction or in opposite directions. Their magnitudes do not have to be equal.
+    </p>
+  </li>
+  <li>
+    <p>
+      Two vectors are collinear if one is a scalar multiple of the other.
+    </p>
+  </li>
+  <li>
+    <p>
+      Example: If <m>\vec{a}= \langle 2, 4, 6 \rangle</m> and
+            <m>\vec{b}= \langle 1, 2, 3 \rangle</m>, they are collinear because
+            <m>\vec{a}= 2\vec{b}</m>.
+    </p>
+  </li>
+</ul>
+</p>
+<p>
+ <term>Coplanar vectors</term> are three or more vectors that lie in the same flat plane (or parallel planes).
+ <ul>
+  <li>
+    <p>
+      <em>The Rule of Two:</em> Any two vectors in space are always coplanar because you can always pass a flat sheet of paper through any two intersecting or parallel lines. 
+      The concept of coplanarity only becomes interesting and restrictive when dealing with three or more vectors.
+    </p>
+  </li>
+  <li>
+    <p>
+      Three vectors <m>\vec{a}</m>, <m>\vec{b}</m>, and <m>\vec{c}</m> are coplanar if
+            one can be expressed as a linear combination of the other two:
+            <md>
+                \vec{c}= x\vec{a}+ y\vec{b}
+            </md>
+            where <m>x</m> and <m>y</m> are scalars.
+            Alternatively, three vectors are coplanar if their scalar triple product is
+            zero:
+            <md>
+                \vec{a}\cdot (\vec{b}\times \vec{c}) = 0
+            </md>
+    </p>
+  </li>
+ </ul>
+</p>
+  </introduction>
+
+<subsubsection xml:id="subsubsec-component-vector">
+  <title>Component of a Vector</title>
+  <p>
+    A vector can be expressed in component form as an ordered pair of its horizontal and vertical components. 
+    For example, the vector <m>\vec{v} = \langle v_x, v_y \rangle</m> has horizontal component <m>v_x</m> and vertical component <m>v_y</m> in <m>\mathbb{R}^2</m>.
+    <url href="https://sklkarn.github.io/Lab_anim/vector-algebra.html">vector algebra</url>
+    The horizontal component represents the projection of the vector onto the x-axis, while the vertical component represents the projection onto the y-axis.
+  </p>
+  <image source="vect_comp_1.png" width="30%">  </image> 
+
+  <p>
+    In <m>\mathbb{R}^3</m>, a vector can be expressed in component form as an ordered triple of its horizontal, vertical, and depth components.
+    For example, the vector <m>\vec{v} = \langle v_x, v_y, v_z \rangle</m> has horizontal component <m>v_x</m>, vertical component <m>v_y</m>, and depth component <m>v_z</m>.
+    The horizontal component represents the projection of the vector onto the x-axis, the vertical component represents the projection onto 
+    the y-axis, and the depth component represents the projection onto the z-axis.
+  </p>
+    <image source="vect_comp_2.png" width="30%">  </image>
+
+    <p>
+      If the vector with representation <m>\vec{AB}</m> has initial point <m>A(x_1, y_1, z_1)</m> and terminal point <m>B(x_2, y_2, z_2)</m>, then the vector <m>\vec{a}</m> is
+      <md>
+        \vec{a} = \langle x_2 - x_1, y_2 - y_1, z_2 - z_1 \rangle
+      </md>
+    </p>
+    <example>
+      <p>
+        Find the vector <m>\vec{AB}</m> if <m>A(1, 2, 3)</m> and <m>B(4, 5, 6)</m>.
+      </p>
+      <p>
+        Solution:
+        <md>
+          \vec{AB} = \langle 4-1, 5-2, 6-3 \rangle = \langle 3, 3, 3 \rangle
+        </md>
+      </p>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+        If <m>\vec{a} = \langle 2, 0, 3 \rangle</m> and <m>\vec{b} = \langle -2, 3, 5 \rangle</m>, find <m>\vert \vec{a} \vert</m> and the vectors <m>\vec{a} + \vec{b}</m>,
+        <m>\vec{a} - \vec{b}</m>, <m>3\vec{b}</m>, and <m>2\vec{a} + 5\vec{b}</m>.
+      </p>
+      </statement>
+        <solution>
+          <p>
+            <md>
+         \vert \vec{a} \vert  = \sqrt{2^2 + 0^2 + 3^2} = \sqrt{13} 
+         \vec{a} + \vec{b} = \langle 2 + (-2), 0 + 3, 3 + 5 \rangle 
+        </md>
+        <md>
+          = \langle 0, 3, 8 \rangle 
+        \vec{a} - \vec{b} = \langle 2 - (-2), 0 - 3, 3 - 5 \rangle = \langle 4, -3, -2 \rangle 
+         3\vec{b} = \langle 3(-2), 3(3), 3(5) \rangle 
+        </md>
+        <md>
+          = \langle -6, 9, 15 \rangle 
+        2\vec{a} + 5\vec{b} = \langle 2(2) + 5(-2), 2(0) + 5(3), 2(3) + 5(5) \rangle = \langle -6, 15, 31 \rangle 
+        </md>
+         </p>
+        </solution>
+    </example>
+
+
+</subsubsection>
+
+<subsubsection xml:id="subsubsec-unit_vector">
+  <title>Unit Vector</title>
+  <p>
+    A unit vector is a vector with magnitude <m>1</m>. Unit vectors are often used to indicate direction without considering magnitude. 
+    For any nonzero vector <m>\vec{v}</m>, the unit vector in the direction of <m>\vec{v}</m> is given by <md>\hat{v} = \frac{\vec{v}}{\vert \vec{v} \vert}</md>.
+    For example, if <m>\vec{v} = \langle 3, 4, 0 \rangle</m>, then <m>\vert \vec{v} \vert = \sqrt{3^2 + 4^2 + 0^2} = 5</m>, 
+    and the unit vector in the direction of <m>\vec{v}</m> is <m>\hat{v} = \frac{1}{5}\langle 3, 4, 0 \rangle = \langle \frac{3}{5}, \frac{4}{5}, 0 \rangle</m>.
+    Unit vectors in the positive coordinate directions are 
+    <md>\hat{i} = \langle 1, 0, 0 \rangle \quad \hat{j} = \langle 0, 1, 0 \rangle \quad \hat{k} = \langle 0, 0, 1 \rangle</md>.
+    These unit vectors are called the standard basis vectors.
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        If <m>\vec{a} = \hat{i} + 5\hat{j} - 3\hat{k}</m> and <m>\vec{b} = 2\hat{i} - 5\hat{k}</m>, 
+        express the vector <m>2\vec{a} + 3\vec{b}</m> in terms of <m>\hat{i}</m>, <m>\hat{j}</m>, and <m>\hat{k}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <md>
+           2\vec{a} + 3\vec{b}  = 2(\hat{i} + 5\hat{j} - 3\hat{k}) + 3(2\hat{i} - 5\hat{k}) 
+        </md>
+        <md>
+           = (2 + 6)\hat{i} + 10\hat{j} + (-6 - 15)\hat{k}  = 8\hat{i} + 10\hat{j} - 21\hat{k} 
+        </md>
+        
+      </p>
+    </solution> 
+  </example>
+
+  <example>
+    <statement>
+      <p>
+        Find the unit vector in the direction of <m>\vec{v} =2\hat{i} + 3\hat{j} - 6\hat{k}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <md>
+           \vert \vec{v} \vert  = \sqrt{2^2 + 3^2 + (-6)^2} = 7 
+          \hat{v}= \frac{1}{7}(2\hat{i} + 3\hat{j} - 6\hat{k}) = \frac{2}{7}\hat{i} + \frac{3}{7}\hat{j} - \frac{6}{7}\hat{k} 
+        </md>
+      </p>
+    </solution>
+  </example>
+
+</subsubsection>
+
+<note>
+  <p>
+    The tangent line to a curve at a point has slope <m>m</m>, so a direction vector for the tangent line is <m>\vec{v} = \langle 1, m \rangle</m>.
+    A vector perpendicular to the tangent line is <m>\vec{w} = \langle 1, -1/m \rangle</m> or <m>\vec{w} = \langle -m, 1 \rangle</m>.
+  </p>
+</note>
+
+<example>
+  <statement>
+    <p>
+      Find the unit vectors that are parallel to the tangent line to the parabola <m>y = x^2</m> at the point <m>(3, 9)</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      The slope of the tangent line is <m>m=y'(3) = 6</m>, so a direction vector for the tangent line is <m>\vec{v} = \langle 1, 6 \rangle</m>.
+      Since <m>\vert \vec{v} \vert = \sqrt{1^2 + 6^2} = \sqrt{37}</m>, the unit vectors parallel to the tangent line are
+      <md>\pm \hat{v} = \pm \frac{1}{\sqrt{37}}\langle 1, 6 \rangle = \left\langle \pm \frac{1}{\sqrt{37}}, \pm \frac{6}{\sqrt{37}} \right\rangle</md>.
+    </p>
+  </solution>
+</example>
+
+<example>
+  <statement>
+    <p>
+      Find the unit vectors that are parallel to the tangent line to the curve <m>y = 2\sin x</m> at the point <m>(\pi/6, 1)</m>. Find the unit vectors that are perpendicular to the tangent line.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      The slope of the tangent line is <m>m=y'(\pi/6) = \sqrt{3}</m>, so a direction vector for the tangent line is <m>\vec{v} = \langle 1, m \rangle=  \langle 1, \sqrt{3} \rangle</m>.
+      Since <m>\vert \vec{v} \vert = \sqrt{1^2 + (\sqrt{3})^2} = 2</m>, the unit vectors parallel to the tangent line are
+      <md>\pm \hat{v} = \pm \frac{1}{2}\langle 1, \sqrt{3} \rangle = \left\langle \pm \frac{1}{2}, \pm \frac{\sqrt{3}}{2} \right\rangle</md>.
+     </p>
+     <p>
+      A vector perpendicular to <m>\vec{v}</m> is <m>\vec{w} =\langle 1, -1/m \rangle= \langle 1, -1/\sqrt{3} \rangle</m>.
+      Since <m>\vert \vec{w} \vert = \sqrt{1^2 + (-1/\sqrt{3})^2} = 2/\sqrt{3}</m>, the unit vectors perpendicular to the tangent line are
+      <md>\pm \hat{w} = \pm \frac{\sqrt{3}}{2}\langle 1, -1/\sqrt{3} \rangle = \left\langle \pm \frac{\sqrt{3}}{2}, \mp \frac{1}{2} \right\rangle</md>.
+    </p>
+  </solution> 
+</example>
+
+</subsection> 
+
+<subsection xml:id="subsec-dot_product">
+  <title>Dot Product of Vectors</title>
+  <p>
+    If <m>a = \langle a_1, a_2, a_3 \rangle</m> and <m>b = \langle b_1, b_2, b_3 \rangle</m>, then the dot product of <m>a</m>
+and <m>b</m> is the number <m>a \cdot b</m> given by 
+<md>a \cdot b = \vert a \vert \vert b \vert \cos \theta = a_1b_1 + a_2b_2 + a_3b_3</md>
+here <m>\theta</m> is the angle between <m>a</m> and <m>b</m>.
+  </p>
+  <p>
+    It is a scalar value and has the following properties:
+    <ul>
+      <li>Commutative: <m>\vec{a} \cdot \vec{b} = \vec{b} \cdot \vec{a}</m></li>
+      <li>Distributive: <m>\vec{a} \cdot (\vec{b} + \vec{c}) = \vec{a} \cdot \vec{b} + \vec{a} \cdot \vec{c}</m></li>
+      <li>Scalar multiplication: <m>(c\vec{a}) \cdot \vec{b} = c(\vec{a} \cdot \vec{b})</m></li>
+    </ul>
+  </p>
+  <p>
+    <md>\vec{a}\cdot \vec{a} = \vert \vec{a} \vert^2 = a_1^2 + a_2^2 + a_3^2</md>
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        If the vectors <m>a</m> and <m>b</m> have lengths 4 and 6, and the angle between them is
+        <m>\pi/3</m>, find <m>a \cdot b</m>.
+      </p>
+    </statement>
+  <solution>
+    <p>
+      <md>a \cdot b = \vert a \vert \vert b \vert \cos \theta = 4 \cdot 6 \cdot \cos \frac{\pi}{3} = 12</md>
+    </p>
+  </solution>
+  </example>
+<corollary xml:id="cor-dot_product">
+  <statement>
+    <p>
+      If <m>\theta</m> is the angle between the nonzero vectors <m>a</m> and <m>b</m>, then
+      <md>\cos \theta = \frac{a \cdot b}{\vert a \vert \vert b \vert}</md>
+    </p>
+  </statement>
+</corollary>
+
+
+<example>
+  <statement>
+    <p>
+      Find the angle between the vectors <m>a = \langle 1, 2, 3 \rangle</m> and <m>b = \langle 4, 5, 6 \rangle</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      First, compute the dot product and the magnitudes:
+      <md>a \cdot b = 1\cdot4 + 2\cdot5 + 3\cdot6 = 32</md>
+      <md>\vert a \vert = \sqrt{1^2 + 2^2 + 3^2} = \sqrt{14}</md>
+      <md>\vert b \vert = \sqrt{4^2 + 5^2 + 6^2} = \sqrt{77}</md>
+      Then,
+      <md>\cos \theta = \frac{a \cdot b}{\vert a \vert \vert b \vert} = \frac{32}{\sqrt{14}\sqrt{77}} = \frac{32}{\sqrt{1078}}</md>
+      Therefore,
+      <md>\theta = \arccos\left(\frac{32}{\sqrt{1078}}\right) \approx 0.3281 \text{ radians} \text{ (or } 18.8^\circ \text{)}</md>
+    </p>
+  </solution> 
+</example>
+
+<corollary xml:id="cor-dot_product_2">
+  <statement>
+    <p>
+      Two vectors <m>a</m> and <m>b</m> are orthogonal (perpendicular) if and only if <m>a \cdot b = 0</m>.
+    </p>
+  </statement>
+</corollary>
+
+
+<example>
+  <statement>
+    <p>
+      Show that the vectors <m>a = \langle 1, 2, 3 \rangle</m> and <m>b = \langle -2, 1, 0 \rangle</m> are orthogonal.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      Compute the dot product:
+      <md>a \cdot b = 1\cdot(-2) + 2\cdot1 + 3\cdot0 = -2 + 2 + 0 = 0</md>
+      Since the dot product is zero, the vectors are orthogonal.
+    </p>
+  </solution>
+</example>
+
+</subsection>
+
+<subsection xml:id="subsec-direction_cosines">
+  <title>Direction Angles and Direction Cosines</title>
+  <introduction>
+   
+    <image source="direct_cosin.png" width="30%">  </image> 
+  <p>
+    The direction angles of a vector are the angles it makes with the positive coordinate axes, 
+    and the direction cosines are the cosines of these angles.
+    <md>\cos \alpha = \frac{\vec{a} \cdot \hat{i}}{\vert \vec{a} \vert} = \frac{a_1}{\vert \vec{a} \vert}</md>
+    <md>\cos \beta = \frac{\vec{a} \cdot \hat{j}}{\vert \vec{a} \vert} = \frac{a_2}{\vert \vec{a} \vert}</md>
+    <md>\cos \gamma = \frac{\vec{a} \cdot \hat{k}}{\vert \vec{a} \vert} = \frac{a_3}{\vert \vec{a} \vert}</md>
+    <md>\cos^2 \alpha + \cos^2 \beta + \cos^2 \gamma = 1</md> 
+  </p>
+  <p>
+    <md>\vec{a} = \langle a_1, a_2, a_3 \rangle = \vert \vec{a} \vert \langle \cos \alpha, \cos \beta, \cos \gamma \rangle</md>
+    or, 
+    <md> \hat{a} = \frac{\vec{a}}{\vert \vec{a} \vert} = \langle \cos \alpha, \cos \beta, \cos \gamma \rangle</md>
+  </p>
+  </introduction>
+
+
+
+
+  <subsubsection xml:id="subsubsec-projection">
+    <title>Projections</title>
+
+     
+    <p>
+      Scalar projection is the length of the projection of one vector onto another.
+      Mathematically, the scalar projection of <m>\vec{a}</m> onto <m>\vec{b}</m> is given by
+      <md>\text{comp}_{\vec{b}} \vec{a} = \frac{\vec{a} \cdot \vec{b}}{\vert \vec{b} \vert}</md>
+    </p>
+    <p>
+       Vector projection is the projection of one vector onto another as a vector.
+       Mathematically, the vector projection of <m>\vec{a}</m> onto <m>\vec{b}</m> is given by
+       <md>\text{proj}_{\vec{b}} \vec{a} = \frac{\vec{a} \cdot \vec{b}}{\vert \vec{b} \vert^2} \vec{b} \quad \text{or equivalently} \quad \text{proj}_{\vec{b}} \vec{a} = \left(\text{comp}_{\vec{b}} \vec{a}\right) \hat{b}</md>
+       </p>
+
+  <example>
+    <statement>
+      <p>
+        Find the direction cosines of the vector <m>\vec{a} = \langle 1, 2, 3 \rangle</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        First, compute the magnitude:
+        <md>\vert \vec{a} \vert = \sqrt{1^2 + 2^2 + 3^2} = \sqrt{14}</md>
+        Therefore,
+        <md>\hat{a} = \frac{\vec{a}}{\vert \vec{a} \vert} = \left\langle \frac{1}{\sqrt{14}}, \frac{2}{\sqrt{14}}, \frac{3}{\sqrt{14}} \right\rangle</md>
+        Thus, the direction cosines are
+        <md>\cos \alpha = \frac{1}{\sqrt{14}}, \quad \cos \beta = \frac{2}{\sqrt{14}}, \quad \cos \gamma = \frac{3}{\sqrt{14}}</md>
+      </p>
+    </solution>
+  </example>
+ 
+
+
+
+       <example>
+        <statement>
+          <p>
+            Find the scalar and vector projections of <m>\vec{a} = \langle 1, 2, 3 \rangle</m> onto <m>\vec{b} = \langle 4, 5, 6 \rangle</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            First, compute the dot product and the magnitude of <m>\vec{b}</m>:
+            <md>\vec{a} \cdot \vec{b} = 1 \cdot 4 + 2 \cdot 5 + 3 \cdot 6 = 32</md>
+            <md>\vert \vec{b} \vert = \sqrt{4^2 + 5^2 + 6^2} = \sqrt{77}</md>
+            Therefore, the scalar projection is
+            <md>\text{comp}_{\vec{b}} \vec{a} = \frac{\vec{a} \cdot \vec{b}}{\vert \vec{b} \vert} = \frac{32}{\sqrt{77}}</md>
+            The vector projection is
+            <md>\text{proj}_{\vec{b}} \vec{a} = \frac{\vec{a} \cdot \vec{b}}{\vert \vec{b} \vert^2} \vec{b} = \frac{32}{77} \langle 4, 5, 6 \rangle = \left\langle \frac{128}{77}, \frac{160}{77}, \frac{192}{77} \right\rangle</md>
+          </p>
+        </solution>
+       </example>
+  </subsubsection>
+
+
+
+
+ <exercises xml:id="exercises-dot_product">
+        <exercise>
+          <statement>
+            <p>
+              Find the dot product of the following vectors:
+              <ol>
+                <li><m>\vec{a} = \langle -2, 3 \rangle</m> and <m>\vec{b} = \langle 2, 5 \rangle</m></li>
+                <li><m>\vec{a} = \langle 1, 2, 3 \rangle</m> and <m>\vec{b} = \langle 4, 5, 6 \rangle</m></li>
+                <li><m>\vec{a} = \langle 2, 3, 4 \rangle</m> and <m>\vec{b} = \langle 5, 6, 7 \rangle</m></li>
+                  <li><m>\vec{a} = 3\hat {i} + 4\hat {j} + 5\hat {k}</m> and <m>\vec{b} = 2\hat {i} + 3\hat {j} + 4\hat {k}</m></li>
+              </ol>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <ol>
+                <li>
+                  <p>
+                     Find the angles at the vertices of a triangle at points <m>A = (1, 2, 3)</m>, <m>B = (4, 5, 6)</m>, and <m>C = (7, 8, 9)</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Find the angles at the vertices of a triangle at points <m>A = (1, 2)</m>, <m>B = (4, 5)</m>, and <m>C = (7, 8)</m>.
+                  </p>
+                </li>
+              </ol>
+              </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Determine whether the given vectors are orthogonal, parallel, or neither.
+              <ol>
+                <li>
+                  <p>
+                    <m>\vec{a} = \langle 1, 2, 3 \rangle</m> and <m>\vec{b} = \langle 4, 5, 6 \rangle</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\vec{a} = \langle -2, 3, -4 \rangle</m> and <m>\vec{b} = \langle 5, -6, 7 \rangle</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\vec{a} = \langle 4, 6 \rangle</m> and <m>\vec{b} = \langle -3, 2 \rangle</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\vec{a} = - 2\hat{i} + 3\hat{j} + 4\hat{k}</m> and <m>\vec{b} = 4\hat{i} - 6\hat{j} + 8\hat{k}</m>
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Find the scalar and vector projections of <m>\vec{a} = \langle 2, 3, 4 \rangle</m> onto <m>\vec{b} = \langle 5, 6, 7 \rangle</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Determine if the given triangle is right-angled.  
+              <ol>
+                <li>
+                  <p>
+                    <m>A = (1, 2, 3)</m>, <m>B = (4, 5, 6)</m>, and <m>C = (7, 8, 9)</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>A = (1, 2)</m>, <m>B = (4, 5)</m>, and <m>C = (7, 8)</m>
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement> 
+            <p>
+              Find the angle between the given lines. 
+              <ol>
+                <li>
+                  <p>
+                    <m>L_1: \frac{x-1}{2} = \frac{y-2}{3} = \frac{z-3}{4}</m> and <m>L_2: \frac{x-4}{5} = \frac{y-5}{6} = \frac{z-6}{7}</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>x+2y=7</m> and <m>2x-y=3</m>
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Find the scalar and vector projections of <m>\vec{a}</m> onto <m>\vec{b}</m>.
+              <ol>
+                <li>
+                  <p>
+                    <m>\vec{a} = \langle 3, 6, -2 \rangle</m> and <m>\vec{b} = \langle 4, 5, 6 \rangle</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\vec{a} = \langle -2, 3, -4 \rangle</m> and <m>\vec{b} = \langle 5, -6, 7 \rangle</m>
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </statement>
+        </exercise>
+       </exercises>
+</subsection>
+
+
+<subsection xml:id="subsec-cross_product">
+  <title>Cross Product of Vectors</title>
+  <introduction>
+    <p>
+      The cross product of two vectors is a vector that is perpendicular to both of the original vectors.
+      It is denoted by <m>\vec{a} \times \vec{b}</m> and has a magnitude equal to the area of the parallelogram formed by <m>\vec{a}</m> and <m>\vec{b}</m>.
+      The direction of the cross product is determined by the right-hand rule. 
+      Spread your right hand fingers in the direction of <m>\vec{a}</m>, then curl them toward <m>\vec{b}</m>; your thumb points in the direction of <m>\vec{a} \times \vec{b}</m>.
+    </p>
+    <p>
+      If <m>a</m> and <m>b</m> be the two vectors then 
+      <md> \vec{a} \times \vec{b} = \vert \vec{a} \vert \vert \vec{b} \vert \sin \theta \vec{n}</md>, 
+      where <m>\theta</m> is the angle between <m>\vec{a}</m> and <m>\vec{b}</m> and <m>\vec{n}</m> is a unit vector perpendicular to both <m>\vec{a}</m> and <m>\vec{b}</m>.
+    </p>
+    <p>
+      If <m>a = \langle a_1, a_2, a_3 \rangle</m> and <m>b = \langle b_1, b_2, b_3 \rangle</m>, then the cross product of
+      <m>a</m> and <m>b</m> is the vector
+      <md>a \times b = \langle a_2 b_3 - a_3 b_2, a_3 b_1 - a_1 b_3, a_1 b_2 - a_2 b_1 \rangle</md>
+    </p>
+   
+     <p>
+      The cross product can be easily computed using the determinant of a square matrix:
+      
+      <md>
+        \vec{a} \times \vec{b} =
+        \begin{vmatrix}
+          \hat{i} &amp; \hat{j} &amp; \hat{k} \\
+          a_1 &amp; a_2 &amp; a_3 \\
+          b_1 &amp; b_2 &amp; b_3
+        \end{vmatrix}
+        = (a_2 b_3 - b_2 a_3)\hat{i}
+        - (a_1 b_3 - b_1 a_3)\hat{j}
+        + (a_1 b_2 - b_1 a_2)\hat{k}
+      </md>
+    </p>
+
+<corollary xml:id="cor-parallel_vect">
+  <statement>
+    <p>
+      Two nonzero vectors <m>a</m> and <m>b</m> are parallel if and only if
+      <m>a \times b = 0</m>.
+    </p>
+  </statement>
+</corollary>
+
+<note>
+  <p> 
+    <md>
+     \hat{i} \times \hat{j}  = \hat{k} \quad   \hat{j} \times \hat{k}   = \hat{i}  \quad  \hat{k} \times \hat{i} = \hat{j}  \\
+    \hat{j} \times \hat{i}   = -\hat{k}  \quad  \hat{k} \times \hat{j}   = -\hat{i} \quad  \hat{i} \times \hat{k}  = -\hat{j} 
+  </md>
+  </p>
+  
+</note>
+
+
+  </introduction>
+
+  <subsubsection xml:id="subsubsec-scalar_triple-product">
+    <title>Scalar Triple Product of Vectors</title>
+    <p>
+      The scalar triple product of three vectors <m>a</m>, <m>b</m>, and <m>c</m> is the scalar
+      <md>a \cdot (b \times c)</md>. It gives the volume of the parallelepiped formed by <m>a</m>, <m>b</m>, and <m>c</m>. 
+      The scalar triple product is also equal to the determinant of the matrix formed by the three vectors as its rows:
+      <md>
+        a \cdot (b \times c) =
+        \begin{vmatrix}
+          a_1 &amp; a_2 &amp; a_3 \\
+          b_1 &amp; b_2 &amp; b_3 \\
+          c_1 &amp; c_2 &amp; c_3
+        \end{vmatrix}
+      </md>
+    </p>
+  </subsubsection>
+
+<subsubsection xml:id="subsubsec-vector_triple-product">
+  <title>Vector Triple Product of Vectors</title>
+  <p>
+    The vector triple product of three vectors <m>a</m>, <m>b</m>, and <m>c</m> is the vector
+    <md>a \times (b \times c)</md>. It can be computed using the formula:
+    <md>
+      a \times (b \times c) = (a \cdot c)b - (a \cdot b)c
+    </md>
+  </p>
+</subsubsection>
+
+<example>
+  <statement>
+    <p>
+      Find the cross product of the vectors <m>a = \langle 1, 2, 3 \rangle</m> and <m>b = \langle 4, 5, 6 \rangle</m> 
+      and verify that it is orthogonal to both vectors.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      The cross product is
+      <md>
+        a \times b =
+        \begin{vmatrix}
+          \hat{i} &amp; \hat{j} &amp; \hat{k} \\
+          1 &amp; 2 &amp; 3 \\
+          4 &amp; 5 &amp; 6
+        \end{vmatrix}
+        = -3\hat{i} + 6\hat{j} - 3\hat{k}
+      </md>
+      Thus, <m>a \times b = \langle -3, 6, -3 \rangle</m>. 
+      To verify orthogonality, we compute
+      <md>
+        a \cdot (a \times b) = 1(-3) + 2(6) + 3(-3) = 0
+      </md>
+      and
+      <md>
+        b \cdot (a \times b) = 4(-3) + 5(6) + 6(-3) = 0
+      </md>
+      Therefore, <m>a \times b</m> is orthogonal to both <m>a</m> and <m>b</m>.
+    </p>
+  </solution>
+</example>
+
+<example>
+  <statement>
+    <p>
+      Compute the vector triple product <m>a \times (b \times c)</m> for the vectors <m>a = \langle 1, 2, 3 \rangle</m>, <m>b = \langle 4, 5, 6 \rangle</m>, and <m>c = \langle 7, 8, 9 \rangle</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      Using the vector triple product formula, we have
+      <md>
+        a \cdot c = 1(7) + 2(8) + 3(9) = 50
+      </md>
+      and
+      <md>
+        a \cdot b = 1(4) + 2(5) + 3(6) = 32
+      </md>
+      Therefore,
+      <md>
+        a \times (b \times c) = 50b - 32c
+        = 50\langle 4, 5, 6 \rangle - 32\langle 7, 8, 9 \rangle
+        = \langle 64, 114, 132 \rangle
+      </md>
+    </p>
+  </solution> 
+</example>
+
+<example>
+  <statement>
+    <p>
+      Compute the scalar triple product <m>a \cdot (b \times c)</m> for the vectors <m>a = \langle 1, 2, 3 \rangle</m>, <m>b = \langle 4, 5, 6 \rangle</m>, and <m>c = \langle 7, 8, 9 \rangle</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      The scalar triple product is
+      <md>
+        a \cdot (b \times c) =
+        \begin{vmatrix}
+          1 &amp; 2 &amp; 3 \\
+          4 &amp; 5 &amp; 6 \\
+          7 &amp; 8 &amp; 9
+        \end{vmatrix}
+         </md>
+         <md>
+          = 1(5 \cdot 9 - 6 \cdot 8) - 2(4 \cdot 9 - 6 \cdot 7) + 3(4 \cdot 8 - 5 \cdot 7) = 0
+         </md>
+         
+      Therefore, the vectors <m>a</m>, <m>b</m>, and <m>c</m> are coplanar.
+    </p>
+  </solution>
+</example>
+
+<example>
+  <statement>
+    <p>
+      Find two unit vectors orthogonal to both <m>a = \langle 3, 2, 1 \rangle</m> and <m>b = \langle -1, 1, 0 \rangle</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      The cross product is
+      <md>
+        a \times b =
+        \begin{vmatrix}
+          \hat{i} &amp; \hat{j} &amp; \hat{k} \\
+          3 &amp; 2 &amp; 1 \\
+          -1 &amp; 1 &amp; 0
+        \end{vmatrix}
+        = -\hat{i} - \hat{j} + 5\hat{k}
+      </md>
+      Thus, <m>a \times b = \langle -1, -1, 5 \rangle</m>. The magnitude is
+      <md>
+        \|a \times b\| = \sqrt{(-1)^2 + (-1)^2 + 5^2} = \sqrt{27} = 3\sqrt{3}
+      </md>
+      Therefore, the two unit vectors are
+      <md>
+        \pm \frac{a \times b}{\|a \times b\|}
+        = \pm \left\langle -\frac{1}{3\sqrt{3}}, -\frac{1}{3\sqrt{3}}, \frac{5}{3\sqrt{3}} \right\rangle    
+      </md>
+    </p>
+  </solution>
+</example>
+
+<example>
+  <statement>
+    <p>
+      Find the area of the parallelogram with vertices <m>A = (-2, 1)</m>,
+      <m>B = (0, 4)</m>, <m>C = (4, 2)</m>, and <m>D = (2, -1)</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      The vectors from <m>A</m> to the adjacent vertices are
+      <md>
+        \vec{AB} = \langle 2, 3, 0 \rangle, \quad
+        \vec{AD} = \langle 4, -2, 0 \rangle
+      </md>
+      The cross product is
+      <md>
+        \vec{AB} \times \vec{AD} =
+        \begin{vmatrix}
+          \hat{i} &amp; \hat{j} &amp; \hat{k} \\
+          2 &amp; 3 &amp; 0 \\
+          4 &amp; -2 &amp; 0
+        \end{vmatrix}
+        = -16\hat{k}
+      </md>
+      Therefore, the area of the parallelogram is
+      <md>
+        \left\|\vec{AB} \times \vec{AD}\right\| = 16
+      </md>
+    </p>
+  </solution>
+</example>
+
+<example>
+  <statement>
+    <p>
+      Find the volume of the parallelepiped with vertices <m>A = (0, 0, 0)</m>,
+      <m>B = (1, 0, 0)</m>, <m>C = (0, 1, 0)</m>, and <m>D = (0, 0, 1)</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      The vectors from <m>A</m> to the adjacent vertices are
+      <md>
+        \vec{AB} = \langle 1, 0, 0 \rangle, \quad
+        \vec{AC} = \langle 0, 1, 0 \rangle, \quad
+        \vec{AD} = \langle 0, 0, 1 \rangle
+      </md>
+      The volume of the parallelepiped is the absolute value of the scalar triple product:
+      <md>
+        \left| \vec{AB} \cdot (\vec{AC} \times \vec{AD}) \right| =
+        \left| \begin{vmatrix}
+          1 &amp; 0 &amp; 0 \\
+          0 &amp; 1 &amp; 0 \\
+          0 &amp; 0 &amp; 1
+        \end{vmatrix} \right| = 1
+      </md>
+    </p>
+  </solution> 
+</example>
+</subsection>
+
+
+</section>

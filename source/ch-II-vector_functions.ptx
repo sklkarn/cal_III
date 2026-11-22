@@ -1,0 +1,329 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+
+<chapter xml:id="ch-II-vector_functions" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Vector Functions</title>
+
+  <introduction>
+ 
+    <p> 
+      A vector-valued function is a function that maps a real number (usually
+            representing time <m>t</m>) to a vector in 2D or 3D space.
+            Instead of outputting a single scalar value like <m>f(x)</m>, it outputs an
+            entire vector whose components are themselves functions of that single
+            parameter. It is a function whose domain is
+            a set of real numbers and whose range is a set of vectors. In three dimensions, a vector-valued function is written as:
+                        <md>
+                            \mathbf{r}(t) = \langle f(t), g(t), h(t) \rangle = f(t)\mathbf{i}+ g(t)\mathbf{j}+ h(t)\mathbf{k}
+                        </md>
+                        where <m>f(t)</m>, <m>g(t)</m>, and <m>h(t)</m> are real-valued functions called
+                        the component functions of <m>\mathbf{r}</m>.
+       </p>
+
+          <image source="vvf.jpeg" width="30%"/>
+
+          <p>
+            The limit of a vector function <m>r</m> is defined by taking the limits of its component functions as follows.
+            <md>
+                \lim_{t \to a} \mathbf{r}(t) = \lim_{t \to a} \langle f(t), g(t), h(t) \rangle = \langle \lim_{t \to a} f(t), \lim_{t \to a} g(t), \lim_{t \to a} h(t) \rangle
+            </md>
+          </p>
+
+    <example>
+      <statement>
+        <p>
+          Find <m>\lim_{t \to a} \mathbf{r}(t)</m>, where <m>\mathbf{r}(t) = 1+t\mathbf{i}+t^2\mathbf{j}+t^3\mathbf{k}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <md>
+              \lim_{t \to a} \mathbf{r}(t) = \lim_{t \to a} \langle 1+t, t^2, t^3 \rangle = \langle 1+a, a^2, a^3 \rangle
+          </md>
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+          Describe the curve defined by the vector function 
+          <md>\mathbf{r}(t) = \sin(t)\mathbf{i}+\cos(t)\mathbf{j}+t\mathbf{k}</md>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The parametric equations are <m>x = \sin(t)</m>, <m>y = \cos(t)</m>, and <m>z = t</m>.
+          Since <m>x^2+y^2=\sin^2(t)+\cos^2(t)=1</m>, the curve lies on the cylinder <m>x^2+y^2=1</m>. 
+          This means every point on the curve lies directly on the surface of a right circular cylinder of radius <m>1</m> centered along the <m>z</m>-axis. 
+          Because <m>z(t) = t</m>, the height increases linearly and steadily as <m>t</m> increases.
+          The curve is a helix that winds around the <m>z</m>-axis while rising at a constant rate.
+        </p>
+        <p>
+          <ul>
+            <li>
+              <p>
+                  At <m>t=0</m>, the point is <m>(0,1,0)</m>. As <m>t</m> increases, the curve spirals upward around the cylinder.
+              </p>
+            </li>
+            <li>
+              <p>
+                  At <m>t=\pi/2</m>, the point is <m>(1,0,\pi/2)</m>. The curve has completed a quarter turn around the cylinder.
+              </p>
+            </li>
+            <li>
+              <p>
+                  At <m>t=\pi</m>, the point is <m>(0,-1,\pi)</m>. The curve has completed a half turn around the cylinder.
+              </p>
+            </li>
+            <li>
+              <p>
+                  At <m>t=3\pi/2</m>, the point is <m>(-1,0,3\pi/2)</m>. The curve has completed three-quarters of a turn around the cylinder.
+              </p>
+            </li>
+            <li>
+              <p>
+                  At <m>t=2\pi</m>, the point is <m>(0,1,2\pi)</m>. The curve has completed a full turn around the cylinder and is now directly above the starting point.
+              </p>
+            </li>
+          </ul>
+        Hence, the curve is a helix that spirals upward around the <m>z</m>-axis clockwise, maintaining a constant distance from it, and rising at a constant rate as <m>t</m> increases.
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+         Sketch the curve whose vector equation is
+          <m>\mathbf{r}(t) = \cos(t)\mathbf{i}+\sin(t)\mathbf{j}+t\mathbf{k}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The parametric equations are <m>x = \cos(t)</m>, <m>y = \sin(t)</m>, and <m>z = t</m>.
+          Since <m>x^2+y^2=\cos^2(t)+\sin^2(t)=1</m>, the curve lies on the cylinder <m>x^2+y^2=1</m>.
+          The curve is a helix that winds around the <m>z</m>-axis while rising at a constant rate.
+        </p>
+        <p>
+          The corkscrew shape of the helix in three-dimensional space is DNA-like.
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+          Find a vector equation and parametric equations for the line segment that 
+          joins the point <m>P(1, 3, -2)</m> to the point <m>Q(2, -1, 3)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Here we take <m>P</m> as the initial point and <m>\overrightarrow{PQ} = \langle 1, -4, 5 \rangle</m> as the direction vector.
+          <md>
+              \mathbf{r}(t) = \langle 1, 3, -2 \rangle + t\langle 1, -4, 5 \rangle, \quad 0 \leq t \leq 1
+          </md>
+          The parametric equations are <m>x = 1+t</m>, <m>y = 3-4t</m>, and <m>z = -2+5t</m>, where <m>0 \leq t \leq 1</m>.
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+          Find a vector function that represents the curve of intersection of the cylinder <m>x^2+y^2=1</m> and the plane <m>y+z=2</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The cylinder has parametric equations <m>x = \cos(t)</m> and <m>y = \sin(t)</m>.
+          Since <m>y+z=2</m>, we have <m>z = 2-\sin(t)</m>.
+          Therefore, a vector function for the curve is
+          <md>
+              \mathbf{r}(t) = \cos(t)\mathbf{i}+\sin(t)\mathbf{j}+(2-\sin(t))\mathbf{k}
+          </md>
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+          Parametric equations for a toroid are given by
+          <md>
+              x = (R + r\cos(v))\cos(u), \quad y = (R + r\cos(v))\sin(u), \quad z = r\sin(v)
+          </md>
+          where <m>R</m> is the distance from the center of the tube to the center of the toroid, <m>r</m> is the radius of the tube, and <m>u, v \in [0, 2\pi)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          A vector function for the toroid is
+          <md>
+              \mathbf{r}(u,v) = (R + r\cos(v))\cos(u)\mathbf{i}+(R + r\cos(v))\sin(u)\mathbf{j}+r\sin(v)\mathbf{k}
+          </md>
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+         Draw the curve with vector equation <m>\mathbf{r}(t) = \langle t, t^2, t^3 \rangle</m> using a computer.
+          This curve is called a twisted cubic.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <md>
+            \mathbf{r}(t) = \langle t, t^2, t^3 \rangle \text{ for } -1 \leq t \leq 1
+          </md>
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+          Find the domain of the vector function 
+          <ol>
+            <li>
+              <p>
+                <m>\mathbf{r}(t) = \langle \ln(t), \sqrt{t}, \frac{1}{t} \rangle</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\mathbf{r}(t) = \langle \sqrt{4-t^2}, e^{-3t}, \ln(t+1) \rangle</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+        <ol> 
+          <li>
+            <p>
+          The domain of <m>\ln(t)</m> is <m>(0,\infty)</m>, the domain of <m>\sqrt{t}</m> is <m>[0,\infty)</m>, and the domain of <m>\frac{1}{t}</m> is <m>(-\infty,0)\cup(0,\infty)</m>.
+          Therefore, the domain of <m>\mathbf{r}</m> is <m>(0,\infty)</m>.
+        </p>
+          </li>
+          <li>
+            <p>
+              The domain of <m>\sqrt{4-t^2}</m> is <m>[-2,2]</m>, the domain of <m>e^{-3t}</m> is <m>(-\infty,\infty)</m>, and the domain of <m>\ln(t+1)</m> is <m>(-1,\infty)</m>.
+              Therefore, the domain of <m>\mathbf{r}</m> is <m>(-1,2]</m>.
+            </p>
+          </li>
+        </ol>
+        </p>
+      </solution>
+    </example>
+
+<example>
+  <statement>
+    <p>
+      Find the limit of the vector function as <m>t \to 1^+</m>.
+      <md>\mathbf{r}(t) = \langle \sqrt{t}, \ln(t), \frac{1}{t-1} \rangle</md>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      Since <m>\lim_{t \to 1^+} \frac{1}{t-1} = \infty</m>, the limit does not exist.
+    </p>
+  </solution>
+</example>
+
+<example>
+  <statement>
+    <p>
+      Find the limit of the vector function 
+      <md>\lim_{t \to 0} \left(e^{-3t} \mathbf{i}+ \frac{\sin(t)}{t} \mathbf{j}+ \frac{\tan(t)}{t} \mathbf{k}\right)</md>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      Since <m>\lim_{t \to 0} e^{-3t} = 1</m>, <m>\lim_{t \to 0} \frac{\sin(t)}{t} = 1</m>, and <m>\lim_{t \to 0} \frac{\tan(t)}{t} = 1</m>, the limit is <m>\mathbf{i}+\mathbf{j}+\mathbf{k}</m>.
+    </p>
+  </solution>
+</example>
+
+<example>
+  <statement>
+    <p>
+      At what point does the curve <m>\mathbf{r}(t) = \langle t^2, t^3, t^4 \rangle</m> intersect the paraboloid <m>z = x^2 + y^2</m>?
+      </p>
+  </statement>
+  <solution>
+    <p>
+      To find the intersection point, we substitute the parametric equations of the curve into the equation of the paraboloid:
+      <m>t^4 = (t^2)^2 + (t^3)^2</m>.
+      Simplifying, we get <m>t^4 = t^4 + t^6</m>, which reduces to <m>0 = t^6</m>. Therefore, <m>t = 0</m>, and the intersection point is <m>(0,0,0)</m>.
+    </p>
+  </solution>
+</example>
+
+<example>
+  <statement>
+    <p>
+      Find a vector function that represents the curve of intersection of the cylinder <m>x^2+y^2=1</m> and the plane <m>y+z=2</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      The equation <m>x^{2} + y^{2} = 1</m> defines a unit circle in the
+            <m>xy</m>-plane (extruded infinitely along the <m>z</m>-axis).
+            Using standard polar parameterization with parameter <m>t</m>:
+            <md>
+                x(t) = \cos(t), \qquad y(t) = \sin(t), \qquad 0 \le t \le 2\pi
+            </md>
+            (Note: If you want a purely rational algebraic parameterization without
+            trigonometric functions, you can use <m>x(t) = \frac{1-t^{2}}{1+t^{2}}</m> and
+            <m>y(t) = \frac{2t}{1+t^{2}}</m>, though this omits the point <m>(-1, 0, 2)</m>
+            unless <m>t \to \pm\infty</m>.)
+    </p>
+    <p>
+       Since <m>y+z=2</m>, we have <m>z = 2-\sin(t)</m>.
+      Therefore, a vector function for the curve is
+      <md>
+                \mathbf{r}(t) = \langle \cos(t),\, \sin(t),\, 2 - \sin(t) \rangle, \qquad 0 \le t \le 2\pi
+            </md>
+         </p>
+     <image source="cyl_plan_inter.png" width="30%"/>
+   <p>
+    Geometrically, slicing a vertical circular cylinder with a tilted plane produces an ellipse in 3D space.
+    Because the coordinates satisfy a linear equation with no <m>x</m> dependence, the entire curve lies flat on the tilted plane <m>y + z = 2</m>.
+    The curve is the intersection of the right circular cylinder  <m>x^{2} + y^{2} = 1</m> and the plane <m>y + z = 2</m>.
+    This intersecting plane is not parallel to the <m>z</m>-axis (its normal vector is <m>\mathbf{n}= \langle 0, 1, 1 \rangle</m>), 
+    We can verify the semi-axes directly from the center of the curve at <m> (0, 0, 2)</m>: 
+</p>
+<p>
+    <ul>
+      <li>
+        <p>
+          Semi-minor axis (<m>b</m>): At <m>t = 0</m>, the point is <m>(1, 0, 2)</m>,
+                    which is a distance of <m>b = \sqrt{1^{2} + 0^{2} + 0^{2}}= 1</m> from the center.
+        </p>
+      </li>
+      <li>
+        <p>
+          Semi-major axis (<m>a</m>): At <m>t = \frac{\pi}{2}</m>, the point is
+                    <m>(0, 1, 1)</m>, which is a distance of
+                    <m>a = \sqrt{0^{2} + 1^{2} + (-1)^{2}}= \sqrt{2}</m> from the center.
+        </p>
+      </li>
+    </ul>
+    This is the vector equation of an ellipse in 3D space, centered at 
+        <m>(0, 0, 2)</m> on the plane <m>y + z = 2</m>, with a semi-major axis of
+        <m>\sqrt{2}</m> and a semi-minor axis of <m>1</m>.
+   </p>
+  </solution>
+</example>
+  
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="sec-II-deriv-integ.ptx" /> 
+  <xi:include href="sec-II-arc.ptx" /> 
+  <xi:include href="sec-II-motion.ptx" /> 
+</chapter>

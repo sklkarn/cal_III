@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-III-partial_derivatives" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Partial Derivatives</title>
+
+  <introduction>
+    <p> 
+      Partial derivatives are a fundamental concept in multivariable calculus, allowing us to analyze how 
+      functions change with respect to one variable while keeping others constant. In this chapter, we will 
+      explore the definition of partial derivatives, techniques for computing them, and their applications in 
+      various fields such as physics, engineering, and economics. 
+      We will also discuss higher-order partial derivatives and the conditions under which mixed partial derivatives are equal.   
+       </p>
+        <p>
+  A function <m>f</m> of two variables takes each number pair <m>(x, y)</m> from a set <m>D</m> 
+  and gives a unique real number denoted by <m>f(x, y)</m>. The set <m>D</m> is the <term>domain</term> of <m>f</m> 
+  and its <term>range</term> is the set of values that <m>f</m> takes on, that is,
+  <md>\{ f(x, y) \mid (x, y) \in D \}.</md>
+</p>
+
+<p>
+  For a function <m>z = f(x, y)</m>, the partial derivative of <m>f</m> with 
+    respect to <m>x</m> at a point <m>(a, b)</m> is defined as:
+    <md>
+        f_{x}(a, b) = \frac{\partial f}{\partial x}(a, b) = \lim_{h \to 0}\frac{f(a + h, b) - f(a, b)}{h}
+    </md>
+    provided this limit exists.
+    Likewise, the partial derivative of <m>f</m> with respect to <m>y</m> at
+    <m>(a, b)</m> is:
+    <md>
+        f_{y}(a, b) = \frac{\partial f}{\partial y}(a, b) = \lim_{h \to 0}\frac{f(a, b + h) - f(a, b)}{h}
+    </md>
+    For a general point <m>(x, y)</m>, replacing <m>(a, b)</m> with <m>(x, y)</m>
+    gives the partial derivative functions <m>f_{x}(x, y)</m> and
+    <m>f_{y}(x, y)</m>.
+    For a function of <m>n</m> variables <m>f(x_{1}, x_{2}, \dots, x_{n})</m>,
+    <m>\frac{\partial f}{\partial x_{i}}</m> is defined by changing only
+    <m>x_{i}</m> by <m>h</m> and keeping all other <m>x_{j}</m> (<m>j \neq i</m>)
+    fixed.
+</p>
+
+<example>
+  <statement>
+    <p>
+      Find the domain and range of <m>f(x, y) = \sqrt{9 - x^2 - y^2}</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      The domain of <m>f</m> is the set of all points <m>(x, y)</m> such that the expression under the square root is non-negative:
+      <md>
+        9 - x^2 - y^2 \geq 0 \implies x^2 + y^2 \leq 9
+      </md>
+      This describes a disk of radius 3 centered at the origin in the xy-plane. Therefore, the domain is:
+      <md>
+        D = \{(x, y) \mid x^2 + y^2 \leq 9\}
+      </md>
+      The range of <m>f</m> is determined by the values that <m>f(x, y)</m> can take. 
+      Since the maximum value occurs when <m>x = 0</m> and <m>y = 0</m>, we have:
+      <md>
+        f(0, 0) = \sqrt{9 - 0 - 0} = 3
+      </md>
+      The minimum value occurs when <m>x^2 + y^2 = 9</m>, which gives:
+      <md>
+        f(x, y) = \sqrt{9 - 9} = 0
+      </md>
+      Therefore, the range of <m>f</m> is:
+      <md>
+        R = [0, 3]
+      </md> 
+    </p>
+  </solution>
+</example>
+
+  <example>
+    <statement>
+      <p>
+        Find the domain and range and sketch the graph of <m>h(x, y) = 4x^2 + y^2</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The domain of <m>h</m> is the set of all points <m>(x, y)</m> in the xy-plane, since the expression is defined for all real values of <m>x</m> and <m>y</m>. Therefore, the domain is:
+        <md>
+          D = \{(x, y) \mid x, y \in \mathbb{R}\}
+        </md>
+        The range of <m>h</m> is determined by the values that <m>h(x, y)</m> can take. Since both terms are non-negative, the minimum value occurs when <m>x = 0</m> and <m>y = 0</m>, giving:
+        <md>
+          h(0, 0) = 4(0)^2 + (0)^2 = 0
+        </md>
+        As <m>x</m> and <m>y</m> increase in magnitude, <m>h(x, y)</m> increases without bound. Therefore, the range of <m>h</m> is:
+        <md>
+          R = [0, \infty)
+        </md>
+      </p>
+    </solution>
+  </example>
+        
+
+  </introduction>
+
+  <!-- include sections -->
+   <xi:include href="sec-III-level_curves.ptx" /> 
+    <xi:include href="sec-III-limits_cont.ptx" /> 
+    <xi:include href="sec-III-pde.ptx" /> 
+     <xi:include href="sec-III-grad.ptx" /> 
+     <xi:include href="sec-III-maxima-lagrange.ptx" /> 
+
+</chapter>

@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-IV-volume_integrals" xmlns:xi="http://www.w3.org/2001/XInclude">
+ <title> Triple (Volume) Integrals </title>
+
+<introduction>
+  <p>
+    A triple integral, written as
+        <md>
+            \iiint_{E} f(x, y, z)\, dV
+        </md>
+        extends integration to a three-dimensional solid region <m>E</m> in
+        <m>\mathbb{R}^{3}</m>.
+        Just as double integrals sum <m>f(x, y)\, dA</m> over 2D area elements, triple
+        integrals sum <m>f(x, y, z)\, dV</m> over tiny volume elements <m>dV</m>.
+        Depending on the geometry of <m>E</m>, you can evaluate it in Cartesian
+        (<m>dV = dx\, dy\, dz</m>), cylindrical (<m>dV = r\, dz\, dr\, d\theta</m>), or
+        spherical (<m>dV = \rho^{2} \sin\phi\, d\rho\, d\phi\, d\theta</m>) coordinates.
+  </p>
+   <image source="ti.png" width="30%"/>
+
+</introduction>
+
+   <subsection xml:id="subsec-appl-TI">
+  <title>Applications of Triple Integrals</title>
+  <p>
+    Triple integrals (<m>\iiint_{E} f(x, y, z)\, dV</m>) accumulate a quantity that
+        varies throughout a three-dimensional solid region <m>E</m> by summing
+        <m>f(x, y, z)\, dV</m> over infinitesimal volume elements <m>dV</m>.
+        They are the primary tool in multivariable calculus, physics, and engineering
+        for analyzing 3D solids whose properties such as density, temperature, or
+        charge change from point to point.
+  </p>
+<p>
+  <ul>
+    <li>
+      <p>
+        Volume of a 3D Solid: Setting the integrand equal to <m>1</m> sums infinitesimal
+                volume elements <m>dV</m> across <m>E</m>:
+                <md>
+                    V(E) = \iiint_{E} 1\, dV
+                </md>
+                This is particularly effective when <m>E</m> is bounded by curved surfaces in
+                cylindrical (<m>dV = r\, dz\, dr\, d\theta</m>) or spherical
+                (<m>dV = \rho^{2} \sin\phi\, d\rho\, d\phi\, d\theta</m>) coordinates.
+      </p>
+    </li>
+    <li>
+      <p>
+        Total Mass of a 3D Object: If a solid <m>E</m> has a variable volumetric mass
+                density <m>\rho(x, y, z)</m> (e.g., <m>\text{kg/m}^{3}</m>), multiplying local
+                density by volume <m>dV</m> and integrating over <m>E</m> gives total mass:
+                <md>
+                    M = \iiint_{E} \rho(x, y, z)\, dV
+                </md>
+      </p>
+    </li>
+    <li>
+      <p>
+        Center of Mass and Centroid: Weighting position coordinates by mass density
+                yields the first moments about the three coordinate planes:
+                <md>
+                    M_{yz}= \iiint_{E} x\rho(x, y, z)\, dV, \\
+                    M_{xz}= \iiint_{E} y\rho(x, y, z)\, dV, \\
+                    M_{xy}= \iiint_{E} z\rho(x, y, z)\, dV
+                </md>
+      </p>
+    </li>
+    <li>
+      <p>
+        Moments of Inertia: Rotational inertia about a coordinate axis measures how mass
+                is distributed relative to the squared perpendicular distance from that
+                axis:
+                About the <m>x</m>-axis:
+                <md>I_{x} = \iiint_{E} (y^{2} + z^{2})\rho(x, y, z)\, dV</md>
+                About the <m>y</m>-axis: 
+                <md>I_{y} = \iiint_{E} (x^{2} + z^{2})\rho(x, y, z)\, dV</md> 
+                About the <m>z</m>-axis: 
+                <md>I_{z} = \iiint_{E} (x^{2} + y^{2})\rho(x, y, z)\, dV</md>
+      </p>
+    </li>
+    <li>
+      <p>
+        Average Value Over a Solid: The spatial average of a continuous function
+                <m>f(x, y, z)</m> (such as temperature, pressure, or concentration) throughout a
+                solid <m>E</m> of volume <m>V(E)</m> is:
+                <md>
+                    f_{\text{avg}}= \frac{1}{V(E)}\iiint_{E} f(x, y, z)\, dV
+                </md>
+      </p>
+    </li>
+    <li>
+      <p>
+        Electromagnetism, Gravitation, and Probability: 
+        Total electric charge:
+                <md>Q = \iiint_{E} \rho_{e}(x, y, z)\, dV</md>, 
+                where <m>\rho_{e}</m> is volume charge density.
+        Gravitational potential / field: Summing contributions
+                <md>G \frac{\rho(x, y, z)\, dV}{r}</md> 
+                from every volume element of an extended astronomical body. 
+        3D Joint Probability: For continuous random variables  <m>(X, Y, Z)</m> with joint probability density function <m>f(x, y, z)</m>,
+                <md>P((X, Y, Z) \in E) = \iiint_{E} f(x, y, z)\, dV</md>.
+      </p>
+    </li>
+  </ul>
+</p>
+
+
+
+   <example>
+     <statement>
+      <p>
+        Cartesian Coordinates Over a BoxEvaluate <m>\iiint_{E} (6xy + z)\, dV</m>, where
+                <m>E</m> is the box <m>[0, 1] \times [0, 2] \times [0, 3]</m>.
+      </p>
+     </statement>
+     <solution>
+      <p>
+        Set up the iterated integral: Because all bounds are constants, any integration
+                order works:
+                <md>
+                    \int_{0}^{1} \int_{0}^{2} \int_{0}^{3} (6xy + z)\, dz\, dy\, dx
+                </md>
+                Integrate with respect to <m>z</m> first (treating <m>x</m> and <m>y</m> as
+                constant):
+                <md>
+                    \int_{0}^{3} (6xy + z)\, dz = \left[ 6xyz + \frac{z^{2}}{2}\right]_{z=0}^{z=3}= 18xy + \frac{9}{2}
+                </md>
+                Integrate with respect to <m>y</m>:
+                <md>
+                    \int_{0}^{2} \left(18xy + \frac{9}{2}\right) dy = \left[ 9xy^{2} + \frac{9}{2}y \right]_{y=0}^{y=2}= 36x + 9
+                </md>
+                Integrate with respect to <m>x</m>:
+                <md>
+                    \int_{0}^{1} (36x + 9)\, dx = \left[ 18x^{2} + 9x \right]_{0}^{1} = 18 + 9 = 27
+                </md>
+      </p>
+     </solution>
+   </example>
+
+   <example>
+    <statement>
+      <p>
+        Cartesian Coordinates Over a Tetrahedral-Style Region: 
+        Find the volume of the solid <m>E</m> bounded by the coordinate planes
+                <m>x = 0</m>, <m>y = 0</m>, <m>z = 0</m> and the plane <m>x + y + z = 2</m> in
+                the first octant.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Determine the bounds: 
+        Since <m>z = 0</m> on the bottom and <m>z = 2 - x - y</m>
+                on top: <m>0 \le z \le 2 - x - y</m>. 
+        Setting <m>z = 0</m> gives the projection
+                onto the <m>xy</m>-plane: <m>x + y \le 2</m> with <m>x \ge 0, y \ge 0</m>.
+                Thus <m>0 \le y \le 2 - x</m> and <m>0 \le x \le 2</m>.Set up the volume
+                integral (<m>f = 1</m>):
+                <md>
+                    V = \iiint_{E} 1\, dV = \int_{0}^{2} \int_{0}^{2-x}\int_{0}^{2-x-y}1\, dz\, dy\, dx
+                </md>
+        Integrate with respect to <m>z</m>:
+                <md>
+                    \int_{0}^{2-x-y}1\, dz = 2 - x - y
+                </md>
+        Integrate with respect to <m>y</m> (holding <m>x</m> fixed, so <m>u = 2 - x</m>
+                is constant):
+                <md>
+                    \int_{0}^{2-x}(2 - x - y)\, dy = \left[ (2-x)y - \frac{y^{2}}{2}\right]_{y=0}^{y=2-x} \\
+                    = (2-x)^{2} - \frac{(2-x)^{2}}{2}= \frac{(2-x)^{2}}{2}
+                </md>
+        Integrate with respect to <m>x</m>:
+                <md>
+                    V = \int_{0}^{2} \frac{(2-x)^{2}}{2}\, dx = \frac{1}{2}\left[ -\frac{(2-x)^{3}}{3}\right]_{0}^{2} = \frac{1}{2}\left(0 - \left(-\frac{8}{3}\right)\right) = \frac{4}{3}
+                </md>
+       (This matches the geometric formula for a tetrahedron:
+                <m>\frac{1}{3}\times \text{Base Area}\times \text{Height}= \frac{1}{3}\times \left(\frac{1}{2}\cdot 2\cdot 2\right) \times 2 = \frac{4}{3}</m>.)
+      </p>
+    </solution>
+   </example>
+
+   <example>
+    <statement>
+      <p>
+        Cylindrical Coordinates: 
+        Evaluate <m>\iiint_{E} (x^{2} + y^{2})\, dV</m>, where <m>E</m> is the solid
+                inside the cylinder <m>x^{2} + y^{2} = 4</m> and between <m>z = 0</m> and
+                <m>z = 5</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Convert to cylindrical coordinates:<m>x^{2} + y^{2} = r^{2}</m> and
+                <m>dV = r\, dz\, dr\, d\theta</m>. 
+                The region <m>E</m> corresponds to
+                <m>0 \le \theta \le 2\pi</m>, <m>0 \le r \le 2</m>, and <m>0 \le z \le 5</m>.Set
+                up and evaluate the integral:
+                <md>
+                    \iiint_{E} (x^{2} + y^{2})\, dV = \int_{0}^{2\pi}\int_{0}^{2} \int_{0}^{5} r^{2} \cdot (r\, dz\, dr\, d\theta) \\ 
+                    = \int_{0}^{2\pi}\int_{0}^{2} \int_{0}^{5} r^{3}\, dz\, dr\, d\theta
+                </md>
+        Integrating with respect to <m>z</m> from <m>0</m> to <m>5</m> multiplies by
+                <m>5</m>:
+                <md>
+                    = \int_{0}^{2\pi}\int_{0}^{2} 5r^{3}\, dr\, d\theta
+                </md>
+        Integrating with respect to <m>r</m> from <m>0</m> to <m>2</m>:
+                <md>
+                    \int_{0}^{2} 5r^{3}\, dr = 5\left[\frac{r^{4}}{4}\right]_{0}^{2} = 5 \cdot \frac{16}{4}= 20
+                </md>
+        Integrating with respect to <m>\theta</m> from <m>0</m> to <m>2\pi</m>:
+                <md>
+                    \int_{0}^{2\pi}20\, d\theta = 40\pi
+                </md>
+      </p>
+    </solution>
+   </example>
+
+   <example>
+   <statement>
+    <p>
+      Spherical Coordinates: 
+      Find the volume of a solid ball <m>B</m> of radius <m>a</m> centered at the
+            origin, given by <m>x^{2} + y^{2} + z^{2} \le a^{2}</m>.
+    </p>
+   </statement>
+   <solution>
+    <p>
+      Convert to spherical coordinates: 
+      Volume element:
+            <m>dV = \rho^{2} \sin\phi\, d\rho\, d\phi\, d\theta</m>. 
+      Bounds for the full ball
+            of radius <m>a</m>: <m>0 \le \rho \le a</m>, <m>0 \le \phi \le \pi</m>, and
+            <m>0 \le \theta \le 2\pi</m>. 
+      Set up and evaluate:
+            <md>
+                V = \int_{0}^{2\pi}\int_{0}^{\pi}\int_{0}^{a} \rho^{2} \sin\phi\, d\rho\, d\phi\, d\theta
+            </md>
+       Because the limits are constant and the integrand factors cleanly:
+            <md>
+                V = \left(\int_{0}^{2\pi}d\theta\right) \left(\int_{0}^{\pi}\sin\phi\, d\phi\right) \left(\int_{0}^{a} \rho^{2}\, d\rho\right)
+            </md>
+      Compute each factor: <md>\int_{0}^{2\pi}d\theta = 2\pi</md>
+            <md>\int_{0}^{\pi}\sin\phi\, d\phi = [-\cos\phi]_{0}^{\pi}= -(-1) - (-1) = 2</md>
+            <md>\int_{0}^{a} \rho^{2}\, d\rho = \frac{a^{3}}{3}</md> 
+      Multiply them together:
+            <md>
+                V = (2\pi)(2)\left(\frac{a^{3}}{3}\right) = \frac{4}{3}\pi a^{3}
+            </md>
+    </p>
+   </solution>
+   </example>
+
+   <p>
+    <alert>Coordinate Conversions &amp; Volume Element</alert> 
+    To convert a triple integral
+        <m>\iiint_{E} f(x, y, z)\, dV</m> from Cartesian to cylindrical (3D polar)
+        coordinates:Coordinate equations:
+        <md>
+            x = r \cos\theta, \qquad y = r \sin\theta, \qquad z = z
+        </md>
+        Useful identities:
+        <md>
+            x^{2} + y^{2} = r^{2}, \qquad \tan\theta = \frac{y}{x}
+        </md>
+        Volume element (<m>dV</m>): Because <m>dA = r\, dr\, d\theta</m> in the
+        <m>xy</m>-plane and the height is <m>dz</m>, the volume element picks up an
+        extra factor of <m>r</m>:
+        <md>
+            dV = r\, dz\, dr\, d\theta
+        </md>
+        If the solid <m>E</m> lies between a lower surface <m>z = u_{1}(r, \theta)</m>
+        and an upper surface <m>z = u_{2}(r, \theta)</m> above a polar region <m>D</m>
+        defined by <m>\alpha \le \theta \le \beta</m> and
+        <m>h_{1}(\theta) \le r \le h_{2}(\theta)</m>, the triple integral becomes:
+        <md>
+            \iiint_{E} f(x, y, z)\, dV = \int_{\alpha}^{\beta}\int_{h_1(\theta)}^{h_2(\theta)}\int_{u_1(r, \theta)}^{u_2(r, \theta)}f(r\cos\theta, r\sin\theta, z)\, r\, dz\, dr\, d\theta
+        </md>
+   </p>
+
+   <example>
+    <statement>
+      <p>
+        Find the volume of the solid <m>E</m> bounded below by the paraboloid
+                <m>z = x^{2} + y^{2}</m> and above by the plane <m>z = 4</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>Convert Equations to Cylindrical Coordinates</em> 
+        Bottom surface:
+                <m>z = x^{2} + y^{2} \implies z = r^{2}</m> 
+        Top surface: <m>z = 4</m> 
+        Intersection curve: Setting <m>r^{2} = 4</m> gives <m>r = 2</m>, so the shadow <m>D</m> in
+                the <m>xy</m>-plane is the disk <m>r \le 2</m> (<m>0 \le r \le 2</m>,
+                <m>0 \le \theta \le 2\pi</m>).
+      </p>
+      <p>
+        Set Up the Volume Integral (<m>f(x, y, z) = 1</m>)
+                <md>
+                    V = \iiint_{E} 1\, dV = \int_{0}^{2\pi}\int_{0}^{2} \int_{r^2}^{4} r\, dz\, dr\, d\theta
+                </md>
+      </p>
+      <p>
+        <em>Evaluate from Inside Out</em> 
+        Inner integral (with respect to <m>z</m>):
+                <md>
+                    \int_{r^2}^{4} r\, dz = r\big[z\big]_{z=r^2}^{z=4}= r(4 - r^{2}) = 4r - r^{3}
+                </md>
+        Middle integral (with respect to <m>r</m>):
+                <md>
+                    \int_{0}^{2} (4r - r^{3})\, dr = \left[ 2r^{2} - \frac{r^{4}}{4}\right]_{0}^{2} = \left(2(4) - \frac{16}{4}\right) - 0 = 8 - 4 = 4
+                </md>
+        Outer integral (with respect to <m>\theta</m>):
+                <md>
+                    V = \int_{0}^{2\pi}4\, d\theta = 4(2\pi) = 8\pi
+                </md>
+        The volume of the paraboloid cap is <m>8\pi</m> cubic units.
+      </p>
+    </solution>
+    
+   </example>
+
+</subsection>
+
+
+
+</section>

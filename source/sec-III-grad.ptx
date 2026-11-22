@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-III-grad" xmlns:xi="http://www.w3.org/2001/XInclude">
+ <title>Gradient Vector </title>
+<introduction>
+ 
+<p>
+  The gradient vector <m>\nabla f</m> points in the direction of fastest increase
+    of a multivariable function <m>f</m>, and its magnitude gives that maximum rate
+    of change.
+    The directional derivative <m>D_{\mathbf{u}}f</m> gives the rate of change of
+    <m>f</m> in any chosen unit direction <m>\mathbf{u}</m>.
+</p>
+<p>
+  For a differentiable function <m>f(x, y)</m>: 
+  <ul>
+    <li>
+      <p>
+         Gradient vector:
+    <md>
+        \nabla f(x, y) = \left\langle \frac{\partial f}{\partial x},\, \frac{\partial f}{\partial y}\right\rangle = f_{x}\,\mathbf{i}+ f_{y}\,\mathbf{j}
+    </md>
+      </p>
+    </li>
+    <li>
+      <p>
+        Unit direction vector: Given any nonzero vector
+                <m>\mathbf{v}= \langle a, b \rangle</m>, normalize it first so
+                <m>\Vert{}\mathbf{u}\Vert{}= 1</m>:
+                <md>
+                    \mathbf{u}= \frac{\mathbf{v}}{\Vert{}\mathbf{v}\Vert{}}= \left\langle \frac{a}{\sqrt{a^{2} + b^{2}}},\, \frac{b}{\sqrt{a^{2} + b^{2}}}\right\rangle
+                </md>
+      </p>
+    </li>
+    <li>
+      <p>
+        Directional derivative:
+                <md>
+                    D_{\mathbf{u}}f(x, y) = \nabla f(x, y) \cdot \mathbf{u}= f_{x}(x, y)\,u_{1} + f_{y}(x, y)\,u_{2}
+                </md>
+      </p>
+    </li>
+  </ul>
+ For a three-variable function <m>f(x, y, z)</m>, add the <m>z</m>-component:
+  <m>\nabla f = \langle f_{x}, f_{y}, f_{z} \rangle</m> and
+  <m>D_{\mathbf{u}}f = \nabla f \cdot \mathbf{u}</m> with a unit vector
+  <m>\mathbf{u}</m> in <m>\mathbb{R}^{3}</m>.
+</p>
+    <p>
+      Because <m>\nabla f</m> is perpendicular to any tangent vector along a level
+            curve <m>f(x, y) = c</m>, the gradient vector is always normal (perpendicular)
+            to level curves (and normal to level surfaces <m>F(x, y, z) = c</m> in 3D).
+    </p> 
+
+    <example>
+      <statement>
+        <p>
+          Find the directional derivative of <m>f(x, y) = x^{2} y - 3y</m> at
+                    <m>(2, 1)</m> in the direction of <m>\mathbf{v}= \langle 3, -4 \rangle</m>, and
+                    find the maximum rate of change at <m>(2, 1)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ul>
+            <li>
+              <p>
+                Compute the gradient at <m>(2, 1)</m>:
+                                <md>
+                                    f_{x}(x, y) = 2xy \implies f_{x}(2, 1) = 4
+                                </md>
+                                <md>
+                                    f_{y}(x, y) = x^{2} - 3 \implies f_{y}(2, 1) = 4 - 3 = 1
+                                </md>
+                                <md>
+                                    \nabla f(2, 1) = \langle 4, 1 \rangle
+                                </md>
+              </p>
+            </li>
+            <li>
+              <p>
+                Normalize <m>\mathbf{v}= \langle 3, -4 \rangle</m>:
+                                <md>
+                                    \Vert{}\mathbf{v}\Vert{}= \sqrt{3^{2} + (-4)^{2}}= 5 \implies \mathbf{u}= \left\langle \frac{3}{5},\, -\frac{4}{5}\right\rangle
+                                </md>
+              </p>
+            </li>
+            <li>
+              <p>
+                ake the dot product for <m>D_{\mathbf{u}}f(2, 1)</m>:
+                                <md>
+                                    D_{\mathbf{u}}f(2, 1) = \langle 4, 1 \rangle \cdot \left\langle \frac{3}{5},\, -\frac{4}{5}\right\rangle = \frac{12}{5}- \frac{4}{5}= \frac{8}{5}
+                                </md>
+              </p>
+            </li>
+            <li>
+              <p>
+                Maximum rate of change:
+                                <md>
+                                    \Vert{}\nabla f(2, 1)\Vert{}= \sqrt{4^{2} + 1^{2}}= \sqrt{17}
+                                </md>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+          Suppose the electric potential <m>V(x, y, z)</m> (in volts) at a point
+                    <m>(x, y, z)</m> in space is given by:
+                    <md>
+                        V(x, y, z) = \frac{120}{2 + 3x^{2} + y^{2} + 4z^{2}}
+                    </md>
+                    where <m>x, y, z</m> are measured in meters.
+                    In which direction does the electric potential increase fastest at the point
+                    <m>(-1, 2, 1)</m>?
+                    What is the maximum rate of increase?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Step 1: Compute the Gradient Vector <m>\nabla V(x, y, z)</m>
+        </p>
+        <p>
+          Rewrite <m>V(x, y, z)</m> with a negative exponent:
+                    <md>
+                        V(x, y, z) = 120(2 + 3x^{2} + y^{2} + 4z^{2})^{-1}
+                    </md>
+                    Differentiate with respect to each variable using the chain rule:
+                    <ul>
+                      <li>
+                       <p>
+          <m>V_{x}(x, y, z) = -120(2 + 3x^{2} + y^{2} + 4z^{2})^{-2}(6x) = \dfrac{-720x}{(2 + 3x^2 + y^2 + 4z^2)^2}</m>
+        </p>
+                      </li>
+                      <li>
+                        <p>
+          <m>V_{y}(x, y, z) = -120(2 + 3x^{2} + y^{2} + 4z^{2})^{-2}(2y) = \dfrac{-240y}{(2 + 3x^2 + y^2 + 4z^2)^2}</m>
+        </p>
+                      </li>
+                      <li>
+                       <p>
+          <m>V_{z}(x, y, z) = -120(2 + 3x^{2} + y^{2} + 4z^{2})^{-2}(8z) = \dfrac{-960z}{(2 + 3x^2 + y^2 + 4z^2)^2}</m>
+        </p>
+                      </li>
+                    </ul>
+        </p>      
+        
+        <p>
+          Step 2: Evaluate <m>\nabla V</m> at <m>(-1, 2, 1)</m>
+        </p>
+        <p>
+          First evaluate the inner expression at <m>(x, y, z) = (-1, 2, 1)</m>:
+                    <md>
+                        2 + 3(-1)^{2} + (2)^{2} + 4(1)^{2} = 2 + 3 + 4 + 4 = 13
+                    </md>
+        </p>
+        <p>
+          Squaring gives <m>13^{2} = 169</m>.
+                    Substitute into each partial derivative: 
+                    <ul>
+                      <li>
+                        <p>
+                          <m>V_{x}(-1, 2, 1) = \dfrac{-720(-1)}{169}= \dfrac{720}{169}</m>
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          <m>V_{y}(-1, 2, 1) = \dfrac{-240(2)}{169}= -\dfrac{480}{169}</m>
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          <m>V_{z}(-1, 2, 1) = \dfrac{-960(1)}{169}= -\dfrac{960}{169}</m>
+                        </p>
+                      </li>
+                    </ul>
+                    Factoring out <m>\frac{240}{169}</m> simplifies the gradient vector:
+                                        <md>
+                                            \nabla V(-1, 2, 1) = \left\langle \frac{720}{169},\, -\frac{480}{169},\, -\frac{960}{169}\right\rangle = \frac{240}{169}\langle 3, -2, -4 \rangle
+                                        </md>
+        </p>
+        <p>
+          Step 3: Direction of Fastest Increase: 
+          The electric potential increases fastest in the direction of
+                    <m>\nabla V(-1, 2, 1)</m>.
+                    Dividing by the positive scalar <m>\frac{240}{169}</m> gives the direction
+                    vector <m>\langle 3, -2, -4 \rangle</m>, and normalizing gives the unit
+                    direction vector:
+                    <md>
+                        \mathbf{u}= \frac{\langle 3, -2, -4 \rangle}{\sqrt{3^{2} + (-2)^{2} + (-4)^{2}}}= \frac{\langle 3, -2, -4 \rangle}{\sqrt{29}}= \left\langle \frac{3}{\sqrt{29}},\, -\frac{2}{\sqrt{29}},\, -\frac{4}{\sqrt{29}}\right\rangle
+                    </md>
+        </p>
+        <p>
+          Step 4: Maximum Rate of Increase: The maximum rate of increase is the magnitude of the
+                    gradient vector at <m>(-1, 2, 1)</m>:
+                    <md>
+                        \Vert{}\nabla V(-1, 2, 1)\Vert{}= \frac{240}{169}\sqrt{3^{2} + (-2)^{2} + (-4)^{2}}= \frac{240\sqrt{29}}{169}\text{ V/m}\approx 7.65\text{ V/m}
+                    </md>
+        </p>
+      </solution>
+    </example>
+
+
+</introduction> 
+
+
+    <exercise>
+     
+     <p>
+     <ol>
+      <li>
+        <p>
+           What is the gradient vector <m>\nabla f(x, y)</m> of
+            <m>f(x, y) = x^{2} y - 4xy^{3}</m>?
+        </p>
+      </li>
+      <li>
+        <p>
+          Find the directional derivative <m>D_{\mathbf{u}}f(1, 2)</m> of
+                    <m>f(x, y) = 3x^{2} - xy + y^{2}</m> in the direction of
+                    <m>\mathbf{v}= \langle 3, -4 \rangle</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          What is the maximum rate of change of <m>f(x, y, z) = x e^{yz}</m> at the point
+                    <m>(2, 0, 5)</m>?
+        </p>
+      </li>
+      <li>
+        <p>
+          In which unit direction <m>\mathbf{u}</m> does <m>f(x, y) = x^{2} + y^{2}</m>
+                    decrease most rapidly at the point <m>(3, -4)</m>?
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>\nabla f(2, -1) = \langle 3, 6 \rangle</m>, what is the directional
+                    derivative of <m>f</m> at <m>(2, -1)</m> in the direction of the vector
+                    <m>\mathbf{v}= \langle 2, -1 \rangle</m>?
+        </p>
+      </li>
+      <li>
+        <p>
+          Suppose <m>D_{\mathbf{u}}f(1, 1) = 5</m> where
+                    <m>\mathbf{u}= \left\langle \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}\right\rangle</m>,
+                    and <m>D_{\mathbf{w}}f(1, 1) = -3</m> where
+                    <m>\mathbf{w}= \left\langle \frac{1}{\sqrt{2}}, -\frac{1}{\sqrt{2}}\right\rangle</m>.
+                    What is <m>f_{x}(1, 1)</m>?
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x, y) = \ln(x^{2} + y^{2})</m> at the point <m>(1, 2)</m>, what is a
+                    vector tangent to the level curve passing through <m>(1, 2)</m>?
+        </p>
+      </li>
+      <li>
+        <p>
+          What is the directional derivative of <m>f(x, y) = x^{3} - 3xy + y^{2}</m> at
+                    <m>(2, 1)</m> in the direction making an angle <m>\theta = \frac{\pi}{3}</m>
+                    with the positive <m>x</m>-axis?
+        </p>
+      </li>
+     </ol>
+     </p>
+    </exercise>
+
+
+
+<subsection xml:id="subsec-tangent-to-level">
+  <title>Tangent Planes to Level Surfaces</title>
+  <p>
+    Equations of the Tangent Plane and Normal Line: Let <m>P_{0}(x_{0}, y_{0}, z_{0})</m> be a point on <m>F(x, y, z) = k</m>, and
+        let <m>P(x, y, z)</m> be any point on the tangent plane.
+        Since the displacement vector
+        <m>\overrightarrow{P_0 P}= \langle x - x_{0}, y - y_{0}, z - z_{0} \rangle</m>
+        is perpendicular to <m>\nabla F(x_{0}, y_{0}, z_{0})</m>:
+        <ol>
+          <li>
+            <p>
+              Tangent Plane Equation:
+                            <md>
+                                F_{x}(x_{0}, y_{0}, z_{0})(x - x_{0}) + F_{y}(x_{0}, y_{0}, z_{0})(y - y_{0}) + F_{z}(x_{0}, y_{0}, z_{0})(z - z_{0}) = 0
+                            </md>
+            </p>
+          </li>
+          <li>
+            <p>
+              Normal Line Equations (passing through <m>P_{0}</m> in the direction of
+                            <m>\nabla F(x_{0}, y_{0}, z_{0})</m>):
+                            <md>
+                                x = x_{0} + F_{x}(x_{0}, y_{0}, z_{0})\,t, \\
+                                y = y_{0} + F_{y}(x_{0}, y_{0}, z_{0})\,t, \\
+                                z = z_{0} + F_{z}(x_{0}, y_{0}, z_{0})\,t
+                            </md>
+            </p>
+          </li>
+        </ol>
+  </p>
+
+  <p>
+    Explicit Surface <m>z = f(x, y)</m>Every explicit graph <m>z = f(x, y)</m> can
+        be written as a level surface <m>F(x, y, z) = 0</m> by setting:
+        <md>
+            F(x, y, z) = f(x, y) - z = 0
+        </md>
+        Computing the partial derivatives gives <m>F_{x} = f_{x}</m>,
+        <m>F_{y} = f_{y}</m>, and <m>F_{z} = -1</m>, so:
+        <md>
+            f_{x}(x_{0}, y_{0})(x - x_{0}) + f_{y}(x_{0}, y_{0})(y - y_{0}) - (z - z_{0}) = 0
+        </md>
+        Rearranging for <m>z</m> recovers the familiar explicit tangent plane formula:
+        <md>
+            z = z_{0} + f_{x}(x_{0}, y_{0})(x - x_{0}) + f_{y}(x_{0}, y_{0})(y - y_{0})
+        </md>
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        Find the equation of the tangent plane and symmetric equations of the normal
+                line to the ellipsoid <m>x^{2} + 2y^{2} + 3z^{2} = 21</m> at the point
+                <m>(1, 2, -2)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ul>
+          <li>
+            <p>
+               Identify <m>F(x, y, z)</m> and verify the point:
+                <md>
+                    F(x, y, z) = x^{2} + 2y^{2} + 3z^{2}
+                </md>
+                At <m>(1, 2, -2)</m>: <m>1^{2} + 2(2)^{2} + 3(-2)^{2} = 1 + 8 + 12 = 21</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Compute <m>\nabla F(1, 2, -2)</m>:
+                            <md>
+                                F_{x} = 2x \implies F_{x}(1, 2, -2) = 2
+                            </md>
+                            <md>
+                                F_{y} = 4y \implies F_{y}(1, 2, -2) = 8
+                            </md>
+                            <md>
+                                F_{z} = 6z \implies F_{z}(1, 2, -2) = -12
+                            </md>
+                            <md>
+                                \nabla F(1, 2, -2) = \langle 2, 8, -12 \rangle
+                            </md>
+            </p>
+          </li>
+          <li>
+            <p>
+              Write the tangent plane:
+                            <md>
+                                2(x - 1) + 8(y - 2) - 12(z + 2) = 0
+                            </md>
+                            Dividing through by <m>2</m> gives:
+                            <md>
+                                (x - 1) + 4(y - 2) - 6(z + 2) = 0 \implies x + 4y - 6z = 21
+                            </md>
+            </p>
+          </li>
+          <li>
+            <p>
+              Write the normal line:
+                            <md>
+                                \frac{x - 1}{2}= \frac{y - 2}{8}= \frac{z + 2}{-12}
+                            </md>
+            </p>
+          </li>
+        </ul>
+         </p>
+    </solution>
+  </example>
+</subsection>
+    
+</section>

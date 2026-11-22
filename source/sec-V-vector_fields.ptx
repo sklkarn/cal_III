@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-V-vector_fields" xmlns:xi="http://www.w3.org/2001/XInclude">
+ <title> Fields </title>
+
+
+<introduction>
+  
+       <p>
+        A field describes a physical quantity or mathematical function that exists throughout space. 
+        Depending on what is assigned to each point, fields fall into two main categories: 
+          </p>
+           <image source = "field.jpeg" width="30%"/>
+          <p>
+            Scalar field: 
+        Assigns a single number (a scalar) to each point in space. Examples include temperature <m>T(x, y, z)</m> 
+        in a room, atmospheric pressure, or gravitational potential energy. 
+                 </p>
+                 <p>
+                   Vector field: 
+        Assigns both a magnitude and a direction (a vector) to each point in space. 
+        Examples include a gravitational force field, an electric field, or fluid velocity vectors across a stream.
+                 </p>
+                
+                 
+                   <image source = "field_2.jpeg" width="30%"/>
+                 <p>
+                  The color and contour map above illustrates a 2D scalar field: each grid point has a single numerical value 
+                  (elevation) shown by color and contour spacing, with tighter contours indicating steeper slopes.
+                 </p>
+</introduction>
+
+<subsection xml:id="subsec-line_integ">
+  <title>The Line Integrals</title>
+  <p>
+    A line integral (also called a path integral) sums up a field along a curve
+        <m>C</m> parameterized by <m>\mathbf{r}(t)</m> for <m>a \le t \le b</m>.
+        Instead of slicing an interval into segments <m>\Delta x</m>, you chop the curve
+        <m>C</m> into tiny pieces of arc length <m>ds</m> or displacement
+        <m>d\mathbf{r}</m>.
+        <ul>
+          <li>
+            <p>
+              Scalar Line Integral: 
+              Evaluates a scalar function <m>f(x, y, z)</m> along a curve
+                            <m>C</m> and multiplies each piece by its arc length <m>ds</m>:
+                            <md>
+                                \int_{C} f \, ds = \int_{a}^{b} f(\mathbf{r}(t)) \, \Vert{}\mathbf{r}'(t)\Vert{}\, dt
+                            </md>
+              Physical meaning: If <m>f</m> represents linear mass density along a curved
+                            wire, <m>\int_{C} f \, ds</m> gives the total mass of the wire.
+                            If <m>f = 1</m>, the integral equals the arc length of <m>C</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Vector Line Integral: 
+              Measures how much of a vector field <m>\mathbf{F}</m> points
+                            along the direction of motion along curve <m>C</m> using the dot product
+                            <m>\mathbf{F}\cdot d\mathbf{r}</m>:
+                            <md>
+                                \int_{C} \mathbf{F}\cdot d\mathbf{r}= \int_{a}^{b} \mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r}'(t) \, dt
+                            </md>
+              Physical meaning: When <m>\mathbf{F}</m> is a force field,
+                            <m>\int_{C} \mathbf{F}\cdot d\mathbf{r}</m> equals the work done moving a
+                            particle along <m>C</m>.
+                            If <m>\mathbf{F}</m> is perpendicular to the path everywhere, the dot product is
+                            zero and no work is done along that curve.
+            </p>
+          </li>
+        </ul>
+        Beyond these two types, there are some other forms of line integrals also appear in multivariable calculus.
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        <em>Scalar Line Integral (<m>\int_{C} f \, ds</m>)</em>
+        Evaluate
+                <m>\int_{C} (x + 2y) \, ds</m>, where <m>C</m> is the line segment from
+                <m>(0, 0)</m> to <m>(2, 4)</m>. 
+                  </p>
+    </statement>
+    <solution>
+      <p>
+        <ul>
+          <li>
+            <p>
+              Parameterize the curve <m>C</m>: 
+        A straight line
+                from <m>(0, 0)</m> to <m>(2, 4)</m> for <m>0 \le t \le 1</m> is:
+                <md>
+                    \mathbf{r}(t) = \langle 2t, \, 4t \rangle, \quad 0 \le t \le 1
+                </md>
+                so <m>x(t) = 2t</m> and <m>y(t) = 4t</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+                Compute the speed / arc-length factor
+                <m>\Vert{}\mathbf{r}'(t)\Vert{}</m>:
+                <md>
+                    \mathbf{r}'(t) = \langle 2, \, 4 \rangle
+                </md>
+                <md>
+                    \Vert{}\mathbf{r}'(t)\Vert{}= \sqrt{2^{2} + 4^{2}}= \sqrt{20}= 2\sqrt{5}
+                </md>
+                Thus <m>ds = 2\sqrt{5}\, dt</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+               Substitute into the integral and evaluate:
+                <md>
+                    \int_{C} (x + 2y) \, ds = \int_{0}^{1} \big(2t + 2(4t)\big)(2\sqrt{5}) \, dt = \int_{0}^{1} 10t \cdot 2\sqrt{5}\, dt 
+                </md>
+                <md>
+                   = 20\sqrt{5}\int_{0}^{1} t \, dt = 20\sqrt{5}\left[ \frac{t^{2}}{2}\right]_{0}^{1} = 20\sqrt{5}\left(\frac{1}{2}\right) = 10\sqrt{5}
+                </md>
+            </p>
+          </li>
+        </ul>                
+      </p>
+    </solution>
+  </example>
+
+  <example>
+    <statement>
+      <p>
+        <em>Vector Line Integral (<m>\int_{C} \mathbf{F}\cdot d\mathbf{r}</m>)</em>
+        Evaluate the
+                work <m>\int_{C} \mathbf{F}\cdot d\mathbf{r}</m> for the vector field
+                <m>\mathbf{F}(x, y) = \langle y, \, -x \rangle</m> along the quarter-circle
+                <m>C</m> of radius <m>3</m> from <m>(3, 0)</m> to <m>(0, 3)</m> in the first
+                quadrant.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ul>
+          <li>
+            <p>
+              Parameterize the curve <m>C</m>: A circle of radius <m>3</m> traversed
+                counterclockwise from angle <m>t = 0</m> to <m>t = \frac{\pi}{2}</m> is:
+                <md>
+                    \mathbf{r}(t) = \langle 3\cos t, \, 3\sin t \rangle, \quad 0 \le t \le \frac{\pi}{2}
+                </md>
+                so <m>x(t) = 3\cos t</m> and <m>y(t) = 3\sin t</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+               Differentiate
+                <m>\mathbf{r}(t)</m> and evaluate <m>\mathbf{F}(\mathbf{r}(t))</m>:
+                <md>
+                    \mathbf{r}'(t) = \langle -3\sin t, \, 3\cos t \rangle
+                </md>
+                <md>
+                    \mathbf{F}(\mathbf{r}(t)) = \langle y(t), \, -x(t) \rangle = \langle 3\sin t, \, -3\cos t \rangle
+                </md>
+            </p>
+          </li>
+          <li>
+            <p>
+               Take the dot product and integrate:
+                <md>
+                    \mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r}'(t) = (3\sin t)(-3\sin t) + (-3\cos t)(3\cos t) \\
+                    = -9(\sin^{2} t + \cos^{2} t) = -9
+                </md>
+                <md>
+                    \int_{C} \mathbf{F}\cdot d\mathbf{r}= \int_{0}^{\pi/2}(-9) \, dt = -9 \left[ t \right]_{0}^{\pi/2}= -\frac{9\pi}{2}
+                </md>
+            </p>
+          </li>
+        </ul>              
+                Notice that the dot product is negative throughout the path because
+                <m>\mathbf{F}(x, y) = \langle y, -x \rangle</m> circulates clockwise while the
+                quarter-circle moves counterclockwise.
+      </p>
+      <p>
+        At <m>(3, 0)</m> (start of the path):
+                <m>\mathbf{F}(3, 0) = \langle 0, -3 \rangle</m>.
+                The arrow points straight down.At <m>(0, 3)</m> (end of the path):
+                <m>\mathbf{F}(0, 3) = \langle 3, 0 \rangle</m>.
+                The arrow points straight right. 
+                At <m>(3/\sqrt{2}, 3/\sqrt{2})</m> (midpoint):
+                The field points down and right tangent to a clockwise circle.
+      </p>
+      <p>
+        At <m>(3, 0)</m>, moving along the quarter-circle takes you upward
+                (<m>\mathbf{r}'(0) = \langle 0, 3 \rangle</m>).At <m>(0, 3)</m>, moving along
+                the quarter-circle takes you leftward
+                (<m>\mathbf{r}'(\pi/2) = \langle -3, 0 \rangle</m>)
+      </p>
+    </solution>
+  </example>
+
+
+</subsection>
+
+
+<exercise>
+  <p>
+    <ol>
+      <li>
+        <p>
+           For a curve parameterized by <m>\mathbf{r}(t) = \langle 2t, t^{2} \rangle</m> on
+        <m>0 \le t \le 1</m>, what is the arc-length differential <m>ds</m> in terms of
+        <m>dt</m>?
+        </p>
+       
+          <hint> 
+ <p>
+  Differentiate each component of <m>\mathbf{r}(t)</m>, square both derivatives,
+    sum them, and take the square root.
+  </p>
+            </hint>
+        </li>
+        <li>
+          <p>
+            Evaluate <m>\int_{C} 3 \, ds</m> where <m>C</m> is the straight line segment
+                        from <m>(1, 2)</m> to <m>(4, 6)</m>.
+          </p>
+          <hint>
+            <p>
+                            Integrating a constant <m>k</m> with respect to <m>ds</m> equals <m>k</m>
+                            times the geometric length of the curve.
+                        </p>
+            </hint>
+        </li>
+        <li>
+          <p>
+            Let <m>C</m> be the line segment from <m>(0, 0)</m> to <m>(2, 2)</m>,
+                        parameterized by <m>\mathbf{r}(t) = \langle 2t, 2t \rangle</m> for
+                        <m>0 \le t \le 1</m>.
+                        What is <m>\int_{C} (x + y) \, ds</m>?
+          </p>
+          <p>
+            Hint: Express <m>x + y</m> in terms of <m>t</m>, find
+                        <m>\Vert{}\mathbf{r}'(t)\Vert{}</m>, and integrate from <m>0</m> to <m>1</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Suppose <m>\int_{C} f(x, y) \, ds = 12</m> along curve <m>C</m> from <m>A</m> to
+                        <m>B</m>.
+                        What is <m>\int_{-C}f(x, y) \, ds</m> along the same curve traversed in reverse
+                        from <m>B</m> to <m>A</m>?
+          </p>
+          <p>
+            Hint: Does the physical length of a tiny piece of wire change when you count from the other end?
+          </p>
+        </li>
+        <li>
+          <p>
+            A force field <m>\mathbf{F}(x, y) = \langle 2x, 3y \rangle</m> acts on a
+                        particle moving along <m>\mathbf{r}(t) = \langle t, t^{2} \rangle</m> from
+                        <m>t = 0</m> to <m>t = 1</m>.
+                        What is the integrand <m>\mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r}'(t)</m>?
+          </p>
+          <p>
+            Hint: Substitute <m>x = t</m> and <m>y = t^{2}</m> into <m>\mathbf{F}</m>, find
+                        <m>\mathbf{r}'(t)</m>, and compute the dot product.
+          </p>
+        </li>
+        <li>
+          <p>
+            Using the same field <m>\mathbf{F}(x, y) = \langle 2x, 3y \rangle</m> and path
+                        <m>\mathbf{r}(t) = \langle t, t^{2} \rangle</m> for <m>0 \le t \le 1</m> from
+                        the previous question, what is the total work
+                        <m>\int_{C} \mathbf{F}\cdot d\mathbf{r}</m>?
+          </p>
+          <p>
+            Hint: Integrate <m>2t + 6t^{3}</m> term by term from <m>t = 0</m> to <m>t = 1</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Let <m>\mathbf{F}(x, y) = \langle -y, x \rangle</m> and let <m>C</m> be the unit
+                        circle <m>x^{2} + y^{2} = 1</m> traversed once counterclockwise from
+                        <m>(1, 0)</m> back to <m>(1, 0)</m>.
+                        What is the circulation <m>\oint_{C} \mathbf{F}\cdot d\mathbf{r}</m>?
+          </p>
+        </li>
+        <li>
+          <p>
+            A vector field <m>\mathbf{F}= \nabla f</m> is conservative with potential
+                        function <m>f(x, y) = x^{2} y + 3y</m>.
+                        What is <m>\int_{C} \mathbf{F}\cdot d\mathbf{r}</m> along any smooth path
+                        <m>C</m> from <m>(1, 2)</m> to <m>(3, 1)</m>?
+          </p>
+        </li>
+    </ol>
+     </p>
+</exercise>
+</section>

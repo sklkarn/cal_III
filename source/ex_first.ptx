@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<exercises xml:id="ex_first" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- You can ommit the title and just get the default "Exercises" -->
+  <title>Exercise</title>
+  
+   <exercise>
+    <statement>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Find an equation of the sphere that passes through the point <m>(4,-2,3)</m> and has center <m>(-1,2,1)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              Find the curve in which this sphere intersects the yz-plane. 
+            </p>
+          </li>
+          <li>
+            <p>
+              Find the center and radius of the sphere <md>x^2 + y^2 + z^2 - 4x + 6y - 2z = 0</md>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  
+  <exercise>
+    <statement>
+      <p>
+        Find two unit vectors that are orthogonal to both <m>2 j + 3 k</m> and <m>3i - 2 j + 3 k</m>.
+      </p>
+    </statement>
+  </exercise>
+  
+  <exercise>
+    <statement>
+      <p>
+        Find the angle between two diagonals of a cube.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+      Given the points <m>A(1, 0, 0)</m>, <m>B(0, 1, 0)</m>, <m>C(0, 0, 1)</m>, and
+      <m>D(0, 3, 2)</m>, find the volume of the parallelepiped with adjacent
+      edges <m>AB</m>, <m>AC</m>, and <m>AD</m>.
+      </p>
+    </statement>
+  </exercise>
+  
+
+  <exercise>
+    <statement>
+      <p>
+        Find a vector perpendicular to the plane through the points
+        <m>A(0, 0, 0)</m>, <m>B(1, 2, 3)</m>, and <m>C(-1, 3, 2)</m>. Find the area of the
+        triangle <m>ABC</m>.
+      </p>
+    </statement>
+  </exercise>
+
+<exercise>
+  <statement>
+    <p>
+      Find parametric equations for the line 
+      <ol>
+        <li>
+          <p>
+            through the point <m>(1, 2, 3)</m> and parallel to the vector <m>2i - 3j + 4k</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+              through the point <m>(4,-1,2)</m> and <m>(2,1,3)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            through the point <m>(0, 0, 0)</m> and perpendicular to the plane <m>x + 2y + 3z = 0</m>.
+          </p>
+        </li>
+      </ol>
+         </p>
+  </statement>
+</exercise>
+
+
+<exercise>
+  <statement>
+    <p>
+      Find the distance from the origin to the line
+      <m>x = 1 + 2t, y = 2 + 3t, z = 3 + 4t</m>
+    </p>
+  </statement>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>
+     Determine whether the lines given by the symmetric equations
+     <m>x - 1 = 2y - 3 = 3z - 4</m> and
+     <m>2x - 1 = 4y - 3 = 6z - 4</m> are parallel, skew, or intersecting.
+     If they intersect, find the point of intersection.
+    </p>
+  </statement>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>
+      Show that the planes <m>x + y - z = 1</m> and
+      <m>2x - 3y + 4z = 5</m> are neither parallel nor perpendicular.
+    </p>
+  </statement>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>
+      Find the distance between the planes <m>x + y - z = 1</m> and
+      <m>2x - 3y + 4z = 5</m>.
+    </p>
+  </statement>
+</exercise>
+ </exercises>
+

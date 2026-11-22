@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-IV-surface_integrals" xmlns:xi="http://www.w3.org/2001/XInclude">
+ <title>Double (Surface) Integrals </title>
+
+<introduction>
+    <p> 
+      A double integral, written as
+            <md>
+                \iint_{R} f(x, y)\, dA
+            </md>
+            extends single-variable integration from an interval <m>[a, b]</m> on the real
+            line to a two-dimensional region <m>R</m> in the <m>xy</m>-plane.
+            Just as a definite integral <m>\int_{a}^{b} f(x)\, dx</m> sums infinitely thin
+            strips to find net area under a curve, a double integral sums infinitely thin
+            columns or slices over a 2D region <m>R</m>.
+       </p>
+        <image source="di.png" width="30%"/>
+       <p>
+        <term>How to Evaluate Double Integrals</term>
+        <ul>
+          <li>
+            <p>
+               Rectangular Regions (<m>R = [a, b] \times [c, d]</m>): By Fubini's Theorem, when
+                <m>f</m> is continuous on a rectangle, you can compute a double integral as an
+                iterated integral in either order:
+                <md>
+                    \iint_{R} f(x, y)\, dA = \int_{a}^{b} \left(\int_{c}^{d} f(x, y)\, dy\right) dx = \int_{c}^{d} \left(\int_{a}^{b} f(x, y)\, dx\right) dy
+                </md>
+                When integrating with respect to one variable, treat the other variable as a
+                constant.
+            </p>
+          </li>
+          <li>
+            <p>
+              Non-Rectangular Regions: 
+              When <m>R</m> is bounded by curves rather than straight
+                            coordinate lines, one inner limit becomes a function of the outer variable:Type
+                            I (vertically simple): <m>a \le x \le b</m> and
+                            <m>g_{1}(x) \le y \le g_{2}(x)</m>:
+                            <md>
+                                \iint_{R} f(x, y)\, dA = \int_{a}^{b} \int_{g_1(x)}^{g_2(x)}f(x, y)\, dy\, dx
+                            </md>
+                            Type II (horizontally simple): <m>c \le y \le d</m> and
+                            <m>h_{1}(y) \le x \le h_{2}(y)</m>:
+                            <md>
+                                \iint_{R} f(x, y)\, dA = \int_{c}^{d} \int_{h_1(y)}^{h_2(y)}f(x, y)\, dx\, dy
+                            </md>
+            </p>
+          </li>
+        </ul>
+          </p>
+
+          <example>
+            <statement>
+              <p>
+                Rectangular Region: Evaluate <m>\iint_{R} (6xy^{2})\, dA</m> over <m>R = [0, 2] \times [1, 3]</m>.
+              </p>
+            </statement>
+            <solution>
+              <p>
+                Integrate with respect to <m>y</m> first (treating <m>6x</m> as constant):
+                                <md>
+                                    \int_{1}^{3} 6xy^{2}\, dy = 6x \left[\frac{y^{3}}{3}\right]_{y=1}^{y=3}= 2x(27 - 1) = 52x
+                                </md>
+              </p>
+              <p>
+                Integrate with respect to <m>x</m>:
+                                <md>
+                                    \int_{0}^{2} 52x\, dx = 52 \left[\frac{x^{2}}{2}\right]_{x=0}^{x=2}= 26(4 - 0) = 104
+                                </md>
+              </p>
+              <p>
+                OR, in short: 
+                We should integrate in the order of inside out
+                 <md>
+              \int_{0}^{2} \int_{1}^{3} 6xy^{2}\, dy \, dx  =  \int_{0}^{2} \left[6x \left[\frac{y^{3}}{3}\right]_{y=1}^{y=3} \right] dx
+                </md>
+                 <md>
+              = \int_{0}^{2} 52x \, dx = 52 \left[\frac{x^{2}}{2}\right]_{x=0}^{x=2}= 26(4 - 0) = 104
+                </md>
+              </p>
+            </solution>
+          </example>
+
+          <example>
+            <statement>
+              <p>
+                Non-Rectangular Region (Type I): 
+                Find the volume under <m>z = x + y</m> above the triangular region <m>R</m>
+                                bounded by <m>y = 0</m>, <m>y = x</m>, and <m>x = 2</m>.
+              </p>
+            </statement>
+            <solution>
+                <p>
+                Set up limits: <m>x</m>
+                                runs from <m>0</m> to <m>2</m>, and for a fixed <m>x</m>, <m>y</m> runs from
+                                <m>0</m> to <m>x</m>:
+                                <md>
+                                    V = \int_{0}^{2} \int_{0}^{x} (x + y)\, dy\, dx
+                                </md>
+                 </p>
+                 <p>
+                Inner integral (with respect to <m>y</m>):
+                                <md>
+                                    \int_{0}^{x} (x + y)\, dy = \left[xy + \frac{y^{2}}{2}\right]_{y=0}^{y=x}= x^{2} + \frac{x^{2}}{2} = \frac{3}{2}x^{2}
+                                </md>
+                      </p>
+                      <p>
+                        
+                      Outer integral (with respect to <m>x</m>):
+                                <md>
+                                    V = \int_{0}^{2} \frac{3}{2}x^{2}\, dx = \frac{3}{2}\left[\frac{x^{3}}{3}\right]_{0}^{2} = \frac{1}{2}(8 - 0) = 4
+                                </md>
+              </p>
+              <p>
+                OR, simply:
+                <md>
+                 V = \int_{0}^{2} \int_{0}^{x} (x + y)\, dy\, dx  =  \int_{0}^{2} \left[xy + \frac{y^{2}}{2}\right]_{0}^{x}\, dx 
+                 </md>
+                  <md>
+                 =  \int_{0}^{2} \left[x^2 + \frac{x^{2}}{2} \right] \, dx  = \frac{3}{2}\left[\frac{x^{3}}{3}\right]_{0}^{2} = 4
+                 </md>
+              </p>
+            </solution>
+          </example>
+
+          <example>
+            <statement>
+              <p>
+                Area via a Double Integral: Find the area of the region <m>R</m> between <m>y = x^{2}</m> and <m>y = 4</m>.
+              </p>
+            </statement>
+            <solution>
+              <p>
+                Find intersections: <m>x^{2} = 4 \implies x \in [-2, 2]</m>.
+                                Here <m>x^{2} \le y \le 4</m>.
+              </p>
+              <p>
+                Integrate <m>1</m> over <m>R</m>:
+                                <md>
+                                    \operatorname{Area}(R) = \int_{-2}^{2} \int_{x^2}^{4} 1\, dy\, dx = \int_{-2}^{2} (4 - x^{2})\, dx
+                                </md> 
+                              
+               Evaluate: Because <m>4 - x^{2}</m> is even,
+                                <md>
+                                    \operatorname{Area}(R) = 2 \int_{0}^{2} (4 - x^{2})\, dx = 2\left[4x - \frac{x^{3}}{3}\right]_{0}^{2} = 2\left(8 - \frac{8}{3}\right) = \frac{32}{3}
+                                </md>
+              </p>
+            </solution>
+          </example>
+
+</introduction>
+
+<subsection xml:id="subsec-appl-DI">
+  <title>Applications of Double Integrals</title>
+  <p>
+    Double integrals (<m>\iint_{R} f(x, y)\, dA</m>) take a quantity defined over a
+        two-dimensional region <m>R</m> in the <m>xy</m>-plane and accumulate its total
+        value by summing <m>f(x, y)\, dA</m> over infinitely small area elements.
+        Whenever a physical or geometric quantity varies with position
+        <m>(x, y)</m> or when you want the area or volume associated with a 2D
+        footprint double integrals provide the standard way to compute it.
+        <ul>
+          <li>
+            <p>
+              Volume Under a Surface: If <m>f(x, y) \ge 0</m> on a region <m>R</m>, the double
+                            integral gives the exact volume between the surface <m>z = f(x, y)</m> and the
+                            <m>xy</m>-plane:
+                            <md>
+                                V = \iint_{R} f(x, y)\, dA
+                            </md>
+                            More generally, for a solid bounded above by <m>z = z_{2}(x, y)</m> and below by
+                            <m>z = z_{1}(x, y)</m> over <m>R</m>, the volume is
+                            <m>\iint_{R} [z_{2}(x, y) - z_{1}(x, y)]\, dA</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Area of a Planar Region: Setting the integrand equal to <m>1</m> sums
+                            infinitesimal area elements <m>dA</m> across <m>R</m>:
+                            <md>
+                                \operatorname{Area}(R) = \iint_{R} 1\, dA
+                            </md>
+                            This is especially helpful when switching to polar coordinates
+                            (<m>dA = r\, dr\, d\theta</m>) for circular, sector, or ring-shaped regions.
+            </p>
+          </li>
+          <li>
+            <p>
+              Surface Area of a Graph <m>z = f(x, y)</m>: When <m>f</m> has continuous partial
+                            derivatives on <m>R</m>, each patch of surface is stretched relative to its
+                            projection <m>dA</m> by the tilt factor <m>\sqrt{1 + f_{x}^{2} + f_{y}^{2}}</m>:
+                            <md>
+                                S = \iint_{R} \sqrt{1 + \left(\frac{\partial f}{\partial x}\right)^{2} + \left(\frac{\partial f}{\partial y}\right)^{2}}\, dA
+                            </md>
+            </p>
+          </li>
+          <li>
+            <p>
+              Mass and Center of Mass of a Lamina: For a thin flat plate (a lamina) occupying
+                            region <m>R</m> with areal mass density <m>\rho(x, y)</m> (such as
+                            <m>\text{kg/m}^{2}</m>):
+                            Total mass: <md>M = \iint_{R} \rho(x, y)\, dA</md> 
+                            Moments about the coordinate axes: <md>M_{y} = \iint_{R} x\rho(x, y)\, dA</md> and
+                            <md>M_{x} = \iint_{R} y\rho(x, y)\, dA</md>Center of mass:
+                            <md>(\bar{x}, \bar{y}) = \left(\frac{M_{y}}{M}, \frac{M_{x}}{M}\right)</md>.
+                            If <m>\rho</m> is constant, <m>(\bar{x}, \bar{y})</m> is the geometric centroid
+                            of <m>R</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Moments of Inertia: Resistance to angular acceleration about an axis depends on
+                            squared distance from that axis weighted by mass:About the <m>x</m>-axis:
+                            <md>I_{x} = \iint_{R} y^{2} \rho(x, y)\, dA</md>About the <m>y</m>-axis:
+                            <md>I_{y} = \iint_{R} x^{2} \rho(x, y)\, dA</md>Polar moment of inertia (about the
+                            origin / <m>z</m>-axis):
+                            <md>I_{0} = I_{x} + I_{y} = \iint_{R} (x^{2} + y^{2})\rho(x, y)\, dA</md>
+            </p>
+          </li>
+          <li>
+            <p>
+              Average Value Over a Region: The spatial average of a function <m>f(x, y)</m>
+                            across a region <m>R</m> of nonzero area is:
+                            <md>
+                                f_{\text{avg}}= \frac{1}{\operatorname{Area}(R)}\iint_{R} f(x, y)\, dA
+                            </md>
+                            For example, if <m>T(x, y)</m> is temperature across a metal plate,
+                            <m>T_{\text{avg}}</m> is the mean temperature over the plate.
+            </p>
+          </li>
+          <li>
+            <p>
+              Probability and Applied Sciences: In probability, if <m>(X, Y)</m> is a continuous random vector with joint 
+              probability density function <m>f(x, y) \ge 0</m>, the probability that <m>(X, Y)</m> falls in region 
+              <m>R</m> is <m>P((X, Y) \in R) = \iint_R f(x, y)\, dA</m>. In physics and engineering, similar integrals 
+              compute total electric charge from a surface charge density <m>\sigma(x, y)</m>.
+            </p>
+          </li>
+        </ul>
+  </p>
+  <p>
+    Double Integrals in Polar Coordinates: When converting a double integral from
+        Cartesian to polar coordinates, remember the key
+        substitutions: <m>x = r\cos\theta</m>, <m>\quad y = r\sin\theta</m>,
+        <m>\quad x^{2} + y^{2} = r^{2}</m>
+        Differential area element: 
+        <m>dA = r\, dr\, d\theta</m>
+  </p>
+
+<example>
+  <statement>
+    <p>
+      Evaluate the double integral: 
+      <md>
+        \iint_R (x^2 + y^2)^{3/2}\, dA
+      </md>
+      where <m>R</m> is the annular region in the <m>xy</m>-plane between the circles
+            <m>x^{2} + y^{2} = 1</m> and <m>x^{2} + y^{2} = 4</m>.
+      </p>
+  </statement>
+  <solution>
+    <p>
+      Describe the region <m>R</m> in polar coordinates: 
+      <ul>
+        <li>
+          <p>
+            The inner circle
+            <m>x^{2} + y^{2} = 1</m> gives <m>r = 1</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            The outer circle
+            <m>x^{2} + y^{2} = 4</m> gives <m>r = 2</m>. 
+          </p>
+        </li>
+      </ul>          
+            Since <m>R</m> spans the full ring around the origin, <m>0 \le \theta \le 2\pi</m> and <m>1 \le r \le 2</m>.
+    </p>
+    <p>
+      Convert the integrand and area element:
+            <md>
+                (x^{2} + y^{2})^{3/2}= (r^{2})^{3/2}= r^{3}, \qquad dA = r\, dr\, d\theta
+            </md>
+            So the integral becomes:
+                        <md>
+                            \int_{0}^{2\pi}\int_{1}^{2} r^{3} \cdot r\, dr\, d\theta = \int_{0}^{2\pi}\int_{1}^{2} r^{4}\, dr\, d\theta
+                        </md>
+    </p>
+    <p>
+      So the integral becomes:
+            <md>
+                \int_{0}^{2\pi}\int_{1}^{2} r^{3} \cdot r\, dr\, d\theta = \int_{0}^{2\pi}\int_{1}^{2} r^{4}\, dr\, d\theta
+            </md>
+            Evaluate the iterated integral:
+            <md>
+                \int_{1}^{2} r^{4}\, dr = \left[\frac{r^{5}}{5}\right]_{1}^{2} = \frac{32 - 1}{5}= \frac{31}{5}
+            </md>
+            <md>
+                \int_{0}^{2\pi}\frac{31}{5}\, d\theta = \frac{31}{5}(2\pi) = \frac{62\pi}{5}
+            </md>
+    </p>
+  </solution>
+</example>
+
+<exercise>
+  
+    <p>
+      <ol>
+        <li>
+          <p>
+              Evaluate the double integral <m>\iint_{R} (4xy + 3y^{2})\, dA</m> over the
+            rectangle <m>R = [0, 2] \times [1, 2]</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the surface area of the portion of the plane <m>z = 4 - 2x - 2y</m> that lies in the first octant.
+          </p>
+        </li>
+        <li>
+          <p>
+            Evaluate <m>\int_{0}^{1} \int_{y}^{1} e^{x^2}\, dx\, dy</m> by changing the
+                        order of integration.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the surface area of the paraboloid <m>z = x^{2} + y^{2}</m> below the plane
+                        <m>z = 4</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Evaluate <m>\iint_{D} e^{-(x^2 + y^2)}\, dA</m>, where <m>D</m> is the disk
+                        <m>x^{2} + y^{2} \le 9</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the surface area of the part of the cone <m>z = \sqrt{x^{2} + y^{2}}</m>
+                        that lies between the planes <m>z = 1</m> and <m>z = 3</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            What is the average value of <m>f(x, y) = x^{2} + y^{2}</m> over the region
+                        <m>R</m> in the first quadrant bounded by <m>x^{2} + y^{2} = 4</m>?
+          </p>
+        </li>
+        <li>
+          <p>
+            Which integral gives the surface area of the hemisphere
+                        <m>z = \sqrt{9 - x^{2} - y^{2}}</m> above the disk <m>x^{2} + y^{2} \le 4</m>?
+          </p>
+        </li>
+      </ol>
+       </p>
+ </exercise>
+
+
+
+</subsection>
+
+
+</section>

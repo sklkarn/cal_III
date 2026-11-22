@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-II-arc" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Arc Length and Curvature</title>
+
+<introduction>
+  <p>
+   In this section, we will explore the concept of arc length and curvature for curves in three-dimensional space.
+  </p>
+  <p>
+    The arc length of a curve defined by a vector function <md>\mathbf{r(t)} = \langle x(t), y(t), z(t) \rangle</md> from <m>t = a</m> to <m>t = b</m> is given by the integral:
+    <md>L = \int_{a}^{b} \sqrt{[\mathbf{f'(t)}]^2+[\mathbf{g'(t)}]^2+[\mathbf{h'(t)}]^2} dt = \int_{a}^{b} \|\mathbf{r'(t)}\| dt</md>
+  </p>
+  <p>
+    The curvature <m>\kappa</m> of a curve at a point is a measure of how quickly the curve is changing direction at that point. It can be calculated using the formula:
+    <md>\kappa = \frac{\|\mathbf{r'(t)} \times \mathbf{r''(t)}\|}{\|\mathbf{r'(t)}\|^3} =\left| \frac{d\mathbf{T}}{ds} \right| </md>
+  where <m>\mathbf{T}</m> is the unit tangent vector and <m>s</m> is the arc length parameter.
+  </p>  
+  <p>
+    It is easier to compute the curvature using the formula:
+    <md>\kappa (t) = \frac{\|\mathbf{T'(t)}\|}{\|\mathbf{r'(t)}\|}</md> 
+    or, <md>\kappa = \frac{\|\mathbf{r'(t)} \times \mathbf{r''(t)}\|}{\|\mathbf{r'(t)}\|^3}</md> when the curve is given in parametric form.
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        Find the curvature of the curve defined by <m>\mathbf{r(t)} = \langle t, t^2, t^3 \rangle</m> at the point where <m>t = 1</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        First, we compute the first and second derivatives of <m>\mathbf{r(t)}</m>:
+        <md>\mathbf{r'(t)} = \langle 1, 2t, 3t^2 \rangle</md>
+        <md>\mathbf{r''(t)} = \langle 0, 2, 6t \rangle</md>
+        Next, we evaluate these derivatives at <m>t = 1</m>:
+        <md>\mathbf{r'(1)} = \langle 1, 2, 3 \rangle</md>
+        <md>\mathbf{r''(1)} = \langle 0, 2, 6 \rangle</md>
+        Now, we compute the cross product <m>\mathbf{r'(1)} \times \mathbf{r''(1)}</m>:
+        <md>\mathbf{r'(1)} \times \mathbf{r''(1)} = \langle (2)(6) - (3)(2), (3)(0) - (1)(6), (1)(2) - (2)(0) \rangle </md>
+        <md>
+           = \langle 12 - 6, 0 - 6, 2 - 0 \rangle = \langle 6, -6, 2 \rangle
+        </md>
+        
+        The magnitude of this cross product is:
+        <md>\|\mathbf{r'(1)} \times \mathbf{r''(1)}\| = \sqrt{6^2 + (-6)^2 + 2^2} = \sqrt{36 + 36 + 4} = \sqrt{76}</md>
+        The magnitude of <m>\mathbf{r'(1)}</m> is:
+        <md>\|\mathbf{r'(1)}\| = \sqrt{1^2 + 2^2 + 3^2} = \sqrt{1 + 4 + 9} = \sqrt{14}</md>
+        Finally, we can compute the curvature at <m>t = 1</m>:
+        <md>\kappa(1) = \frac{\|\mathbf{r'(1)} \times \mathbf{r''(1)}\|}{\|\mathbf{r'(1)}\|^3} = \frac{\sqrt{76}}{(\sqrt{14})^3} = \frac{\sqrt{76}}{14\sqrt{14}} = \frac{\sqrt{76}}{14\sqrt{14}} = \frac{\sqrt{76}}{14\sqrt{14}}</md> 
+      </p>
+    </solution>
+  </example>
+
+  <example>
+    <statement>
+      <p>
+        Find the curvature of the curve defined by <m>\mathbf{r(t)} = \langle \cos(t), \sin(t), t \rangle</m> at the point where <m>t = 0</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        First, we compute the first and second derivatives of <m>\mathbf{r(t)}</m>:
+        <md>\mathbf{r'(t)} = \langle -\sin(t), \cos(t), 1 \rangle</md>
+        <md>\mathbf{r''(t)} = \langle -\cos(t), -\sin(t), 0 \rangle</md>
+        Next, we evaluate these derivatives at <m>t = 0</m>:
+        <md>\mathbf{r'(0)} = \langle 0, 1, 1 \rangle</md>
+        <md>\mathbf{r''(0)} = \langle -1, 0, 0 \rangle</md>
+        Now, we compute the cross product <m>\mathbf{r'(0)} \times \mathbf{r''(0)}</m>:
+        <md>\mathbf{r'(0)} \times \mathbf{r''(0)} = \langle (1)(0) - (1)(-1), (1)(-1) - (0)(0), (0)(0) - (1)(-1) \rangle </md>
+        <md>
+          = \langle 0 + 1, -1 - 0, 0 + 1 \rangle = \langle 1, -1, 1 \rangle
+        </md>
+        
+        The magnitude of this cross product is:
+        <md>\|\mathbf{r'(0)} \times \mathbf{r''(0)}\| = \sqrt{1^2 + (-1)^2 + 1^2} = \sqrt{3}</md>
+        The magnitude of <m>\mathbf{r'(0)}</m> is:
+        <md>\|\mathbf{r'(0)}\| = \sqrt{0^2 + 1^2 + 1^2} = \sqrt{2}</md>
+        Finally, we can compute the curvature at <m>t = 0</m>:
+        <md>\kappa(0) = \frac{\|\mathbf{r'(0)} \times \mathbf{r''(0)}\|}{\|\mathbf{r'(0)}\|^3} = \frac{\sqrt{3}}{(\sqrt{2})^3} = \frac{\sqrt{3}}{2\sqrt{2}} = \frac{\sqrt{3}}{2\sqrt{2}}</md>
+      </p>
+    </solution> 
+  </example>
+
+  <example>
+    <statement>
+      <p>
+        Find the curvature of the parabola <m>y = x^2</m> at the points <m>(0, 0)</m>, <m>(1, 1)</m>, and <m>(3, 9)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The parabola <m>y = x^2</m> can be represented parametrically as <m>\mathbf{r(t)} = \langle t, t^2 \rangle</m>. 
+        The first derivative is <md>\mathbf{r'(t)} = \langle 1, 2t \rangle</md> and the second derivative is <md>\mathbf{r''(t)} = \langle 0, 2 \rangle</md>.
+        The curvature formula for a plane curve is given by:
+        <md>\kappa(t) = \frac{|x'y'' - y'x''|}{(x'^2 + y'^2)^{3/2}}</md>
+        Substituting the derivatives, we have:
+        <md>\kappa(t) = \frac{|(1)(2) - (2t)(0)|}{(1^2 + (2t)^2)^{3/2}} = \frac{2}{(1 + 4t^2)^{3/2}}</md>
+        Now we can evaluate the curvature at the specified points:
+        <ul>
+          <li>At <m>(0, 0)</m>, <m>t = 0</m>: 
+            <md>\kappa(0) = \frac{2}{(1 + 4(0)^2)^{3/2}} = 2</md>
+          </li>
+          <li>At <m>(1, 1)</m>, <m>t = 1</m>: 
+            <md>\kappa(1) = \frac{2}{(1 + 4(1)^2)^{3/2}} = \frac{2}{(5)^{3/2}} = \frac{2}{5\sqrt{5}}</md>
+          </li>
+          <li>At <m>(3, 9)</m>, <m>t = 3</m>: 
+            <md>\kappa(3) = \frac{2}{(1 + 4(3)^2)^{3/2}} = \frac{2}{(37)^{3/2}} = \frac{2}{37\sqrt{37}}</md>
+          </li>
+        </ul>
+      </p>
+       <image source="curvature_1.png" width="30%"/>
+        <p>
+        or, by substituting these into the planar curvature formula gives:
+                <md>
+                    \kappa(x) = \frac{\vert{}y''(x)\vert{}}{\bigl(1 + (y'(x))^{2}\bigr)^{3/2}}= \frac{2}{\bigl(1 + 4x^{2}\bigr)^{3/2}}
+                </md>
+                Curvature is highest at the vertex <m>x = 0</m> (<m>\kappa(0) = 2</m>) and
+                decreases toward <m>0</m> as <m>\vert{}x\vert{}</m> increases.
+      </p>
+    </solution> 
+  </example>
+</introduction>
+  
+<subsection xml:id="subsec-normal_binom">
+  <title>The Normal and Binormal Vectors</title>
+  <p>
+    At a given point on a curve, the unit tangent vector <m>\mathbf{T}</m> points in the direction of the curve's motion. 
+    The unit normal vector <m>\mathbf{N}</m> is perpendicular to <m>\mathbf{T}</m> and points towards the center of curvature. 
+    The binormal vector <m>\mathbf{B}</m> is defined as the cross product of <m>\mathbf{T}</m> and <m>\mathbf{N}</m>, and it 
+    is perpendicular to both. The <term>Unit Normal Vector</term> is defined as:
+    <md>\mathbf{N} = \frac{\mathbf{T'}}{\|\mathbf{T'}\|}</md>
+    The <term>Binormal Vector</term> is defined as:
+    <md>\mathbf{B} = \mathbf{T} \times \mathbf{N}</md>  
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        Find the unit normal and binormal vectors for the circular helix  
+        <m>\mathbf{r(t)} = \langle \cos t, \sin t, t \rangle</m> at the point where <m>t = 0</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        First, we compute the first derivative of <m>\mathbf{r(t)}</m>:
+        <md>\mathbf{r'(t)} = \langle -\sin t, \cos t, 1 \rangle</md>
+        Next, we evaluate this derivative at <m>t = 0</m>:
+        <md>\mathbf{r'(0)} = \langle 0, 1, 1 \rangle</md>
+        The magnitude of this vector is:
+        <md>\|\mathbf{r'(0)}\| = \sqrt{0^2 + 1^2 + 1^2} = \sqrt{2}</md>
+        The unit tangent vector is:
+        <md>\mathbf{T(0)} = \frac{\mathbf{r'(0)}}{\|\mathbf{r'(0)}\|} = \frac{\langle 0, 1, 1 \rangle}{\sqrt{2}} = \langle 0, \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}} \rangle</md>
+        Next, we compute the second derivative of <m>\mathbf{r(t)}</m>:
+        <md>\mathbf{r''(t)} = \langle -\cos t, -\sin t, 0 \rangle</md>
+        Evaluating at <m>t = 0</m> gives:
+        <md>\mathbf{r''(0)} = \langle -1, 0, 0 \rangle</md>
+        Now we compute the derivative of the unit tangent vector:
+        <md>\mathbf{T'(t)} = \frac{\mathbf{r''(t)}}{\|\mathbf{r'(t)}\|} - \frac{\mathbf{r'(t)}(\mathbf{r'(t)} \cdot \mathbf{r''(t)})}{\|\mathbf{r'(t)}\|^3}</md>
+        Evaluating at <m>t = 0</m> gives:
+        <md>\mathbf{T'(0)} = \frac{\langle -1, 0, 0 \rangle}{\sqrt{2}} - \frac{\langle 0, 1, 1 \rangle(\langle 0, 1, 1 \rangle \cdot \langle -1, 0, 0 \rangle)}{(\sqrt{2})^3}</md>    
+        </p>
+        <p>
+          Therefore the unit normal vector is:
+          <md>
+             \mathbf{N} = \frac{\mathbf{T'(t)}}{\|\mathbf{T'(t)}\|} = \langle -1, 0, 0 \rangle  
+          </md>
+          and the binormal vector is:
+          <md>
+            \mathbf{B} = \mathbf{T} \times \mathbf{N} = \langle 0, \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}} \rangle \times \langle -1, 0, 0 \rangle = \langle 0, -\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}} \rangle
+          </md> 
+        </p>
+        </solution>
+  </example>
+
+
+    <example>
+    <statement>
+      <p>
+       Find the length of the curve. 
+       <ol>
+        <li>
+          <p>
+            <m>\mathbf{r(t)} = \langle t, 3\cos t, 3 \sin t \rangle</m> for <m>0 \leq t \leq 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\mathbf{r(t)} = \langle 2\cos t, 2\sin t, 3t \rangle</m> for <m>0 \leq t \leq 2\pi</m> 
+          </p>
+        </li>
+       </ol>
+       </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              The length of the curve is given by the integral:
+              <md>L = \int_{0}^{1} \|\mathbf{r'(t)}\| dt</md>
+              First, we compute the first derivative of <m>\mathbf{r(t)}</m>:
+              <md>\mathbf{r'(t)} = \langle 1, -3\sin t, 3\cos t \rangle</md>
+              Next, we compute the magnitude of this derivative:
+              <md>\|\mathbf{r'(t)}\| = \sqrt{1^2 + (-3\sin t)^2 + (3\cos t)^2} </md>
+              <md>
+                = \sqrt{1 + 9(\sin^2 t + \cos^2 t)} = \sqrt{1 + 9} = \sqrt{10}
+              </md>
+              
+              Therefore, the length of the curve is:
+              <md>L = \int_{0}^{1} \sqrt{10} dt = \sqrt{10} [t]_{0}^{1} = \sqrt{10}(1 - 0) = \sqrt{10}</md> 
+            </p>
+          </li>
+          <li>
+            <p>
+              The length of the curve is given by the integral:
+              <md>L = \int_{0}^{2\pi} \|\mathbf{r'(t)}\| dt</md>
+              First, we compute the first derivative of <m>\mathbf{r(t)}</m>:
+              <md>\mathbf{r'(t)} = \langle -2\sin t, 2\cos t, 3 \rangle</md>
+              Next, we compute the magnitude of this derivative:
+              <md>\|\mathbf{r'(t)}\| = \sqrt{(-2\sin t)^2 + (2\cos t)^2 + 3^2} </md>
+              <md>
+                = \sqrt{4(\sin^2 t + \cos^2 t) + 9} = \sqrt{4 + 9} = \sqrt{13}
+              </md>
+              
+              Therefore, the length of the curve is:
+              <md>L = \int_{0}^{2\pi} \sqrt{13} dt = \sqrt{13} [t]_{0}^{2\pi} = \sqrt{13}(2\pi - 0) = 2\pi\sqrt{13}</md>  
+            </p>
+          </li>
+        </ol>
+         </p> 
+        </solution> 
+    </example>
+
+    <example>
+    <statement>
+      <p>
+        Find the curvature of the curve defined by <m>\mathbf{r(t)} = \langle t, t^2, t^3 \rangle</m> at the point where <m>t = 1</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        First, we compute the first and second derivatives of <m>\mathbf{r(t)}</m>:
+        <md>\mathbf{r'(t)} = \langle 1, 2t, 3t^2 \rangle</md>
+        <md>\mathbf{r''(t)} = \langle 0, 2, 6t \rangle</md>
+        Next, we evaluate these derivatives at <m>t = 1</m>:
+        <md>\mathbf{r'(1)} = \langle 1, 2, 3 \rangle</md>
+        <md>\mathbf{r''(1)} = \langle 0, 2, 6 \rangle</md>
+        Now, we compute the cross product <m>\mathbf{r'(1)} \times \mathbf{r''(1)}</m>:
+        <md>\mathbf{r'(1)} \times \mathbf{r''(1)} = \langle (2)(6) - (3)(2), (3)(0) - (1)(6), (1)(2) - (2)(0) \rangle </md>
+        <md>
+          = \langle 12 - 6, 0 - 6, 2 - 0 \rangle = \langle 6, -6, 2 \rangle
+        </md>
+        
+        The magnitude of this cross product is:
+        <md>\|\mathbf{r'(1)} \times \mathbf{r''(1)}\| = \sqrt{6^2 + (-6)^2 + 2^2} = \sqrt{36 + 36 + 4} = \sqrt{76}</md>
+        The magnitude of <m>\mathbf{r'(1)}</m> is:
+        <md>\|\mathbf{r'(1)}\| = \sqrt{1^2 + 2^2 + 3^2} = \sqrt{1 + 4 + 9} = \sqrt{14}</md>
+        Finally, we can compute the curvature at <m>t = 1</m>:
+        <md>\kappa(1) = \frac{\|\mathbf{r'(1)} \times \mathbf{r''(1)}\|}{\|\mathbf{r'(1)}\|^3} = \frac{\sqrt{76}}{(\sqrt{14})^3} = \frac{\sqrt{76}}{14\sqrt{14}} = \frac{\sqrt{76}}{14\sqrt{14}}</md> 
+      </p>
+    </solution> 
+    </example>
+
+    <example>
+    <statement>
+      <p>
+       Find the unit tangent and unit normal vectors <m>\mathbf{T}(t)</m> and <m>\mathbf{N}(t)</m>.
+       <ol>
+        <li>
+          <p>
+            <m>\mathbf{r(t)} = \langle t, 3\cos t, 3 \sin t \rangle</m> for <m>0 \leq t \leq 1</m>  
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\mathbf{r(t)} = \langle 2\cos t, 2\sin t, 3t \rangle</m> for <m>0 \leq t \leq 2\pi</m> 
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\mathbf{r(t)} = \langle t, t^2, t^3 \rangle</m> for <m>0 \leq t \leq 1</m>  
+          </p>
+        </li>
+       </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              The unit tangent vector is given by:
+              <md>\mathbf{T(t)} = \frac{\mathbf{r'(t)}}{\|\mathbf{r'(t)}\|}</md>
+              First, we compute the first derivative of <m>\mathbf{r(t)}</m>:
+              <md>\mathbf{r'(t)} = \langle 1, -3\sin t, 3\cos t \rangle</md>
+              Next, we compute the magnitude of this derivative:
+              <md>\|\mathbf{r'(t)}\| = \sqrt{1^2 + (-3\sin t)^2 + (3\cos t)^2} </md>
+              <md>
+                = \sqrt{1 + 9(\sin^2 t + \cos^2 t)} = \sqrt{1 + 9} = \sqrt{10}
+              </md>
+              
+              Therefore, the unit tangent vector is:
+              <md>\mathbf{T(t)} = \frac{\langle 1, -3\sin t, 3\cos t \rangle}{\sqrt{10}} = \langle \frac{1}{\sqrt{10}}, -\frac{3\sin t}{\sqrt{10}}, \frac{3\cos t}{\sqrt{10}} \rangle</md> 
+            </p>
+          </li>
+          <li>
+            <p>
+              The unit tangent vector is given by:
+              <md>\mathbf{T(t)} = \frac{\mathbf{r'(t)}}{\|\mathbf{r'(t)}\|}</md>
+              First, we compute the first derivative of <m>\mathbf{r(t)}</m>:
+              <md>\mathbf{r'(t)} = \langle -2\sin t, 2\cos t, 3 \rangle</md>
+              Next, we compute the magnitude of this derivative:
+              <md>\|\mathbf{r'(t)}\| = \sqrt{(-2\sin t)^2 + (2\cos t)^2 + 3^2} </md>
+              <md>
+                = \sqrt{4(\sin^2 t + \cos^2 t) + 9} = \sqrt{4 + 9} = \sqrt{13}
+              </md>
+              
+              Therefore, the unit tangent vector is:
+              <md>\mathbf{T(t)} = \frac{\langle -2\sin t, 2\cos t, 3 \rangle}{\sqrt{13}} = \langle -\frac{2\sin t}{\sqrt{13}}, \frac{2\cos t}{\sqrt{13}}, \frac{3}{\sqrt{13}} \rangle</md>    
+      </p>
+      </li>
+      </ol>
+      </p>  
+    </solution>   
+    </example>
+
+</subsection>
+
+<exercise>
+  <p>
+    Find the curvature of <m>\mathbf{r(t)} = \langle t^2, \ln t, t \ln t \rangle</m> at the point <m>(1, 0, 0)</m>.
+  </p>
+</exercise>
+
+<exercise>
+  <p>
+    Find the curvature of <m>\mathbf{r(t)} = \langle t, t^2, t^3 \rangle</m> at the point <m>(1, 1, 1)</m>.
+  </p>  
+</exercise>
+
+
+</section>

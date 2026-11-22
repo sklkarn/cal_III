@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-IV-multiple_integrals" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Multiple Integrals</title>
+
+  <introduction>
+  <p>
+    Multiple integrals: specifically double integrals (<m>\iint_{R}</m>) over
+        two-dimensional regions and triple integrals (<m>\iiint_{E}</m>) over
+        three-dimensional solids generalize definite integration to functions of
+        several variables. Their core purpose is to accumulate a quantity that varies across space by
+        breaking a region or solid into tiny elements (<m>dA</m> or <m>dV</m>),
+        multiplying the local density or value by the element size, and summing over the
+        entire domain.
+  </p>
+  
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="sec-IV-surface_integrals.ptx" /> 
+  <xi:include href="sec-IV-volume_integrals.ptx" /> 
+
+</chapter>

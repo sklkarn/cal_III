@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-III-level_curves" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Level Curves</title>
+
+<introduction>
+  <p>
+    In this section, we will explore level curves of functions of two variables. 
+    A <term>level curve</term> of a function <m>f(x, y)</m> is the set of all points <m>(x, y)</m> 
+    in the domain of <m>f</m> such that <m>f(x, y) = k</m> for some constant <m>k</m>. 
+    Level curves are useful for visualizing the behavior of a function in two dimensions.
+  </p>
+      <image source="level_curve.png" width="30%"/>
+
+<example>
+  <statement>
+    <p>
+      Find the level curves of the function <m>f(x, y) = x^2 + y^2</m> for <m>k = 1, 4, 9</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      For a given constant <m>k</m>, the level curve is defined by:
+      <md>
+        x^2 + y^2 = k
+      </md>
+      This represents a circle centered at the origin with radius <m>\sqrt{k}</m>. Therefore:
+      <ul>
+        <li>For <m>k = 1</m>, the level curve is a circle with radius 1.</li>
+        <li>For <m>k = 4</m>, the level curve is a circle with radius 2.</li>
+        <li>For <m>k = 9</m>, the level curve is a circle with radius 3.</li>
+      </ul>
+    </p>
+  </solution>
+</example>
+
+<example>
+  <statement>
+    <p>
+      Find the level curves of the function <m>f(x, y) = x^2 - y^2</m> for <m>k = 1, 0, -1</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      For a given constant <m>k</m>, the level curve is defined by:
+      <md>
+        x^2 - y^2 = k
+      </md>
+      This represents a hyperbola. Therefore:
+      <ul>
+        <li>For <m>k = 1</m>, the level curve is a hyperbola opening along the x-axis.</li>
+        <li>For <m>k = 0</m>, the level curve is the pair of lines <m>y = \pm x</m>.</li>
+        <li>For <m>k = -1</m>, the level curve is a hyperbola opening along the y-axis.</li>
+      </ul>
+    </p>
+  </solution>
+</example>
+
+<example>
+  <statement>
+    <p>
+      Sketch the level curves of the function <m>f(x, y) = \sqrt{9 - x^2 - y^2}</m> for <m>k = 0, 1, 2, 3</m>.
+    </p>
+  </statement>
+  <solution>
+     <image source="level_curve_2.png" width="30%"/>
+    <p>
+      For a given constant <m>k</m>, the level curve is defined by:
+      <md>
+        \sqrt{9 - x^2 - y^2} = k \implies 9 - x^2 - y^2 = k^2
+      </md>
+      This represents a circle centered at the origin with radius <m>\sqrt{9 - k^2}</m>. Therefore:
+      <ul>
+        <li>For <m>k = 0</m>, the level curve is a circle with radius 3.</li>
+        <li>For <m>k = 1</m>, the level curve is a circle with radius \sqrt{8}.</li>
+        <li>For <m>k = 2</m>, the level curve is a circle with radius \sqrt{5}.</li>
+        <li>For <m>k = 3</m>, the level curve is a circle with radius 0.</li>
+      </ul>
+    </p>
+  </solution> 
+</example>
+</introduction>
+
+
+
+
+</section>

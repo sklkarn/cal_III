@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-III-maxima-lagrange" xmlns:xi="http://www.w3.org/2001/XInclude">
+ <title>Maxima and Minima </title>
+
+ <introduction>
+  <p>
+     Local maxima and minima of a two-variable function <m>f(x, y)</m> occur at critical points where the tangent 
+     plane is horizontal (or does not exist). To classify whether a critical point is a local maximum, 
+     local minimum, or saddle point, we use the Second Derivative Test.
+  </p>
+  <p>
+    <ul>
+      <li>
+        <p>
+          Finding Critical Points: 
+          A point <m>(a, b)</m> in the domain of <m>f</m> is a
+                    critical point if either:Both first partial derivatives equal zero
+                    simultaneously (making <m>\nabla f(a, b) = \langle 0, 0 \rangle</m> and the
+                    tangent plane horizontal):
+                    <md>
+                        f_{x}(a, b) = 0 \qquad \text{and}\qquad f_{y}(a, b) = 0
+                    </md>
+          At least one of <m>f_{x}(a, b)</m> or <m>f_{y}(a, b)</m> fails to exist.Note:
+                    Every local maximum or minimum at an interior point occurs at a critical point,
+                    though not every critical point is an extremum.
+        </p>
+      </li>
+      <li>
+        <p>
+          The Second Derivative Test: 
+          Suppose the second partial derivatives of <m>f</m> are
+                    continuous near a critical point <m>(a, b)</m> where <m>f_{x}(a, b) = 0</m> and
+                    <m>f_{y}(a, b) = 0</m>.
+                    Compute the discriminant (or Hessian determinant) <m>D</m> at <m>(a, b)</m>:
+                    <md>
+                        D = D(a, b) = f_{xx}(a, b)\,f_{yy}(a, b) - \bigl[f_{xy}(a, b)\bigr]^{2}
+                    </md>
+        </p>
+      </li>
+    </ul>
+    If <m>D \gt 0 </m> and <m>f_{xx}(a, b) \gt 0</m> gives point <m>(a,b)</m> as Local minimum (bowl opening upward). 
+  </p>
+  <p>
+     If <m>D \gt 0 </m> and <m>f_{xx}(a, b) \lt 0</m> gives point <m>(a,b)</m> as Local maxima (Dome opening downward).
+  </p>
+  <p>
+     If <m>D \lt 0 </m> then it gives point <m>(a,b)</m> as Saddle point (Curves up in one direction, down in another).
+  </p>
+   <p>
+     If <m>D = 0 </m> then it is inconclusive (Higher-order or direct behavior check needed).
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        Find and classify all critical points of:
+                <md>
+                    f(x, y) = x^{3} + y^{3} - 3xy
+                </md>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <alert>Step 1: Find the critical points:</alert> 
+        Set both first partial derivatives equal to
+                <m>0</m>:
+                <md>
+                    f_{x}(x, y) = 3x^{2} - 3y = 0 \implies y = x^{2}
+                </md>
+                <md>
+                    f_{y}(x, y) = 3y^{2} - 3x = 0 \implies x = y^{2}
+                </md>
+                Substitute <m>y = x^{2}</m> into the second equation:
+                <md>
+                    x = (x^{2})^{2} = x^{4} \implies x^{4} - x = 0 \implies x(x^{3} - 1) = 0
+                </md>
+                This yields <m>x = 0</m> or <m>x = 1</m>.
+                Using <m>y = x^{2}</m> gives two critical points: <m>(0, 0)</m> and
+                <m>(1, 1)</m>.
+      </p>
+      <p>
+        <alert>Step 2: Compute second partial derivatives and <m>D(x, y)</m>: </alert>
+                <md>
+                    f_{xx}= 6x, \qquad f_{yy}= 6y, \qquad f_{xy}= -3
+                </md>
+                <md>
+                    D(x, y) = (6x)(6y) - (-3)^{2} = 36xy - 9
+                </md>
+      </p>
+      <p>
+        <alert>Step 3: Classify each critical point:</alert> 
+        At <m>(0, 0)</m>:
+                <md>
+                    D(0, 0) = 36(0)(0) - 9 = -9 \lt 0
+                </md>
+                Since <m>D &lt; 0</m>, <m>(0, 0)</m> is a saddle point (with
+                <m>f(0, 0) = 0</m>).At <m>(1, 1)</m>:
+                <md>
+                    D(1, 1) = 36(1)(1) - 9 = 27 \gt 0 \quad \text{and}\quad f_{xx}(1, 1) = 6(1) = 6 \gt 0
+                </md>
+                Since <m>D \gt 0</m> and <m>f_{xx} \gt 0</m>, <m>f</m> has a local minimum at
+                <m>(1, 1)</m> with value <m>f(1, 1) = 1 + 1 - 3 = -1</m>.
+      </p>
+      <p>
+        <alert>Absolute Extrema on Closed, Bounded Regions:</alert> 
+        To find the absolute maximum and minimum of a continuous function 
+        <m>f(x, y)</m> on a closed, bounded region <m>R</m> (analogous to the closed interval method 
+        in single-variable calculus): Find all critical points of <m>f</m> in the interior of <m>R</m> and evaluate 
+        <m>f</m> at each one.Find the extreme values of <m>f</m> along the boundary of <m>R</m> (by parameterizing boundary 
+        curves or substituting boundary equations into <m>f</m>).Compare all values from Steps 1 and 2: 
+        the largest value is the absolute maximum, and the smallest is the absolute minimum.
+      </p>
+    </solution>
+  </example>
+ </introduction>
+    
+
+    <subsection xml:id="subsec-lagrange-mult">
+      <title>Lagrange Multipliers</title>
+      <p>
+                 The method of Lagrange multipliers finds local maxima and minima of a smooth objective function <m>f(x, y)</m> 
+            (or <m>f(x, y, z)</m>) subject to an equality constraint <m>g(x, y) = k</m> (or <m>g(x, y, z) = k</m>). 
+            Rather than solving the constraint equation explicitly for one variable and substituting, which is 
+            often messy or impossible. You introduce an auxiliary scalar <m>\lambda</m> (the Lagrange multiplier) 
+            to locate points where the gradient vectors <m>\nabla f</m> and <m>\nabla g</m>
+                        are parallel, enforcing tangency between the level sets of <m>f</m> and the
+                        constraint. 
+          </p>
+          
+
+      <sidebyside widths="30% 30%">
+         <image source="lagrang-multi.png" />
+          <image source="lagrang-multi_2.png" />
+      </sidebyside> 
+   
+      <p>
+        Geometric Intuition: Consider maximizing or minimizing <m>f(x, y)</m> along a constraint curve <m>g(x, y) = c</m>: 
+        The illustration above visualizes this concept both in 3D and 2D: The Objective Function <m>(z=f(x,y))</m>: 
+        The curved surface represents the function you want to optimize. The Constraint Curve <m>(g(x,y)=c)</m>: 
+        The blue circle represents the constraint, which restricts the possible values of <m>x</m> and <m>y</m>. 
+        The Geometry of Tangency: At the optimal point (the maximum, <m>P</m>), the level curves of the objective function 
+        <m>(f)</m> are tangent to the constraint curve <m>(g)</m>. Gradient Vectors: At this point of tangency, 
+        the gradient of the objective function (<m>\nabla f</m>, in red) and the gradient of the constraint function 
+        (<m>\nabla g</m>, in blue) must be parallel. This means one is a scalar multiple of the other, represented by the 
+        Lagrange multiplier equation: <m>\nabla f = \lambda \nabla g</m>. This geometric relationship allows us to convert 
+        a constrained optimization problem into a system of equations that can be solved algebraically, 
+        making it an indispensable tool in fields like economics, physics, and engineering.
+          </p>
+
+        <p>
+          At an interior extreme point along the smooth constraint <m>g(x, y) = c</m>
+                    (where <m>\nabla g \neq \mathbf{0}</m>), the level curve <m>f(x, y) = k</m>
+                    reaches its highest or lowest accessible value by touching <m>g(x, y) = c</m>
+                    tangentially.
+                    Because gradients are perpendicular to level curves/surfaces, a tangency point
+                    forces <m>\nabla f</m> and <m>\nabla g</m> to be parallel:
+                    <md>
+                        \nabla f(x, y) = \lambda \nabla g(x, y), \qquad g(x, y) = c
+                    </md>
+                    In scalar component form for two variables, this gives a system of three
+                                        equations in three unknowns <m>(x, y, \lambda)</m>:
+                                        <md>f_{x}(x, y) = \lambda g_{x}(x, y)</md>
+                                        <md>f_{y}(x, y) = \lambda g_{y}(x, y)</md> 
+                                        <md>g(x, y) = c</md> 
+                  (For three variables  <m>x, y, z</m>, add <m>f_{z} = \lambda g_{z}</m>, giving four equations in four
+                                        unknowns.)
+        </p>
+
+        <p>
+          <alert>Step-by-Step Solution Procedure</alert> 
+          <ul>
+            <li>
+              <p>
+                Identify <m>f</m>, <m>g</m>, and <m>c</m>: Rewrite the constraint cleanly as
+                                <m>g(x, y) = c</m> (or <m>g(x, y, z) = c</m>).
+              </p>
+            </li>
+            <li>
+              <p>
+                Compute gradients: Find <m>\nabla f = \langle f_{x}, f_{y} \rangle</m> and
+                                <m>\nabla g = \langle g_{x}, g_{y} \rangle</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Set up the system of equations: Write <m>\nabla f = \lambda \nabla g</m>
+                                component-by-component alongside the constraint equation <m>g = c</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Solve for candidate points: Avoid dividing by expressions containing variables if
+                                they could equal zero instead, factor equations so you don't lose valid
+                                solutions. Substitute relationships between <m>x</m>, <m>y</m>, and
+                                <m>\lambda</m> back into the constraint <m>g = c</m> to find all candidate
+                                points <m>(x, y)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Evaluate and compare: Plug every candidate point into <m>f(x, y)</m> to identify the largest value 
+                (maximum) and smallest value (minimum) on the constraint set. (When the constraint set is closed and bounded 
+                and $f$ is continuous, the Extreme Value Theorem guarantees global extrema exist among the candidates.)
+              </p>
+            </li>
+          </ul>
+        </p>
+          
+
+          <example>
+            <statement>
+              <p>
+                Maximize and minimize <m>f(x, y) = xy</m> subject to the circular constraint <m>x^2 + y^2 = 8</m>.
+              </p>
+            </statement>
+            <solution>
+              <p>
+                <alert>Gradients and System</alert>
+                Objective:
+                                <m>f(x, y) = xy \implies \nabla f = \langle y, x \rangle</m>
+                Constraint:
+                                <m>g(x, y) = x^{2} + y^{2} = 8 \implies \nabla g = \langle 2x, 2y \rangle</m> 
+                The system is:
+                                <md>
+                                    y = 2\lambda x \qquad \text{(1)}
+                                </md>
+                                <md>
+                                    x = 2\lambda y \qquad \text{(2)}
+                                </md>
+                                <md>
+                                    x^{2} + y^{2} = 8 \qquad \text{(3)}
+                                </md>
+              </p>
+              <p>
+                Solve for Candidates
+                Substitute <m>y = 2\lambda x</m> from (1) into (2):
+                                <md>
+                                    x = 2\lambda(2\lambda x) = 4\lambda^{2} x \implies x(1 - 4\lambda^{2}) = 0
+                                </md>
+                 Thus either <m>x = 0</m> or <m>\lambda = \pm \frac{1}{2}</m>: 
+                 <ul>
+                  <li>
+                    <p>
+                       Case 1:
+                                <m>x = 0</m> From (1), <m>y = 2\lambda(0) = 0</m>.
+                                Substituting into (3) gives <m>0^{2} + 0^{2} = 8</m>, which is false.
+                                No candidates here.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                       Case 2: <m>\lambda = \frac{1}{2}</m> From (1),
+                                <m>y = 2\left(\frac{1}{2}\right)x = x</m>.
+                                Substituting into (3):
+                                <md>
+                                    x^{2} + x^{2} = 8 \implies 2x^{2} = 8 \implies x^{2} = 4 \implies x = \pm 2
+                                </md>
+                                Since <m>y = x</m>, this yields candidate points <m>(2, 2)</m> and
+                                <m>(-2, -2)</m>. 
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                       Case 3: <m>\lambda = -\frac{1}{2}</m> From (1),
+                                <m>y = 2\left(-\frac{1}{2}\right)x = -x</m>.
+                                Substituting into (3):
+                                <md>
+                                    x^{2} + (-x)^{2} = 8 \implies 2x^{2} = 8 \implies x = \pm 2
+                                </md>
+                    </p>
+                  </li>
+                 </ul>            
+                 Since <m>y = -x</m>, this yields candidate points <m>(2, -2)</m> and <m>(-2, 2)</m>.
+              </p>
+              <p>
+                Evaluate <m>f(x, y) = xy</m> 
+                <ul>
+                  <li>
+                    <p>
+                       For <m>f(2,2)=2 \cdot 2=4 </m> gives Maximum point.     
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                       For <m>f(-2,-2)= -2 \cdot -2 = 4 </m> gives Maximum point.     
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                       For <m>f(2,-2) = 2 \cdot -2 = -4 </m> gives Minimum point.     
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                       For <m>f(-2,2) = -2 \cdot 2 = - 4 </m> gives Minimum point.    
+                    </p>
+                  </li>
+                </ul>
+                  </p>
+            </solution>
+          </example>
+
+          <p>
+            <term>Practical Tips &amp; Edge Cases:</term> 
+            <ul>
+              <li>
+                <p>
+                   Where <m>\nabla g = \mathbf{0}</m>: 
+            Lagrange's theorem assumes <m>\nabla g \neq \mathbf{0}</m> along the constraint.
+                        Points on <m>g = c</m> where <m>\nabla g = \mathbf{0}</m> (such as cusps or
+                        self-intersections) must be checked separately. 
+                </p>
+              </li>
+              <li>
+                <p>
+                  Multiple constraints: For two constraints <m>g_{1}(x, y, z) = c_{1}</m> and <m>g_{2}(x, y, z) = c_{2}</m>, the
+                        condition generalizes to <m>\nabla f = \lambda_{1} \nabla g_{1} + \lambda_{2} \nabla g_{2}</m> along with
+                        both constraint equations. 
+                </p>
+              </li>
+              <li>
+                <p>
+                   Meaning of <m>\lambda</m>: In applications like
+                        economics, <m>\lambda</m> measures the sensitivity of the optimal objective
+                        value to a small relaxation of the constraint
+                        (<m>\frac{df_{\max}}{dc}\approx \lambda</m>).
+                </p>
+              </li>
+            </ul>          
+            </p>
+    </subsection>
+
+
+</section>

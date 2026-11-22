@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- we first include a file which contains the docinfo element: -->
+  <xi:include href="./docinfo.ptx" />
+
+  <book xml:id="cal-III">
+    <title>Multivariable Calculus </title>
+    <subtitle>Calculus III</subtitle>
+
+    <!-- Include frontmatter -->
+    <xi:include href="./frontmatter.ptx" />
+
+    <!-- Include chapters -->
+    <xi:include href="./ch-I-3D_geometry.ptx" />
+      <xi:include href="./ch-II-vector_functions.ptx" />
+       <xi:include href="./ch-III-partial_derivatives.ptx" />
+       <xi:include href="./ch-IV-multiple_integrals.ptx" />
+       <xi:include href="./ch-V-vector_calculus.ptx" />
+
+
+    <!-- Include backmatter -->
+    <xi:include href="./backmatter.ptx" />
+
+  </book>
+</pretext>

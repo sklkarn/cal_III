@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-I-eq_lines-planes" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Equations of Lines and Planes</title>
+
+    <introduction>
+     
+  <p> The line in xy-plane is determined by a point <m>P_1(x_o, y_o, z_o)</m> 
+    and its direction vector <m>\vec{v}</m>. Let <m>\vec{v}</m> be a vector parallel to the 
+    line: <m>L</m>, and <m>P(x, y, z)</m> be an arbitrary point on the line. Let
+    <m>\vec{r}_0</m> and <m>\vec{r}</m> be the position vectors of <m>P_o</m> and
+    <m>P</m>, respectively, as shown in the figure below.
+    </p>
+    <image source="eq_line-1.png" width ="30%">  </image>
+  <p>
+    From the figure, we can see that the vector <m> \vec{a} = \vec{P_oP} = \vec{r} - \vec{r}_0</m> is parallel to the direction vector <m>\vec{v}</m>.
+    Therefore, there exists a scalar <m>t</m> such that:
+    <m>\vec{r} - \vec{r}_0 = t \vec{v}</m>.
+    This gives the vector equation of the line:
+    <md>\vec{r} = \vec{r}_0 + t \vec{v}</md>.
+    Each value of parameter <m>t</m> gives the position vector <m>\vec{r}</m> of a point on the line, <m>L</m>. 
+    This parametric representation allows us to describe all points on the line using a single parameter <m>t</m>.
+    Positive values of <m>t</m> correspond to points on the line that lie on one side of <m>P_o</m>, 
+    whereas negative values of <m>t</m> correspond to points that lie on the other side of <m>P_o</m>.
+  </p>
+  <p>
+    If <m>\vec{v} = \langle a,b,c \rangle </m>, the parametric equations of the line can be written in component form as:
+  
+    <md>\langle x, y, z \rangle = \langle x_o + ta, y_o+tb, z_o +tc \rangle </md>.
+    or, 
+      <md>x = x_o + ta, \quad y = y_o + tb, \quad z = z_o + tc</md>.
+    The symmetric form of the line equation can be written as:
+    <md>\frac{x - x_o}{a} = \frac{y - y_o}{b} = \frac{z - z_o}{c}</md>.
+     </p>
+
+     <example>
+      <statement>
+        <p> 
+          Find the parametric and symmetric equations of the line passing through the point <m>P_o(1, 2, 3)</m> 
+          and parallel to the vector <m>\vec{v} = \langle 4, 5, 6 \rangle</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The parametric equations of the line are:
+          <md>x = 1 + 4t, \quad y = 2 + 5t, \quad z = 3 + 6t</md>.
+          The symmetric form of the line equation is:
+          <md>\frac{x - 1}{4} = \frac{y - 2}{5} = \frac{z - 3}{6}</md>.
+        </p>
+      </solution> 
+     </example>
+
+     <example>
+      <statement>
+        <p>
+          Find the parametric and symmetric equations of the line passing through the point <m>A(2, 3, 4)</m> 
+          and point <m>B(3, 1, 7)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The direction vector of the line is:
+          <md>\vec{v} = \vec{AB} = \langle 3-2, 1-3, 7-4 \rangle = \langle 1, -2, 3 \rangle</md>.
+          The parametric equations of the line are:
+          <md>x = 2 + t, \quad y = 3 - 2t, \quad z = 4 + 3t</md>.
+          The symmetric form of the line equation is:
+          <md>\frac{x - 2}{1} = \frac{y - 3}{-2} = \frac{z - 4}{3}</md>.  
+        </p>
+      </solution>
+     </example>
+
+      </introduction>
+
+
+
+     <subsection xml:id="sec-skew_lines">
+       <title>Skew Lines</title>
+   
+       
+       <p>
+        Two lines in space are said to be skew if they are not parallel and do not intersect. 
+        Skew lines exist in three-dimensional space and can be described using parametric equations. 
+        For example, the lines 
+        <md>L_1: \vec{r}_1(t) = \vec{r}_{1o} + t\vec{v}_1</md>
+        and <md>L_2: \vec{r}_2(s) = \vec{r}_{2o} + s\vec{v}_2</md> are skew if their direction 
+        vectors <m>\vec{v}_1</m> and <m>\vec{v}_2</m> are not parallel and the lines do not intersect.
+       </p>
+         <image source="skew_lines.png" width ="30%">  </image>
+         
+       
+     </subsection>
+
+
+
+ <subsection xml:id="sec-planes">
+       <title>Planes</title>
+       <introduction>
+      
+       <p>
+        A plane in space is a flat, two-dimensional surface that extends infinitely in all directions. 
+        A plane is defined by a point <m>P_0(x_0, y_0, z_0)</m> in the plane and a normal vector to the plane <m>\vec{n} = \langle A, B, C \rangle</m>.
+        Let <m>P(x, y, z)</m> be any point in the plane, and let <m>\vec{r_o}</m> and <m>\vec{r}</m> be the position vectors of <m>P_0</m> and <m>P</m>, respectively.
+        Then the vector <m>\vec{P_0P} = \vec{r} - \vec{r_o}</m> is perpendicular to <m>\vec{n}</m>, so their dot product is zero. Hence the vector equation of the plane is:
+        <md>\vec{n} \cdot (\vec{r} - \vec{r_o}) = 0</md>.
+        </p> 
+         <image source="plane_1.png" width ="30%">  </image>
+        <p>
+        If <m>\vec{n} = \langle a,b,c \rangle</m>, <m>\vec{r} = \langle x,y,z \rangle</m>, and <m>\vec{r_o} = \langle x_0,y_0,z_0 \rangle</m>, then
+        <md>a(x - x_0) + b(y - y_0) + c(z - z_0) = 0</md>. This is known as the scalar equation of the plane.
+        The general form of the equation of the plane is <md>ax + by + cz = d</md>, where <m>d = ax_0 + by_0 + cz_0</m>.
+        For example, the plane <md>2x + 3y - 4z = 5</md> has a normal vector <m>\vec{n} = \langle 2, 3, -4 \rangle</m>.
+       </p>
+         
+         <example>
+          <statement>
+            <p>
+              Find the equation of the plane that passes through the point <m>P_0(1, 2, 3)</m> and has a normal vector <m>\vec{n} = \langle 4, 5, 6 \rangle</m>. Find the intercepts of the plane.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              The equation of the plane is
+              <md>4(x - 1) + 5(y - 2) + 6(z - 3) = 0</md>,
+              or equivalently,
+              <md>4x + 5y + 6z = 32</md>.
+              The intercepts are <m>(8, 0, 0)</m>, <m>(0, 32/5, 0)</m>, and <m>(0, 0, 16/3)</m>.
+              To find the intercepts, set two variables to zero and solve for the remaining variable.
+            </p>
+          </solution>
+         </example>
+         <example>
+          <statement>
+            <p>
+              Find the equation of the plane that passes through the point <m>P(2, 3, 4)</m>, <m>Q(5, 6, 7)</m>, and <m>R(8, 9, 10)</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              The vectors <m>\vec{PQ} = \langle 3, 3, 3 \rangle</m> and <m>\vec{PR} = \langle 6, 6, 6 \rangle</m> are parallel, so the three points are collinear.
+              Therefore, no unique plane passes through all three points. 
+            </p>
+          </solution>
+         </example>
+
+         <example>
+          <statement>
+            <p>
+              Find the equation of the plane that passes through the point <m>P(1,3,2)</m>, <m>Q(3,-1,5)</m>, and <m>R(5,2,0)</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              The vectors <m>\vec{PQ} = \langle 2, -4, 3 \rangle</m> and <m>\vec{PR} = \langle 4, -1, -2 \rangle</m> are not parallel, so the three points are not collinear.
+              A normal vector to the plane is
+              <md>\vec{PQ} \times \vec{PR} = \langle 11, 16, 14 \rangle</md>.
+              Therefore, the equation of the plane is
+              <md>11(x - 1) + 16(y - 3) + 14(z - 2) = 0</md>,
+              or equivalently,
+              <md>11x + 16y + 14z = 75</md>.
+            </p>
+          </solution>
+         </example>
+
+         <example>
+          <statement>
+            <p>
+              Find the point at which the line with parametric equations <m>x = 2 - 3t</m>, <m>y = 2t</m>, and <m>z = 4 + t</m> intersects the plane <m>4x + 5y - 2z = 12</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Substituting the parametric equations into the plane equation gives
+              <md>4(2 - 3t) + 5(2t) - 2(4 + t) = 12</md>,
+              which simplifies to
+              <md>-4t = 12</md>.
+              Therefore, <m>t = -3</m>, and the point of intersection is <m>x = 2 - 3 (-3) = 11</m>, <m>y = 2 (-3) = -6</m>, and <m>z = 4 + (-3) = 1</m>, or
+              <m>(11, -6, 1)</m>.
+            </p>
+          </solution>
+         </example>
+
+         <example>
+          <statement> 
+            <p>
+              Find the angle between the planes <m>2x - y + 4z = 10</m> and <m>x + 2y - 2z = 5</m>. 
+              Find symmetric equations for the line of intersection <m>L</m> of these two planes.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              The normal vectors to the planes are <m>\vec{n}_1 = \langle 2, -1, 4 \rangle</m> and <m>\vec{n}_2 = \langle 1, 2, -2 \rangle</m>.
+              Therefore, the angle between the planes is 
+              <md>
+              <mrow>  \theta \amp  = \arccos\left(\frac{\vec{n}_1 \cdot \vec{n}_2}{\|\vec{n}_1\|\|\vec{n}_2\|}\right)</mrow>
+              <mrow> \amp = \arccos\left(\frac{2 - 2 - 8}{\sqrt{21}\sqrt{9}}\right)</mrow> 
+              <mrow> \amp = \arccos\left(\frac{8}{3\sqrt{21}}\right) \approx 0.835 \text{ radians}</mrow>
+             </md>
+            </p>
+            <p>
+              A direction vector for the line of intersection is
+              <md>\vec{n}_1 \times \vec{n}_2 = \langle -6, 8, 5 \rangle</md>.
+              <md>\vec{n}_1 \times \vec{n}_2 = \begin{vmatrix} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\ 2 &amp; -1 &amp; 4 \\ 1 &amp; 2 &amp; -2 \end{vmatrix} = \langle -6, 8, 5 \rangle</md>
+              Setting <m>z = 0</m> and solving the plane equations gives the point <m>(5, 0, 0)</m> on the line.
+              Therefore, symmetric equations for the line are
+              <md>\frac{x - 5}{-6} = \frac{y}{8} = \frac{z}{5}</md>.
+            </p>
+          </solution>
+         </example>
+
+
+ <image source="plane_intersect.png" width ="30%">  </image> 
+         <note>
+          <p>    
+             In three-dimensional space, a single linear equation in <m>x</m>, <m>y</m>, and <m>z</m> defines a plane. 
+             Because two non-parallel planes intersect along a shared path, a system of two linear equations can be 
+             used to describe a line. Any coordinate point <m>(x, y, z)</m> that satisfy both <m>a_1x + b_1y + c_1z + d_1 = 0</m> and <m>a_2x + b_2y + c_2z + d_2 = 0</m>
+             lie on both of these planes at once, and so the pair of linear equations represents the line of intersection of the planes (if they are not parallel).
+          </p>
+         </note>
+
+       </introduction>
+
+<subsubsection xml:id="distance-from-point-to-plane">
+          <title>Distance from a Point to a Plane</title>
+           <image source="dist_plane.png" width ="30%">  </image>
+                     
+         <p>
+           A formula for measuring the distance <m>d</m> from a point <m>P_1(x_1, y_1, z_1)</m> to the
+           plane <m>ax + by + cz + d = 0</m>.
+         </p>
+        <p>
+          Let <m>d</m> be the distance from <m>P_1</m> to the plane. Consider any arbitrary point <m>P_o (x_o, y_o, z_o)</m> on the plane, 
+          so that direction vector <md>\overrightarrow{P_oP_1}=\vec{v} =(x_1-x_o, y_1-y_o, z_1-z_o)</md>. 
+          The scalar projection of <m>\vec{v}</m> onto the normal vector <m>\vec{n}=\langle a,b,c\rangle</m> is
+          <md>
+             d  = \left|\vec{v}\cdot \hat{n} \right|  = \left|\vec{v}\cdot\frac{\vec{n}}{\|\vec{n}\|}\right| 
+           </md>
+           <md>
+             = \frac{\left|a(x_1-x_o)+b(y_1-y_o)+c(z_1-z_o)\right|}{\sqrt{a^2+b^2+c^2}} 
+             </md>
+           <md>
+             = \frac{\left|ax_1+by_1+cz_1-(ax_o+by_o+cz_o)\right|}{\sqrt{a^2+b^2+c^2}}
+           </md>
+             <md>
+              \therefore \quad d = \frac{\left|ax_1 + by_1 + cz_1 + d\right|}{\sqrt{a^2 + b^2 + c^2}}
+            </md>  
+        </p>
+
+      
+
+        <example>
+          <statement>
+            <p>
+              Find the distance from the point <m>P_1(1, 2, 3)</m> to the plane <m>2x + 3y + 4z - 5 = 0</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Using the distance formula,
+              <md>
+                d  = \frac{\left|2(1)+3(2)+4(3)-5\right|}{\sqrt{2^2+3^2+4^2}} 
+                 = \frac{15}{\sqrt{29}} 
+              </md>
+              Therefore, the distance is <m>d = \frac{15}{\sqrt{29}}</m>.
+            </p>
+          </solution>
+        </example>
+
+            <example>
+          <statement>
+            <p>
+              Find the distance from the plane <m>2x + 4y + 6z + 3 = 0</m> to the plane <m>x + 2y + 3z - 7 = 0</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>To calculate the distance between the planes, first note that their normal vectors are parallel. 
+              Therefore, the planes are parallel. Choose a point on the first plane, such as <m>(0, 0, -\frac{1}{2})</m>. Then calculate the distance from this point to the second plane, 
+              using the distance formula,
+              <md>
+                 d = \frac{\left|3+7\right|}{\sqrt{1^2+2^2+3^2}} 
+                 = \frac{10}{\sqrt{14}} 
+              </md>
+              Therefore, the distance is <m>d = \frac{10}{\sqrt{14}}</m>.
+            </p>
+          </solution>
+        </example>
+
+
+ <example>
+          <statement>
+            <p>
+              Find the distance between the skew lines <m>L_1: x=1+t, y=2+3t, z=3+4t </m> and <m>L_2: x=4+5s, y=5+6s, z=6+7s</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              The direction vectors of the lines are <m>\vec{v}_1 = \langle 1, 3, 4\rangle</m> and <m>\vec{v}_2 = \langle 5, 6, 7\rangle</m>. A vector perpendicular to both lines is
+              <md>
+                \vec{v}_1 \times \vec{v}_2 = \begin{vmatrix} \hat{i} &amp; \hat{j} &amp; \hat{k} \\ 1 &amp; 3 &amp; 4 \\ 5 &amp; 6 &amp; 7 \end{vmatrix} = \langle -3, 13, -9\rangle 
+              </md>
+              The distance between the lines is the distance from <m>P_1(1, 2, 3)</m> to the plane through <m>P_2(4, 5, 6)</m> with normal vector <m>\vec{v}_1 \times \vec{v}_2</m>. Using the distance formula,
+              <md>
+                <mrow> d = \frac{\left|\langle 3, 3, 3\rangle \cdot \langle -3, 13, -9\rangle\right|}{\sqrt{(-3)^2+13^2+(-9)^2}} </mrow>
+                <mrow> = \frac{3}{\sqrt{259}} </mrow>
+              </md>
+              Therefore, the distance is <m>d = \frac{3}{\sqrt{259}}</m>.
+            </p>
+          </solution> 
+         </example>
+
+
+          <example>
+          <statement>
+            <p>
+              Find the distance between the skew lines 
+              <md>L_1: \frac{x-1}{2} = \frac{y-2}{3} = \frac{z-3}{4}</md> and
+              <md>L_2: \frac{x-4}{5} = \frac{y-5}{6} = \frac{z-6}{7}</md>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              The direction vectors of the lines are <m>\vec{v}_1 = \langle 2, 3, 4\rangle</m> and <m>\vec{v}_2 = \langle 5, 6, 7\rangle</m>. 
+              A vector perpendicular to both lines is
+              <md>
+                \vec{v}_1 \times \vec{v}_2 = \begin{vmatrix} \hat{i} &amp; \hat{j} &amp; \hat{k} \\ 2 &amp; 3 &amp; 4 \\ 5 &amp; 6 &amp; 7 \end{vmatrix} = \langle -3, 6, -3\rangle 
+              </md>
+              The distance between the lines is the distance from <m>P_1(1, 2, 3)</m> to the plane through <m>P_2(4, 5, 6)</m> with normal vector <m>\vec{v}_1 \times \vec{v}_2</m>. Using the distance formula,
+              <md>
+                 d = \frac{\left|\langle 3, 3, 3\rangle \cdot \langle -3, 6, -3\rangle\right|}{\sqrt{(-3)^2+6^2+(-3)^2}} 
+               = \frac{9}{\sqrt{54}} = \frac{\sqrt{6}}{2} 
+              </md>
+              Therefore, the distance is <m>d = \frac{\sqrt{6}}{2}</m>.
+            </p>
+          </solution>
+         </example>
+
+
+ </subsubsection>
+
+
+   </subsection>
+       
+
+       <exercises>
+      <exercise>
+        <p>
+          Find the distance between the skew lines <m>L_1: x=1+t, y=2+3t, z=3+4t </m> and <m>L_2: x=4+5s, y=5+6s, z=6+7s</m>.
+        </p>
+      </exercise>
+      <exercise>
+        <p>
+          Find the distance between a point  <m>P(1, 2, 3)</m> to the line <m>L: x=4+5s, y=5+6s, z=6+7s</m>.
+        </p>
+      </exercise>
+      <exercise>
+        <p>
+          Find the distance between the point <m>P(1, 2, 3)</m> and the plane <m>3x + 4y + 5z = 6</m>.
+        </p>
+      </exercise>
+      <exercise>
+        <p>
+          Find the equation of the line through the point <m>(1, 2, 3)</m> and parallel to the vector <m>\langle 3, 9, -2\rangle</m>.
+        </p>
+      </exercise>
+
+      <exercise>
+        <p>
+          Find the parametric equation of the line through the point
+          <ol>
+            <li><m>(2, 2, 3)</m> and parallel to the vector <m>2\hat{i} + 3\hat{j} -5\hat{k}</m>.</li> 
+            <li>
+              <p>
+                 <m>(0, 0, 0)</m> and parallel to the vector <m>\langle 1, 2, 3\rangle</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                 <m>(0, 2, 3)</m> and parallel to the line <m>x = -1 + 2t, y = 6 - 3t, z = 3 + 9t</m>.
+              </p>
+            </li>
+          </ol>
+         </p>
+      </exercise>
+
+      <exercise>
+        <p>
+         Find parametric equations and symmetric equations for the line.
+         <ol>
+          <li>
+            <p>
+             through the origin and the point <m>(4,3,-1)</m>.
+            </p>  
+          </li>
+          <li>
+            <p>
+             through the points <m>(2,1,0)</m> and perpendicular to both <m>\mathbf{i}+\mathbf{j}</m> and <m>\mathbf{j}+\mathbf{k}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+             through the point <m>(1,-1,1)</m> and parallel to the line <m>x+2=2y=-3z</m>.
+            </p>
+          </li>
+          </ol>
+        </p>
+      </exercise>
+
+      <exercise>
+        <p>
+         Find parametric equations for the line of intersection of the planes <m>x + 2y + 3z = 1</m> and <m>x - y + z = 1</m>.
+        </p>
+      </exercise>
+
+  <exercise>
+    <p>
+     Is the line through the points <m>(1, 2, 3)</m> and <m>(4, 5, 6)</m> parallel to the line through the points <m>(0, 0, 0)</m> and <m>(3, 3, 3)</m>?
+    </p>
+  </exercise>
+
+  <exercise>
+    <p>
+     Is the line through the points <m>(-2,4,0)</m> and <m>(1,1,0)</m> perpendicular to the line through the points <m>(2, 2, 2)</m> and <m>(3, 3, 3)</m>?
+    </p>
+  </exercise>
+
+  <exercise>
+    <p>
+     Find parametric equations for the line segment from <m>(5,-3,0)</m> to <m>(4,6,1)</m>.
+    </p>
+  </exercise>
+
+  <exercise>
+    <p>
+     Find an equation of the plane through the points <m>(3,-2,5)</m>, <m>(2,1,4)</m>, and <m>(-1,0,-3)</m>.
+    </p>
+  </exercise>
+
+  <exercise>
+    <p>
+     Find the point of intersection of the line <m>x = 1 + 2t, y = 2 - t, z = 3 + 4t</m> and the plane <m>x + y + z = 6</m>.
+    </p>
+  </exercise>
+
+  <exercise>
+    <p>
+     Where does the line through the points <m>(1, 0, 0)</m> and <m>(1, 1, 1)</m> intersect the plane <m>x + y + z = 3</m>?
+    </p>
+  </exercise>
+
+  <exercise>
+    <p>
+     Find the cosine of the angle between the planes <m>x + y + z = 0</m> and <m>x + 2y + 3z = 1</m>.
+    </p>
+  </exercise>
+
+  <exercise>
+    <p>
+     Determine whether the planes are parallel, perpendicular, or neither. 
+     <ol>
+      <li>
+        <p>
+         <m>4x - 2y + 5z = 2</m> and <m>6x + 3y - 2z = 3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+         <m>2x - 3y + 4z = 5</m> and <m>6x + 9y - 12z = 1</m>
+        </p>
+      </li>
+        <li>
+        <p>
+         <m>x - y + 2z = 1</m> and <m>2x + 2y - 4z = 3</m>
+        </p>
+      </li>
+     </ol>
+    </p>
+  </exercise>
+
+  <exercise>
+    <p>
+     Find an equation for the plane consisting of all points that are equidistant from the points <m>(-1, 0, 0)</m> and <m>(1, 0, 0)</m>.
+    </p>
+  </exercise>
+
+  <exercise>
+    <p>
+     Show that the distance between the parallel planes <m>ax + by + cz = d_1</m> and <m>ax + by + cz = d_2</m> is <m>\frac{|d_1 - d_2|}{\sqrt{a^2 + b^2 + c^2}}</m>.
+    </p>
+    <hint>
+      <p>
+        Find a point on the first plane and use the distance formula to find its distance from the second plane. 
+        For example, you can choose a point <m>(x_0, y_0, z_0)</m> on the first plane such that <m>ax_0 + by_0 + cz_0 = d_1</m>. 
+        Then use the distance formula to find the distance from this point to the second plane.
+      </p>
+    </hint>
+  </exercise>
+    </exercises>
+
+
+
+
+</section>

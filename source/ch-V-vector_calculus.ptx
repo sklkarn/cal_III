@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-V-vector_calculus" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Vector Calculus</title>
+
+  <introduction>
+  <p>
+    Vector calculus extends differentiation and integration to scalar and vector fields in two- and three-dimensional space. 
+    Building directly on scalar and vector line integrals, it gives you differential operators like gradient, 
+    divergence, and curl along with major theorems that connect integrals over curves, surfaces, and volumes.
+  </p>
+   <image source = "div-curl.jpeg" width="30%"/>
+
+   <p>
+    <ul>
+      <li>
+        <p>
+           Gradient (<m>\nabla f</m>): Takes a scalar field <m>f(x, y, z)</m> and produces
+        a vector field pointing in the direction of steepest increase, with magnitude
+        equal to the rate of increase there. 
+        </p>
+      </li>
+      <li>
+        <p>
+          Divergence (<m>\nabla \cdot \mathbf{F}</m>):
+        Takes a vector field <m>\mathbf{F}</m> and returns a scalar field measuring how
+        much the field spreads out (''sources'') or converges (''sinks'') at each
+        point.
+        </p>
+      </li>
+      <li>
+        <p>
+           Curl (<m>\nabla \times \mathbf{F}</m>): Takes a three-dimensional vector
+        field <m>\mathbf{F}</m> and returns a vector field measuring local rotation or
+        circulation density around each point.
+        </p>
+      </li>
+      <li>
+        <p>
+           Line and Surface Integrals: Line integrals
+        accumulate values along a curve <m>C</m>, while surface integrals measure flux
+        (how much of a vector field passes through a surface <m>S</m>).
+        </p>
+      </li>
+      <li>
+        <p>
+           Fundamental
+        Theorems: Green's theorem, Stokes' theorem, and the Divergence (Gauss) theorem
+        relate boundary integrals (around a curve or closed surface) to interior
+        integrals (over a region or volume).
+        </p>
+      </li>
+    </ul>  
+  </p>
+
+   
+
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="sec-V-vector_fields.ptx" /> 
+   <xi:include href="sec-V-greens_theorem.ptx" /> 
+
+</chapter>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-V-greens_theorem" xmlns:xi="http://www.w3.org/2001/XInclude">
+ <title> Greens Theorem </title>
+
+<introduction>
+ <p>
+  Green's theorem relates a line integral around a simple, closed, positively
+    oriented curve <m>C</m> in the <m>xy</m>-plane to a double integral over the
+    plane region <m>D</m> that <m>C</m> encloses.
+    It lets you trade a path integral around a boundary for a double integral over
+    the interior---or vice versa.
+ </p>
+<p>
+  Let <m>D</m> be a simply connected region in <m>\mathbb{R}^{2}</m> whose
+    boundary <m>C = \partial D</m> is a piecewise smooth, simple closed curve
+    oriented counterclockwise (positive orientation).
+    If <m>P(x, y)</m> and <m>Q(x, y)</m> have continuous partial derivatives on an
+    open region containing <m>D</m>, then:
+    <md>
+        \oint_{C} (P \, dx + Q \, dy) = \iint_{D} \left( \frac{\partial Q}{\partial x}- \frac{\partial P}{\partial y}\right) dA
+    </md>
+    In vector field notation, for <m>\mathbf{F}= \langle P, Q \rangle</m>:
+    <md>
+        \oint_{C} \mathbf{F}\cdot d\mathbf{r}= \iint_{D} \left( \frac{\partial Q}{\partial x}- \frac{\partial P}{\partial y}\right) dA
+    </md>
+</p>
+<p>
+  Green's theorem also has a normal (flux) form using the outward unit normal
+    <m>\mathbf{n}</m> along <m>C</m>:
+    <md>
+        \oint_{C} \mathbf{F}\cdot \mathbf{n}\, ds = \iint_{D} \left( \frac{\partial P}{\partial x}+ \frac{\partial Q}{\partial y}\right) dA = \iint_{D} (\nabla \cdot \mathbf{F}) \, dA
+    </md>
+    Circulation form (<m>\oint_{C} \mathbf{F}\cdot d\mathbf{r}</m>): Measures
+    tangential flow along the boundary curve <m>C</m>.Flux form
+    (<m>\oint_{C} \mathbf{F}\cdot \mathbf{n}\, ds</m>): Measures net outward flow
+    across the boundary curve <m>C</m>.
+</p>
+
+<p>
+  <alert>Practical Uses:</alert> 
+  Simplifying hard integrals: When a closed curve has
+    multiple pieces or awkward parameterization, converting to
+    <m>\iint_{D} \left(\frac{\partial Q}{\partial x}- \frac{\partial P}{\partial y}\right) dA</m>
+    often makes integration much cleaner. 
+    </p>
+    <p>
+      Finding areas: Since
+    <m>\frac{1}{2}\oint_{C} (-y \, dx + x \, dy) = \iint_{D} 1 \, dA = \operatorname{Area}(D)</m>,
+    Green's theorem provides a boundary formula for the area of a planar
+    region.
+    </p>
+    <p>
+       Check orientation and domain: If <m>C</m> is traversed clockwise,
+    multiply the result by <m>-1</m>.
+    Also verify that <m>P</m> and <m>Q</m> have no singularities inside <m>D</m>; if
+    a hole or singularity exists inside <m>C</m>, use a region with boundary cuts or
+    apply Stokes' theorem / vector potential methods carefully.
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Evaluate <m>\oint_{C} (-y \, dx + x \, dy)</m>, where <m>C</m> is the circle
+                    <m>x^{2} + y^{2} = 4</m> oriented counterclockwise.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ul>
+            <li>
+              <p>
+                Identify <m>P</m>, <m>Q</m>, and region <m>D</m>: Here <m>P(x, y) = -y</m> and
+                                <m>Q(x, y) = x</m>.
+                                The curve <m>C</m> encloses the disk <m>D = \{(x, y) : x^{2} + y^{2} \le 4\}</m>
+                                of radius <m>2</m>.
+                                   </p>
+            </li>
+            <li>
+              <p>
+                Compute partial derivatives:
+                                <md>
+                                    \frac{\partial Q}{\partial x}= \frac{\partial}{\partial x}(x) = 1, \qquad \frac{\partial P}{\partial y}= \frac{\partial}{\partial y}(-y) = -1
+                                </md>
+                                   </p>
+            </li>
+            <li>
+              <p>
+                 Apply Green's theorem:
+                                <md>
+                                    \oint_{C} (-y \, dx + x \, dy) = \iint_{D} \big(1 - (-1)\big) \, dA = \iint_{D} 2 \, dA = 2 \cdot \operatorname{Area}(D)
+                                </md>
+                                       </p>
+            </li>
+          </ul>
+          Since <m>\operatorname{Area}(D) = \pi(2)^{2} = 4\pi</m>:
+                                <md>
+                                    \oint_{C} (-y \, dx + x \, dy) = 2(4\pi) = 8\pi
+                                </md>
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+          Line Integral Around a Rectangle: 
+          Evaluate
+                    <m>\oint_{C} (xy^{2} \, dx + x^{2} y \, dy)</m>, where <m>C</m> is the boundary
+                    of the rectangle <m>[0, 2] \times [0, 3]</m> oriented counterclockwise.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Identify <m>P</m>, <m>Q</m>, and <m>D</m>: Here <m>P(x, y) = xy^{2}</m> and
+                    <m>Q(x, y) = x^{2} y</m>, and <m>D = [0, 2] \times [0, 3]</m>.
+        </p>
+        <p>
+          Compute partial derivatives:
+                    <md>
+                        \frac{\partial Q}{\partial x}= \frac{\partial}{\partial x}(x^{2} y) = 2xy, \qquad \frac{\partial P}{\partial y}= \frac{\partial}{\partial y}(xy^{2}) = 2xy
+                    </md>
+                    
+          Apply Green's theorem:
+                    <md>
+                        \oint_{C} (xy^{2} \, dx + x^{2} y \, dy) = \iint_{D} (2xy - 2xy) \, dA = \iint_{D} 0 \, dA = 0
+                    </md>
+          Because <m>\frac{\partial Q}{\partial x}- \frac{\partial P}{\partial y}= 0</m>
+                    everywhere on the simply connected rectangle <m>D</m>, the vector field
+                    <m>\mathbf{F}= \langle xy^{2}, x^{2} y \rangle</m> is conservative, so the
+                    integral around any closed loop is <m>0</m>.
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+          Triangular Region Using a Double Integral: 
+          Evaluate
+                    <m>\oint_{C} (3y \, dx + 2x \, dy)</m>, where <m>C</m> is the counterclockwise
+                    boundary of the triangle with vertices <m>(0, 0)</m>, <m>(1, 0)</m>, and
+                    <m>(0, 2)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Identify <m>P</m>, <m>Q</m>, and <m>D</m>: Here <m>P(x, y) = 3y</m> and
+                    <m>Q(x, y) = 2x</m>.
+                
+          The hypotenuse connects <m>(1, 0)</m> to <m>(0, 2)</m>, which is the line
+                    <m>y = 2 - 2x</m>.
+        </p>
+        <p>
+          Thus:
+                    <md>
+                        D = \{(x, y) : 0 \le x \le 1, \; 0 \le y \le 2 - 2x\}
+                    </md>
+          Compute partial derivatives:
+                    <md>
+                        \frac{\partial Q}{\partial x}= 2, \qquad \frac{\partial P}{\partial y}= 3
+                    </md>
+                    <md>
+                        \frac{\partial Q}{\partial x}- \frac{\partial P}{\partial y}= 2 - 3 = -1
+                    </md>
+          Evaluate the double integral:
+                    <md>
+                        \oint_{C} (3y \, dx + 2x \, dy) = \iint_{D} (-1) \, dA = -\operatorname{Area}(D)
+                    </md>
+          Since <m>D</m> is a right triangle with base <m>1</m> and height <m>2</m>, its
+                    area is <m>\frac{1}{2}(1)(2) = 1</m>:
+                    <md>
+                        \oint_{C} (3y \, dx + 2x \, dy) = -1
+                    </md>
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+          Outward Flux Form Around a Circle: 
+          Compute the outward flux
+                    <m>\oint_{C} \mathbf{F}\cdot \mathbf{n}\, ds</m> for
+                    <m>\mathbf{F}(x, y) = \langle x^{2}, y^{2} \rangle</m> across the circle
+                    <m>C</m>: <m>x^{2} + y^{2} = 9</m> (oriented counterclockwise, with outward
+                    normal <m>\mathbf{n}</m>).
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Identify <m>P</m>, <m>Q</m>, and <m>D</m>: Here <m>P(x, y) = x^{2}</m> and
+                    <m>Q(x, y) = y^{2}</m>, and <m>D</m> is the disk <m>x^{2} + y^{2} \le 9</m> of
+                    radius <m>3</m>.
+        </p>
+        <p>
+          Compute the 2D divergence
+                    <m>\frac{\partial P}{\partial x}+ \frac{\partial Q}{\partial y}</m>:
+                    <md>
+                        \frac{\partial P}{\partial x}= 2x, \qquad \frac{\partial Q}{\partial y}= 2y
+                    </md>
+                    <md>
+                        \nabla \cdot \mathbf{F}= 2x + 2y
+                    </md>
+            
+            Integrate in polar coordinates (<m>x = r\cos\theta</m>, <m>y = r\sin\theta</m>,
+                    <m>dA = r \, dr \, d\theta</m>):
+                    <md>
+                        \oint_{C} \mathbf{F}\cdot \mathbf{n}\, ds = \int_{0}^{2\pi}\int_{0}^{3} (2r\cos\theta + 2r\sin\theta) \, r \, dr \, d\theta \\ 
+                        = \int_{0}^{2\pi}(2\cos\theta + 2\sin\theta) \, d\theta \int_{0}^{3} r^{2} \, dr
+                    </md>
+            
+            Since <m>\int_{0}^{2\pi}\cos\theta \, d\theta = 0</m> and
+                    <m>\int_{0}^{2\pi}\sin\theta \, d\theta = 0</m>:
+                    <md>
+                        \oint_{C} \mathbf{F}\cdot \mathbf{n}\, ds = 0 \cdot \left[\frac{r^{3}}{3}\right]_{0}^{3} = 0
+                    </md>
+            
+            The outward flux across the whole circle is <m>0</m> because positive outward
+                    flow on the upper/right sides balances inward/negative flow on the opposite
+                    sides.
+        </p>
+      </solution>
+    </example>
+</introduction>
+
+   
+
+</section>

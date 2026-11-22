@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-deriv-integ" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Derivatives and Integrals of Vector Functions</title>
+
+<introduction>
+  <p>
+    In this section, we will explore the derivatives and integrals of vector functions, which are essential tools in calculus and physics.
+  </p>
+
+  </introduction>
+
+  <subsection xml:id="subsec-deriv">
+    <title>Derivatives of Vector Functions</title>
+  <p>
+    The derivative <m>r'</m> of a vector function <m>\mathbf{r}</m> is defined similar to real-valued functions: 
+    <md> \frac{d\mathbf{r}}{dt} = \mathbf{r'(t)} = \lim_{h \to 0} \frac{\mathbf{r}(t+h) - \mathbf{r}(t)}{h} </md> 
+    As with real-valued functions, the derivative of a vector function gives us the rate of change of the vector with respect to the parameter <m>t</m>.
+    As <m> h \to 0</m>, the difference quotient approaches the derivative, which is a vector that points in the direction of the instantaneous rate of change of <m>\mathbf{r}</m> at time <m>t</m>.
+    For this reason, the vector <m>\mathbf{r'(t)}</m> is tangent to the curve described by <m>\mathbf{r}(t)</m> at the point P(<m>x(t)</m>, <m>y(t)</m>, <m>z(t)</m>). 
+    The unit tangent vector <m>\mathbf{T(t)}</m> is defined as the normalized derivative of <m>\mathbf{r}</m>:
+    <md> \mathbf{T(t)} = \frac{\mathbf{r'(t)}}{|\mathbf{r'(t)}|} </md>
+    The unit tangent vector points in the direction of the curve at point P and has a magnitude of 1.
+  </p>
+  <theorem xml:id="thm-derivative">
+    <statement>
+      <p>
+        If <m>\mathbf{r(t)} = \langle f(t), g(t), h(t) \rangle</m> is a vector function, then its derivative is given by:
+        <md> \mathbf{r'(t)} = \langle f'(t), g'(t), h'(t) \rangle </md>
+        where <m>f'(t)</m>, <m>g'(t)</m>, and <m>h'(t)</m> are the derivatives of the component functions of <m>\mathbf{r}</m>. 
+      </p>
+    </statement>
+  </theorem>
+  
+  <example>
+    <statement>
+      <p>
+        Let <m>\mathbf{r(t)} = \langle t^2, \sin(t), e^t \rangle</m>. Then the derivative of <m>\mathbf{r}</m> is:
+        <md> \mathbf{r'(t)} = \langle 2t, \cos(t), e^t \rangle </md>
+        This means that at any point <m>t</m>, the rate of change of the vector function is given by the vector <m>\langle 2t, \cos(t), e^t \rangle</m>.  
+      </p>
+    </statement>
+  </example>
+
+  <example>
+    <statement>
+      <p>
+        Let <m>\mathbf{r(t)} = \langle t^3, \ln(t), \sqrt{t} \rangle</m>. Then the derivative of <m>\mathbf{r}</m> is:
+        <md> \mathbf{r'(t)} = \langle 3t^2, \frac{1}{t}, \frac{1}{2\sqrt{t}} \rangle </md>
+        This means that at any point <m>t</m>, the rate of change of the vector function is given by the vector <m>\langle 3t^2, \frac{1}{t}, \frac{1}{2\sqrt{t}} \rangle</m>.  
+      </p>
+    </statement>
+  </example>
+
+  <example>
+    <statement>
+      <p>
+        Find the unit tangent vector <m>\mathbf{T(t)}</m> for the vector function <m>\mathbf{r(t)} = \langle t^2, \sin(t), e^t \rangle</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        First, we find the derivative of <m>\mathbf{r(t)}</m>:
+        <md> \mathbf{r'(t)} = \langle 2t, \cos(t), e^t \rangle </md>
+        Next, we find the magnitude of <m>\mathbf{r'(t)}</m>:
+        <md> |\mathbf{r'(t)}| = \sqrt{(2t)^2 + (\cos(t))^2 + (e^t)^2} = \sqrt{4t^2 + \cos^2(t) + e^{2t}} </md>
+        Finally, we can find the unit tangent vector <m>\mathbf{T(t)}</m>:
+        <md> \mathbf{T(t)} = \frac{\mathbf{r'(t)}}{|\mathbf{r'(t)}|} = \frac{\langle 2t, \cos(t), e^t \rangle}{\sqrt{4t^2 + \cos^2(t) + e^{2t}}} </md>
+      </p>
+    </solution>
+  </example>
+
+  <example>
+    <statement>
+      <p>
+        For the curve defined by <m>\mathbf{r(t)} = \langle t^3, \ln(t), \sqrt{t} \rangle</m>, find the unit tangent vector <m>\mathbf{T(t)}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        First, we find the derivative of <m>\mathbf{r(t)}</m>:
+        <md> \mathbf{r'(t)} = \langle 3t^2, \frac{1}{t}, \frac{1}{2\sqrt{t}} \rangle </md>
+        Next, we find the magnitude of <m>\mathbf{r'(t)}</m>:
+        <md> |\mathbf{r'(t)}| = \sqrt{(3t^2)^2 + \left(\frac{1}{t}\right)^2 + \left(\frac{1}{2\sqrt{t}}\right)^2} = \sqrt{9t^4 + \frac{1}{t^2} + \frac{1}{4t}} </md>
+        Finally, we can find the unit tangent vector <m>\mathbf{T(t)}</m>:
+        <md> \mathbf{T(t)} = \frac{\mathbf{r'(t)}}{|\mathbf{r'(t)}|} = \frac{\langle 3t^2, \frac{1}{t}, \frac{1}{2\sqrt{t}} \rangle}{\sqrt{9t^4 + \frac{1}{t^2} + \frac{1}{4t}}} </md>
+      </p>
+    </solution>
+  </example>
+
+  <example>
+    <statement>
+      <p>
+       Show that if <m>\mathbf{r(t)} = \mathbf{c}</m> (a constant vector), then <m>\mathbf{r'(t)}</m> is orthogonal to <m>\mathbf{r(t)}</m> for all <m>t</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        If <m>\mathbf{r(t)} = \mathbf{c}</m>, then <m>\mathbf{r'(t)} = \mathbf{0}</m> (the zero vector). The dot product of <m>\mathbf{r(t)}</m> and <m>\mathbf{r'(t)}</m> is:
+        <md> \mathbf{r(t)} \cdot \mathbf{r'(t)} = \mathbf{c} \cdot \mathbf{0} = 0 </md>
+        Since the dot product is zero, it follows that <m>\mathbf{r'(t)}</m> is orthogonal to <m>\mathbf{r(t)}</m> for all <m>t</m>.
+      </p>
+    </solution>
+  </example>
+
+    <example>
+    <statement>
+      <p>
+       Find the derivative of the vector function <m>\mathbf{r(t)} = \langle t^2+1, \sin(t), e^t \rangle</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The derivative of <m>\mathbf{r(t)}</m> is given by:
+        <md> \mathbf{r'(t)} = \frac{d}{dt} \langle t^2+1, \sin(t), e^t \rangle = \langle 2t, \cos(t), e^t \rangle </md>
+      </p>
+    </solution>
+  </example>
+
+  <example>
+    <statement>
+      <p>
+        Find the derivative of the vector function <m>\mathbf{r(t)} = (1+\cos(t))\mathbf{i} + (2+\sin(t))\mathbf{j} + t^2\mathbf{k}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The derivative of <m>\mathbf{r(t)}</m> is given by:
+        <md> \mathbf{r'(t)} = \frac{d}{dt} \langle 1+\cos(t), 2+\sin(t), t^2 \rangle = \langle -\sin(t), \cos(t), 2t \rangle </md>
+          <md> \int \mathbf{r(t)} dt = \int \langle t^2, \sin(t), e^t \rangle dt = \langle \frac{t^3}{3}, -\cos(t), e^t \rangle + \mathbf{C} </md>
+        where <m>\mathbf{C}</m> is a constant vector of integration.
+      </p>
+      
+    </solution>
+
+  </example>
+
+  <example>
+      <statement>
+        <p>
+         Find the unit tangent vector <m>\mathbf{T}(t)</m> at the point with the given value of the parameter <m>t</m>.
+         <ol>
+          <li>
+            <p>
+              For <m>\mathbf{r(t)} = \langle t e^{-t}, 2 \arcsin(t), 2e^t \rangle</m> at <m>t = 0</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              For <m>\mathbf{r(t)} = \langle t^2+3t, t^2+1, 3t+4 \rangle</m> at <m>t = 1</m>.
+            </p>
+          </li>
+         </ol>
+        </p>  
+          </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                First, we find the derivative of <m>\mathbf{r(t)} = \langle t e^{-t}, 2 \arcsin(t), 2e^t \rangle</m>:
+          <md> \mathbf{r'(t)} = \langle e^{-t} - t e^{-t}, \frac{2}{\sqrt{1-t^2}}, 2e^t \rangle </md>
+          Next, we evaluate <m>\mathbf{r'(0)}</m>:
+          <md> \mathbf{r'(0)} = \langle 1, 2, 2 \rangle </md>
+          Now, we find the magnitude of <m>\mathbf{r'(0)}</m>:
+          <md> |\mathbf{r'(0)}| = \sqrt{1^2 + 2^2 + 2^2} = \sqrt{9} = 3 </md>
+          Finally, we can find the unit tangent vector <m>\mathbf{T(0)}</m>:
+          <md> \mathbf{T(0)} = \frac{\mathbf{r'(0)}}{|\mathbf{r'(0)}|} = \frac{\langle 1, 2, 2 \rangle}{3} = \langle \frac{1}{3}, \frac{2}{3}, \frac{2}{3} \rangle </md>
+              </p>
+            </li>
+            <li>
+              <p>
+                Next, we find the derivative of <m>\mathbf{r(t)} = \langle t^2+3t, t^2+1, 3t+4 \rangle</m>:
+          <md> \mathbf{r'(t)} = \langle 2t+3, 2t, 3 \rangle </md>
+          Next, we evaluate <m>\mathbf{r'(1)}</m>:
+          <md> \mathbf{r'(1)} = \langle 5, 2, 3 \rangle </md>
+          Now, we find the magnitude of <m>\mathbf{r'(1)}</m>:
+          <md> |\mathbf{r'(1)}| = \sqrt{5^2 + 2^2 + 3^2} = \sqrt{38} </md>
+          Finally, we can find the unit tangent vector <m>\mathbf{T(1)}</m>:
+          <md> \mathbf{T(1)} = \frac{\mathbf{r'(1)}}{|\mathbf{r'(1)}|} = \frac{\langle 5, 2, 3 \rangle}{\sqrt{38}} = \langle \frac{5}{\sqrt{38}}, \frac{2}{\sqrt{38}}, \frac{3}{\sqrt{38}} \rangle </md>  
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+  </example>
+
+  <example>
+    <statement>
+      <p>
+        Find parametric equations for the tangent line to the curve with the given parametric equations at the specified point.
+        <ol>
+          <li>
+            <p>
+              For <m>x(t) = t^2 + 1</m>, <m>y(t) = \sin(t)</m>, and <m>z(t) = e^t</m> at <m>t = 0</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>x=2\cos t</m>, <m>y=2\sin t</m>, <m>z=4\cos 2t</m> at <m>(\sqrt{3}, 1, 4)</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              First, we find the derivative of the vector function <m>\mathbf{r(t)} = \langle t^2 + 1, \sin(t), e^t \rangle</m>:
+          <md> \mathbf{r'(t)} = \langle 2t, \cos(t), e^t \rangle </md>
+          Next, we evaluate <m>\mathbf{r'(0)}</m>:
+          <md> \mathbf{r'(0)} = \langle 0, 1, 1 \rangle </md>
+          The point on the curve at <m>t = 0</m> is:
+          <md> \mathbf{r(0)} = \langle 1, 0, 1 \rangle </md>
+          Therefore, the parametric equations for the tangent line are:
+          <md> x = 1 + 0t = 1, y = 0 + 1t = t, z = 1 + 1t = t + 1 </md>
+              </p>
+            </li>
+            <li>
+              <p>
+                First, we find the derivative of the vector function <m>\mathbf{r(t)} = \langle 2\cos(t), 2\sin(t), 4\cos(2t) \rangle</m>:
+          <md> \mathbf{r'(t)} = \langle -2\sin(t), 2\cos(t), -8\sin(2t) \rangle </md>
+          Next, we need to find the value of <m>t</m> that corresponds to the point <m>(\sqrt{3}, 1, 4)</m>. We can solve for <m>t</m> using the first two equations:
+          <md> x(t) = 2\cos(t) = \sqrt{3} \implies t = \frac{\pi}{6} </md>
+          Now we evaluate <m>\mathbf{r'(\frac{\pi}{6})}</m>:
+          <md> \mathbf{r'(\frac{\pi}{6})} = \langle -2\sin(\frac{\pi}{6}), 2\cos(\frac{\pi}{6}), -8\sin(\frac{\pi}{3}) \rangle = \langle -1, \sqrt{3}, -4\sqrt{3} \rangle </md>
+          The point on the curve at <m>t = \frac{\pi}{6}</m> is:
+          <md> \mathbf{r(\frac{\pi}{6})} = \langle 2\cos(\frac{\pi}{6}), 2\sin(\frac{\pi}{6}), 4\cos(\frac{\pi}{3}) \rangle = \langle \sqrt{3}, 1, 2 \rangle </md>  
+      </p>
+      </li>
+      </ol>
+      </p>
+    </solution>
+  </example>
+
+<example>
+    <statement>
+      <p>
+        At what point do the curves 
+        <md>\mathbf{r_1(t)} = \langle 1+t^2, \sin(t), e^t \rangle</md> 
+        and <md>\mathbf{r_2(t)} = \langle 1+t, \sin(t), e^{2t} \rangle</md> intersect? 
+        Find the angle between the curves at the point of intersection.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        To find the intersection point, we set <m>\mathbf{r_1(t)} = \mathbf{r_2(s)}</m>:
+        <md> \langle 1+t^2, \sin(t), e^{t} \rangle = \langle 1+s, \sin(s), e^{2s} \rangle </md>
+        This gives us the system of equations:
+        <md> 1+t^2 = 1 + s \quad \Rightarrow t^2 = s </md>
+        <md> \sin(t) = \sin(s) \quad \Rightarrow t = s </md>
+        <md> e^{t} = e^{2s} \quad \Rightarrow t = 2s </md>
+        </p>
+      <p>
+        From the second equation, we have <m>t = s</m>. Substituting this into the first equation gives us <m>t^2 = t</m>, which has solutions <m>t = 0</m> or <m>t = 1</m>.
+        Substituting <m>t = 0</m> into the third equation gives us <m>0 = 2(0)</m>, which is true. 
+        Substituting <m>t = 1</m> into the third equation gives us <m>1 = 2(1)</m>, which is false. 
+        Therefore, the curves intersect at <m>t = 0</m> and <m>s = 0</m>.
+        The intersection point is <m>\mathbf{r_1(0)} = \langle 1, 0, 1 \rangle</m>.
+      </p>
+      <p>
+        To find the angle between the curves at the point of intersection, we need to find the tangent vectors of the curves at 
+        <m>t = 0</m> and <m>s = 0</m>:
+        <md> \mathbf{r_1'(t)} = \langle 2t, \cos(t), e^t \rangle \quad \Rightarrow \mathbf{r_1'(0)} = \langle 0, 1, 1 \rangle </md> 
+        <md> \mathbf{r_2'(s)} = \langle 1, \cos(s), 2e^{2s} \rangle \quad \Rightarrow \mathbf{r_2'(0)} = \langle 1, 1, 2 \rangle </md>      
+        </p>
+       <p>
+        Compute the angle <m>\theta</m> using the dot product: 
+        <md>
+          \cos(\theta) = \frac{\mathbf{r}_1'(0) \cdot \mathbf{r}_2'(0)}{\Vert{}\mathbf{r}_1'(0)\Vert{}\,\Vert{}\mathbf{r}_2'(0)\Vert{}} 
+         </md>
+         <md>
+          = \frac{(0)(1) + (1)(1) + (1)(2)}{\sqrt{0^2 + 1^2 + 1^2}\sqrt{1^2 + 1^2 + 2^2}} = \frac{3}{\sqrt{2}\sqrt{6}} = \frac{3}{\sqrt{12}} = \frac{\sqrt{3}}{2}
+         </md>
+         
+        <md>
+          \therefore \quad \theta =  \arccos\!\left(\frac{\sqrt{3}}{2}\right) = \frac{\pi}{6} \text{ radians } (\text{ or, } 30^\circ)
+        </md>
+        
+       </p>
+    </solution>
+  </example>
+
+</subsection>
+
+  
+  <subsection xml:id="subsec-integ">
+  <title>Integration of Vector Functions</title>
+    <p>
+    The integral of a vector function is defined similarly to the integral of a real-valued function. If <m>\mathbf{r(t)}</m> is a vector function, then its integral is given by:
+    <md> \int \mathbf{r(t)} dt = \mathbf{R(t)} + \mathbf{C} </md>
+    where <m>\mathbf{R(t)}</m> is the antiderivative of <m>\mathbf{r(t)}</m> and <m>\mathbf{C}</m> is a constant vector of integration. 
+    The integral represents the accumulation of the vector function over the interval of integration, and it can be used to find the position vector of a particle given its velocity vector, or to compute the area under a curve in three-dimensional space.
+    </p>
+    <p>
+      The definite integral of a vector function <m>\mathbf{r(t)}</m> from <m>a</m> to <m>b</m> is given by:
+      <md> \int_{a}^{b} \mathbf{r(t)} dt = \left(\int_{a}^{b} \mathbf{f(t)} dt\right) \mathbf{i} + \left(\int_{a}^{b} \mathbf{g(t)} dt\right) \mathbf{j} + \left(\int_{a}^{b} \mathbf{h(t)} dt\right) \mathbf{k}  </md>
+      <md>
+        = \mathbf{R(b)} - \mathbf{R(a)}
+      </md>
+      
+      where <m>\mathbf{R(t)}</m> is the antiderivative of <m>\mathbf{r(t)}</m>. This represents the net change in the vector function over the interval <m>[a, b]</m>.
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Find the integral of the vector function <m>\mathbf{r(t)} = \langle t^2, \sin(t), e^t \rangle</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The integral of <m>\mathbf{r(t)}</m> is given by:
+          <md> \int \mathbf{r(t)} dt = \int \langle t^2, \sin(t), e^t \rangle dt = \langle \frac{t^3}{3}, -\cos(t), e^t \rangle + \mathbf{C} </md>
+          where <m>\mathbf{C}</m> is a constant vector of integration.
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+          Compute the definite integral of the vector function <m>\mathbf{r(t)} = \langle t^2, \sin(t), e^t \rangle</m> from <m>0</m> to <m>1</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The definite integral is given by:
+          <md> \int_{0}^{1} \mathbf{r(t)} dt = \int_{0}^{1} \langle t^2, \sin(t), e^t \rangle dt = \langle \frac{1}{3}, 1 - \cos(1), e - 1 \rangle </md>
+          This represents the net change in the vector function over the interval <m>[0, 1]</m>.
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+          Find the integral of the vector function <m>\mathbf{r(t)} = 2\cos(t)\mathbf{i} + \sin(t)\mathbf{j} + 2t\mathbf{k}</m>. If <m>\mathbf{r(0)} = \langle 1, 0, 0 \rangle</m>, find <m>\mathbf{r(t)}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The integral of <m>\mathbf{r(t)}</m> is given by:
+          <md> \int \mathbf{r(t)} dt = \int \langle 2\cos(t), \sin(t), 2t \rangle dt = \langle 2\sin(t), -\cos(t), t^2 \rangle + \mathbf{C} </md>
+          where <m>\mathbf{C}</m> is a constant vector of integration.
+        </p>
+        <p>
+          To find <m>\mathbf{C}</m>, we use the initial condition <m>\mathbf{r(0)} = \langle 1, 0, 0 \rangle</m>:
+          <md> \mathbf{r(0)} = \langle 2\sin(0), -\cos(0), 0^2 \rangle + \mathbf{C} = \langle 0, -1, 0 \rangle + \mathbf{C} = \langle 1, 0, 0 \rangle </md>
+          This gives us <m>\mathbf{C} = \langle 1, 1, 0 \rangle</m>.
+          Therefore, the vector function is:
+          <md> \mathbf{r(t)} = \langle 2\sin(t) + 1, -\cos(t) + 1, t^2 \rangle </md>  
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+          Evaluate the definite integral of the vector function <m>\mathbf{r(t)} = t\mathbf{i} + t^2\mathbf{j} - 3t^3\mathbf{k}</m> from <m>0</m> to <m>1</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The definite integral is given by:
+          <md> \int_{0}^{1} \mathbf{r(t)} dt = \int_{0}^{1} \langle t, t^2, -3t^3 \rangle dt = \langle \frac{1}{2}, \frac{1}{3}, -\frac{3}{4} \rangle </md>
+          This represents the net change in the vector function over the interval <m>[0, 1]</m>.
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+          Find the integral of the vector function <m>\mathbf{r(t)} = 2\cos(t)\mathbf{i} + \sin(t)\mathbf{j} + 2t\mathbf{k}</m>. If <m>\mathbf{r(0)} = \langle 1, 0, 0 \rangle</m>, find <m>\mathbf{r(t)}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The integral of <m>\mathbf{r(t)}</m> is given by:
+          <md> \int \mathbf{r(t)} dt = \int \langle 2\cos(t), \sin(t), 2t \rangle dt = \langle 2\sin(t), -\cos(t), t^2 \rangle + \mathbf{C} </md>
+          where <m>\mathbf{C}</m> is a constant vector of integration.
+        </p>
+        <p>
+          To find <m>\mathbf{C}</m>, we use the initial condition <m>\mathbf{r(0)} = \langle 1, 0, 0 \rangle</m>:
+          <md> \mathbf{r(0)} = \langle 2\sin(0), -\cos(0), 0^2 \rangle + \mathbf{C} = \langle 0, -1, 0 \rangle + \mathbf{C} = \langle 1, 0, 0 \rangle </md>
+          This gives us <m>\mathbf{C} = \langle 1, 1, 0 \rangle</m>.
+          Therefore, the vector function is:
+          <md> \mathbf{r(t)} = \langle 2\sin(t) + 1, -\cos(t) + 1, t^2 \rangle </md>  
+        </p>
+      </solution>
+    </example>
+
+
+<example>
+    <statement>
+      <p>
+        Evaluate the definite integral of the vector function <m>\mathbf{r(t)} = \langle t^2, \sin(t), e^t \rangle</m> from <m>0</m> to <m>1</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The definite integral is given by:
+        <md> \int_{0}^{1} \mathbf{r(t)} dt = \int_{0}^{1} \langle t^2, \sin(t), e^t \rangle dt = \langle \frac{1}{3}, 1 - \cos(1), e - 1 \rangle </md>
+        This represents the net change in the vector function over the interval <m>[0, 1]</m>.
+      </p>
+    </solution>
+</example>
+
+<example>
+    <statement>
+      <p>
+        Find  <m>\mathbf{r(t)} </m>. If <m>\mathbf{r'(t)} = \langle 2\cos(t), \sin(t), 2t \rangle</m> and <m>\mathbf{r(0)} = \langle 1, 0, 0 \rangle</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The integral of <m>\mathbf{r'(t)}</m> is given by:
+        <md> \int \mathbf{r'(t)} dt = \int \langle 2\cos(t), \sin(t), 2t \rangle dt = \langle 2\sin(t), -\cos(t), t^2 \rangle + \mathbf{C} </md>
+        where <m>\mathbf{C}</m> is a constant vector of integration.
+      </p>
+      <p>
+        To find <m>\mathbf{C}</m>, we use the initial condition <m>\mathbf{r(0)} = \langle 1, 0, 0 \rangle</m>:
+        <md> \mathbf{r(0)} = \langle 2\sin(0), -\cos(0), 0^2 \rangle + \mathbf{C} = \langle 0, -1, 0 \rangle + \mathbf{C} = \langle 1, 0, 0 \rangle </md>
+        This gives us <m>\mathbf{C} = \langle 1, 1, 0 \rangle</m>.
+        Therefore, the vector function is:
+        <md> \mathbf{r(t)} = \langle 2\sin(t) + 1, -\cos(t) + 1, t^2 \rangle </md>  
+      </p>
+    </solution>
+</example>
+
+<example>
+    <statement>
+      <p>
+        If <m>\mathbf{u(t)} = \langle \sin(t), \cos(t), t \rangle</m> and <m>\mathbf{v(t)} = \langle t, \cos(t), \sin(t) \rangle</m>, 
+        find <md>\frac{d}{dt} \left[\mathbf{u(t)}\cdot \mathbf{v(t)} \right]</md>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The derivative of the dot product is given by:
+        <md> \frac{d}{dt} \left[\mathbf{u(t)}\cdot \mathbf{v(t)} \right] = \mathbf{u'(t)}\cdot \mathbf{v(t)} + \mathbf{u(t)}\cdot \mathbf{v'(t)} </md>
+      </p>
+      <p>
+        First, we find the derivatives:
+        <md> \mathbf{u'(t)} = \langle \cos(t), -\sin(t), 1 \rangle </md>
+        <md> \mathbf{v'(t)} = \langle 1, -\sin(t), \cos(t) \rangle </md>
+      </p>
+      <p>
+        Then, we compute the dot products:
+        <md> 
+          \mathbf{u'(t)}\cdot \mathbf{v(t)} = \cos(t) \cdot t + (-\sin(t)) \cdot \cos(t) + 1 \cdot \sin(t) 
+          </md>
+          <md>
+            = t\cos(t) - \sin(t)\cos(t) + \sin(t) 
+          </md>
+          
+        <md> \mathbf{u(t)}\cdot \mathbf{v'(t)} = \sin(t) \cdot 1 + \cos(t) \cdot (-\sin(t)) + t \cdot \cos(t)  </md>
+        <md>
+          = \sin(t) - \cos(t)\sin(t) + t\cos(t)
+        </md>
+        
+      </p>
+      <p>
+        Adding these together:
+        <md> \frac{d}{dt} \left[\mathbf{u(t)}\cdot \mathbf{v(t)} \right]  </md>
+        <md>
+          = t\cos(t) - \sin(t)\cos(t) + \sin(t) + \sin(t) - \cos(t)\sin(t) + t\cos(t) 
+        </md>
+        
+        <md>
+          = 2t\cos(t) - 2\sin(t)\cos(t) + 2\sin(t)
+        </md>
+        
+      </p>
+    </solution>
+</example>
+
+</subsection>
+
+
+
+
+
+</section>
